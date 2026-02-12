@@ -4,6 +4,11 @@
    ========================================================== */
 
 @import './tokens.css';
+@import './themes/light.css';
+@import './themes/dark.css';
+@import './density/compact.css';
+@import './density/default.css';
+@import './density/comfortable.css';
 
 /* ── Reset ───────────────────────────────────────────────── */
 *,
@@ -21,11 +26,11 @@ html {
 }
 
 body {
-  font-family: var(--font-family);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 12px;
   line-height: 1.5;
-  color: var(--color-text-900);
-  background-color: var(--color-bg);
+  color: var(--text-primary);
+  background: var(--bg-primary);
   overflow: hidden;
   /* Prevent rubber-band scrolling in desktop app */
   overscroll-behavior: none;
@@ -102,4 +107,30 @@ input, textarea {
 /* ── Utility: text that can be selected (compound names, SMILES) */
 .selectable {
   user-select: text;
+}
+
+/* Dark theme */
+[data-theme='dark'] {
+  --bg-primary: #0f0f1a;
+  --bg-secondary: #1a1a2e;
+  --bg-tertiary: #16213e;
+  --border: #2a2a4a;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+}
+
+/* Light theme */
+[data-theme='light'] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #e2e8f0;
+  --border: #cbd5e1;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
 }

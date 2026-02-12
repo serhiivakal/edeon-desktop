@@ -1,0 +1,97 @@
+[
+  {
+    "smiles_original": "",
+    "stage": "missing_fields",
+    "reason": "missing_smiles_or_log_bcf: smiles=, log_bcf=5.19"
+  },
+  {
+    "smiles_original": "",
+    "stage": "missing_fields",
+    "reason": "missing_smiles_or_log_bcf: smiles=, log_bcf=5.75"
+  },
+  {
+    "smiles_original": "",
+    "stage": "missing_fields",
+    "reason": "missing_smiles_or_log_bcf: smiles=, log_bcf=5.3"
+  },
+  {
+    "smiles_original": "",
+    "stage": "missing_fields",
+    "reason": "missing_smiles_or_log_bcf: smiles=, log_bcf=6.13"
+  },
+  {
+    "smiles_original": "",
+    "stage": "missing_fields",
+    "reason": "missing_smiles_or_log_bcf: smiles=, log_bcf=6.29"
+  },
+  {
+    "smiles_original": "",
+    "stage": "missing_fields",
+    "reason": "missing_smiles_or_log_bcf: smiles=, log_bcf=6.15"
+  },
+  {
+    "smiles_original": "",
+    "stage": "missing_fields",
+    "reason": "missing_smiles_or_log_bcf: smiles=, log_bcf=6.36"
+  },
+  {
+    "smiles_original": "",
+    "stage": "missing_fields",
+    "reason": "missing_smiles_or_log_bcf: smiles=, log_bcf=6.05"
+  },
+  {
+    "smiles_original": "",
+    "stage": "missing_fields",
+    "reason": "missing_smiles_or_log_bcf: smiles=, log_bcf=6.01"
+  },
+  {
+    "smiles_original": "",
+    "stage": "missing_fields",
+    "reason": "missing_smiles_or_log_bcf: smiles=, log_bcf=5.84"
+  },
+  {
+    "smiles_original": "",
+    "stage": "missing_fields",
+    "reason": "missing_smiles_or_log_bcf: smiles=, log_bcf=5.68"
+  },
+  {
+    "smiles_original": "",
+    "stage": "missing_fields",
+    "reason": "missing_smiles_or_log_bcf: smiles=, log_bcf=5.44"
+  },
+  {
+    "smiles_original": "",
+    "stage": "missing_fields",
+    "reason": "missing_smiles_or_log_bcf: smiles=, log_bcf=5.93"
+  },
+  {
+    "smiles_original": "",
+    "stage": "missing_fields",
+    "reason": "missing_smiles_or_log_bcf: smiles=, log_bcf=6.29"
+  },
+  {
+    "smiles_original": "",
+    "stage": "missing_fields",
+    "reason": "missing_smiles_or_log_bcf: smiles=, log_bcf=5.57"
+  },
+  {
+    "smiles_original": "",
+    "stage": "missing_fields",
+    "reason": "missing_smiles_or_log_bcf: smiles=, log_bcf=5.75"
+  },
+  {
+    "smiles_original": "",
+    "stage": "missing_fields",
+    "reason": "missing_smiles_or_log_bcf: smiles=, log_bcf=5.88"
+  },
+  {
+    "smiles_original": "",
+    "stage": "missing_fields",
+    "reason": "missing_smiles_or_log_bcf: smiles=, log_bcf=5.83"
+  },
+  {
+    "smiles_original": "",
+    "stage": "missing_fields",
+    "reason": "missing_smiles_or_log_bcf: smiles=, log_bcf=6.43"
+  }
+]

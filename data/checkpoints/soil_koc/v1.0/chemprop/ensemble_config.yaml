@@ -1,0 +1,26 @@
+accelerator: cpu
+config:
+  batch_size: 50
+  depth: 5
+  dropout: 0.05428465240272049
+  epochs: 50
+  ffn_hidden_size: 300
+  ffn_num_layers: 1
+  hidden_size: 150
+  hpo_trials: 20
+mean_val_balanced_accuracy: null
+mean_val_rmse: 4.711625813755714
+mean_val_score: 4.711625813755714
+seed_val_losses:
+  0: 4.7556581390425565
+  1: 4.298356469733135
+  2: 4.783138048122508
+  3: 5.121828204616237
+  4: 4.599148207264132
+seeds:
+- 0
+- 1
+- 2
+- 3
+- 4
+task_kind: regression

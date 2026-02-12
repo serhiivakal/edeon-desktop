@@ -1,0 +1,52 @@
+[
+  {
+    "smiles_original": "CCO",
+    "stage": "standardisation",
+    "reason": "mw_out_of_range:46.0"
+  },
+  {
+    "smiles_original": "CO",
+    "stage": "standardisation",
+    "reason": "mw_out_of_range:32.0"
+  },
+  {
+    "smiles_original": "C[As](C)(O)=O",
+    "stage": "standardisation",
+    "reason": "disallowed_atoms:As"
+  },
+  {
+    "smiles_original": "C[As](O[Na])(O[Na])=O",
+    "stage": "standardisation",
+    "reason": "disallowed_atoms:As"
+  },
+  {
+    "smiles_original": "c1ccc4c(c1)ccc5c3ccc2ccccc2c3nc45",
+    "stage": "standardisation",
+    "reason": "parse_failed"
+  },
+  {
+    "smiles_original": "[Na+].C[As]([O-])(O)=O",
+    "stage": "standardisation",
+    "reason": "disallowed_atoms:As"
+  },
+  {
+    "smiles_original": "c1cc(CCCC)c2nnnc2c1",
+    "stage": "standardisation",
+    "reason": "parse_failed"
+  },
+  {
+    "smiles_original": "c1cc(F)c2nnnc2c1",
+    "stage": "standardisation",
+    "reason": "parse_failed"
+  },
+  {
+    "smiles_original": "C1CN1",
+    "stage": "standardisation",
+    "reason": "mw_out_of_range:43.0"
+  },
+  {
+    "smiles_original": "c1cc(Cl)c2nnnc2c1",
+    "stage": "standardisation",
+    "reason": "parse_failed"
+  }
+]

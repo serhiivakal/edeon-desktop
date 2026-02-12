@@ -1,0 +1,62 @@
+[
+  {
+    "id": "amide_coupling",
+    "name": "Amide Bond Coupling",
+    "smarts": "[C:1](=[O:2])[OH].[N:3]>>[C:1](=[O:2])[N:3]",
+    "description": "Coupling of carboxylic acids with primary or secondary amines",
+    "n_reagent_slots": 2,
+    "default_reagents": [
+      "CC(=O)O", "C1CCNCC1", "NC1=CC=CC=C1", "CCN", "NCC1=CC=CC=C1"
+    ]
+  },
+  {
+    "id": "suzuki_coupling",
+    "name": "Suzuki Biaryl Coupling",
+    "smarts": "[c:1][Br,I,Cl].[c:2]B(O)O>>[c:1]-[c:2]",
+    "description": "Cross-coupling of aryl halides with aryl boronic acids",
+    "n_reagent_slots": 2,
+    "default_reagents": [
+      "BrC1=CC=CC=C1", "OB(O)C1=CC=CC=C1", "BrC1=CC=NC=C1", "OB(O)C1=CC=C(F)C=C1", "IC1=CC=CC=C1"
+    ]
+  },
+  {
+    "id": "snar_ether",
+    "name": "SNAr Ether Formation",
+    "smarts": "[c:1][F,Cl].[O:2]>>[c:1]-[O:2]",
+    "description": "Nucleophilic aromatic substitution of electron-poor aryl halides with alcohols",
+    "n_reagent_slots": 2,
+    "default_reagents": [
+      "FC1=CC=C(N(=O)=O)C=C1", "CCO", "OC1=CC=CC=C1", "CO", "OCC1=CC=CC=C1"
+    ]
+  },
+  {
+    "id": "reductive_amination",
+    "name": "Reductive Amination",
+    "smarts": "[C:1]=[O:2].[N:3]>>[C:1][N:3]",
+    "description": "Condensation of aldehydes or ketones with amines followed by reduction",
+    "n_reagent_slots": 2,
+    "default_reagents": [
+      "CC=O", "O=C1CCCC1", "CCN", "NC1=CC=CC=C1", "O=C1CCCCC1"
+    ]
+  },
+  {
+    "id": "esterification",
+    "name": "Esterification",
+    "smarts": "[C:1](=[O:2])[OH].[O:3]>>[C:1](=[O:2])[O:3]",
+    "description": "Ester bond formation from carboxylic acids and alcohols",
+    "n_reagent_slots": 2,
+    "default_reagents": [
+      "CC(=O)O", "CCO", "CO", "CC1=CC=CC=C1C(=O)O", "OCC1=CC=CC=C1"
+    ]
+  },
+  {
+    "id": "sulfonamide_coupling",
+    "name": "Sulfonamide Coupling",
+    "smarts": "[S:1](=[O:2])(=[O:3])[Cl].[N:4]>>[S:1](=[O:2])(=[O:3])[N:4]",
+    "description": "Reaction of sulfonyl chlorides with amines",
+    "n_reagent_slots": 2,
+    "default_reagents": [
+      "CS(=O)(=O)Cl", "ClS(=O)(=O)C1=CC=CC=C1", "CCN", "NC1=CC=CC=C1", "C1CCNCC1"
+    ]
+  }
+]

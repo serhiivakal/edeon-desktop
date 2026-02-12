@@ -1,0 +1,16 @@
+[data-density="comfortable"] {
+  --space-multiplier: 1.25;
+  --font-size-base: 15px;
+  --row-height: 44px;
+  
+  --space-1: 5px;
+  --space-2: 10px;
+  --space-3: 15px;
+  --space-4: 20px;
+  --space-5: 25px;
+  --space-6: 30px;
+  --space-8: 40px;
+  --space-10: 50px;
+  --space-12: 60px;
+  --space-16: 80px;
+}

@@ -1,0 +1,79 @@
+{
+  "endpoint_id": "soil_dt50",
+  "timestamp": "2026-06-20T10:55:06.845478Z",
+  "train_samples": 242,
+  "cal_samples": 52,
+  "test_samples": 34,
+  "cv_train_rmse": 0.0,
+  "cv_train_nll": null,
+  "cal_rmse": 0.42032192959194137,
+  "cal_nll": -0.5292351423690976,
+  "cal_r2": -2.8657228823914562,
+  "overall": {
+    "rmse": 1.0086946168529132,
+    "mae": 0.7308450728562728,
+    "r2": -13.399555696386788,
+    "pearson": -0.6529828775485848,
+    "spearman": -0.8711836741759966,
+    "count": 34,
+    "nll": 0.19105121761841257,
+    "spearman_sigma": 0.7999999999999999
+  },
+  "conformal": {
+    "overall_coverage": 0.8529411764705882,
+    "mean_width": 1.7765817642211914,
+    "regions": {
+      "in": {
+        "count": 0,
+        "rmse": NaN,
+        "coverage": NaN,
+        "mean_width": NaN
+      },
+      "borderline": {
+        "count": 17,
+        "rmse": 0.2614182288044287,
+        "coverage": 1.0,
+        "mean_width": 0.8238921165466309
+      },
+      "out": {
+        "count": 17,
+        "rmse": 1.4023516569622778,
+        "coverage": 0.7058823529411765,
+        "mean_width": 2.729271650314331
+      }
+    }
+  },
+  "classes": {
+    "unclassified": {
+      "count": 23,
+      "rmse": 0.6059614177717771,
+      "coverage": 0.9130434782608695,
+      "ad_coverage": 0.7391304347826086
+    },
+    "pyrethroid": {
+      "count": 3,
+      "rmse": 2.409809336515441,
+      "coverage": 1.0,
+      "ad_coverage": 0.0
+    },
+    "triazine": {
+      "count": 4,
+      "rmse": 0.6222186476642287,
+      "coverage": 1.0,
+      "ad_coverage": 0.0
+    },
+    "triazole": {
+      "count": 2,
+      "rmse": 1.037859614886602,
+      "coverage": 0.5,
+      "ad_coverage": 0.0
+    },
+    "sdhi": {
+      "count": 2,
+      "rmse": 1.584925747277998,
+      "coverage": 0.0,
+      "ad_coverage": 0.0
+    }
+  },
+  "subset_metrics": null
+}

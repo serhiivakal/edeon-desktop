@@ -1,0 +1,167 @@
+{
+  "profile_id": "agrochem_default",
+  "name": "Agrochemical Default Profile",
+  "description": "Default desirability profile for agrochemical lead optimization. Thresholds derived from EU regulatory cutoffs (REACH, CLP, 1107/2009) and industry best-practice windows.",
+  "endpoints": {
+    "fish_lc50": {
+      "display_name": "Fish Acute LC50 (mg/L)",
+      "curve_type": "higher_better",
+      "breakpoints": [0.1, 1.0, 10.0, 100.0],
+      "desirability": [0.0, 0.2, 0.5, 0.8, 1.0],
+      "unit": "mg/L",
+      "default_weight": 1.0,
+      "direction": "max",
+      "regulatory_ref": "CLP H400/H410"
+    },
+    "daphnia_ec50": {
+      "display_name": "Daphnia Acute EC50 (mg/L)",
+      "curve_type": "higher_better",
+      "breakpoints": [0.1, 1.0, 10.0, 100.0],
+      "desirability": [0.0, 0.2, 0.5, 0.8, 1.0],
+      "unit": "mg/L",
+      "default_weight": 1.0,
+      "direction": "max",
+      "regulatory_ref": "CLP H400/H410"
+    },
+    "algae_ec50": {
+      "display_name": "Algae EC50 (mg/L)",
+      "curve_type": "higher_better",
+      "breakpoints": [0.1, 1.0, 10.0, 100.0],
+      "desirability": [0.0, 0.2, 0.5, 0.8, 1.0],
+      "unit": "mg/L",
+      "default_weight": 0.8,
+      "direction": "max",
+      "regulatory_ref": "CLP H400/H410"
+    },
+    "bee_oral": {
+      "display_name": "Bee Oral LD50 (µg/bee)",
+      "curve_type": "higher_better",
+      "breakpoints": [0.1, 1.0, 10.0, 100.0],
+      "desirability": [0.0, 0.15, 0.5, 0.85, 1.0],
+      "unit": "µg/bee",
+      "default_weight": 1.2,
+      "direction": "max",
+      "regulatory_ref": "EFSA Bee Guidance 2013"
+    },
+    "bee_contact": {
+      "display_name": "Bee Contact LD50 (µg/bee)",
+      "curve_type": "higher_better",
+      "breakpoints": [0.1, 1.0, 10.0, 100.0],
+      "desirability": [0.0, 0.15, 0.5, 0.85, 1.0],
+      "unit": "µg/bee",
+      "default_weight": 1.0,
+      "direction": "max",
+      "regulatory_ref": "EFSA Bee Guidance 2013"
+    },
+    "bird_ld50": {
+      "display_name": "Bird Oral LD50 (mg/kg)",
+      "curve_type": "higher_better",
+      "breakpoints": [10.0, 50.0, 200.0, 2000.0],
+      "desirability": [0.0, 0.2, 0.5, 0.85, 1.0],
+      "unit": "mg/kg",
+      "default_weight": 0.8,
+      "direction": "max",
+      "regulatory_ref": "EPA Avian Risk Assessment"
+    },
+    "earthworm_lc50": {
+      "display_name": "Earthworm LC50 (mg/kg soil)",
+      "curve_type": "higher_better",
+      "breakpoints": [1.0, 10.0, 100.0, 500.0],
+      "desirability": [0.0, 0.2, 0.5, 0.85, 1.0],
+      "unit": "mg/kg soil",
+      "default_weight": 0.6,
+      "direction": "max",
+      "regulatory_ref": "OECD 207"
+    },
+    "rat_ld50": {
+      "display_name": "Rat Oral LD50 (mg/kg)",
+      "curve_type": "higher_better",
+      "breakpoints": [5.0, 50.0, 300.0, 2000.0],
+      "desirability": [0.0, 0.1, 0.4, 0.8, 1.0],
+      "unit": "mg/kg",
+      "default_weight": 1.0,
+      "direction": "max",
+      "regulatory_ref": "CLP GHS Cat 1-5"
+    },
+    "skin_sens": {
+      "display_name": "Skin Sensitization (binary)",
+      "curve_type": "step",
+      "breakpoints": [0.5],
+      "desirability": [1.0, 0.0],
+      "unit": "probability",
+      "default_weight": 0.7,
+      "direction": "min",
+      "regulatory_ref": "CLP H317"
+    },
+    "bcf": {
+      "display_name": "Bioconcentration Factor",
+      "curve_type": "lower_better",
+      "breakpoints": [500.0, 2000.0, 5000.0],
+      "desirability": [1.0, 0.7, 0.2, 0.0],
+      "unit": "L/kg",
+      "default_weight": 0.8,
+      "direction": "min",
+      "regulatory_ref": "REACH Annex XIII B-criterion"
+    },
+    "koc": {
+      "display_name": "Soil Sorption Koc",
+      "curve_type": "target_window",
+      "breakpoints": [50.0, 75.0, 500.0, 5000.0],
+      "desirability": [0.3, 0.7, 1.0, 0.7, 0.3],
+      "unit": "mL/g",
+      "default_weight": 0.8,
+      "direction": "target",
+      "regulatory_ref": "EU DWD mobility screening"
+    },
+    "dt50": {
+      "display_name": "Soil DT50 (days)",
+      "curve_type": "lower_better",
+      "breakpoints": [21.0, 90.0, 120.0, 180.0],
+      "desirability": [1.0, 0.8, 0.4, 0.15, 0.0],
+      "unit": "days",
+      "default_weight": 1.0,
+      "direction": "min",
+      "regulatory_ref": "EU 1107/2009 persistence"
+    },
+    "gus": {
+      "display_name": "GUS Leaching Index",
+      "curve_type": "lower_better",
+      "breakpoints": [1.8, 2.8],
+      "desirability": [1.0, 0.5, 0.0],
+      "unit": "",
+      "default_weight": 1.0,
+      "direction": "min",
+      "regulatory_ref": "Gustafson 1989"
+    },
+    "selectivity_window": {
+      "display_name": "Cross-Species Selectivity",
+      "curve_type": "higher_better",
+      "breakpoints": [2.0, 5.0, 10.0, 50.0],
+      "desirability": [0.0, 0.3, 0.6, 0.9, 1.0],
+      "unit": "ratio",
+      "default_weight": 1.5,
+      "direction": "max",
+      "regulatory_ref": "Edeon selectivity metric"
+    },
+    "mobility_class": {
+      "display_name": "Systemic Mobility",
+      "curve_type": "step",
+      "breakpoints": [0.5],
+      "desirability": [0.4, 1.0],
+      "unit": "categorical",
+      "default_weight": 0.5,
+      "direction": "max",
+      "regulatory_ref": "Kleier/Bromilow models"
+    },
+    "feasibility_score": {
+      "display_name": "Synthetic Feasibility",
+      "curve_type": "higher_better",
+      "breakpoints": [0.2, 0.5, 0.8],
+      "desirability": [0.0, 0.3, 0.7, 1.0],
+      "unit": "score [0,1]",
+      "default_weight": 0.8,
+      "direction": "max",
+      "regulatory_ref": "RAscore/AiZynthFinder"
+    }
+  }
+}

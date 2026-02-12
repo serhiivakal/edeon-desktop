@@ -1,0 +1,8 @@
+batch_size: 16
+depth: 5
+dropout: 0.17596272343243455
+epochs: 30
+ffn_hidden_size: 150
+ffn_num_layers: 1
+hidden_size: 300
+hpo_trials: 10

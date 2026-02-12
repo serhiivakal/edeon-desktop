@@ -1,0 +1,94 @@
+dataset_id: edeon-earthworm-acute-lc50-v1.0
+endpoint: earthworm_acute_lc50
+version: 1.0.0
+created: '2026-06-20T07:15:28Z'
+created_by: edeon-data-pipeline
+sources:
+- name: Kotli et al. 2024 (QDB.258)
+  citation: Kotli M, Piir G, Maran U (2024). J. Hazard. Mater. 461:132577.
+  doi: 10.15152/QDB.258
+  url: https://qsardb.org/repository/handle/10967/258
+  license: Creative Commons Attribution-NonCommercial-NoDerivs 3.0
+  access_date: '2026-06-02'
+  raw_records: 10
+inclusion_criteria:
+- Experimentally measured earthworm acute toxicity (LC50) records
+- Eisenia fetida or Eisenia andrei species only
+- OECD 207 or equivalent 14-day tests
+- 'Canonical units: mg/kg soil'
+exclusion_criteria:
+- Mixtures, formulations, or records with missing structures
+- Compounds containing atoms outside default organic allowlist
+- Values reported outside the standard OECD 207 artificial soil parameters
+standardisation:
+  tool: chembl_structure_pipeline
+  version: 1.2.4
+  tautomer: rdkit-canonical
+  atom_allowlist:
+  - H
+  - B
+  - C
+  - N
+  - O
+  - F
+  - Si
+  - P
+  - S
+  - Cl
+  - Se
+  - Br
+  - I
+  mw_range:
+  - 50.0
+  - 1500.0
+activity:
+  units_canonical: mg/kg soil
+  log_transform: log10_mg_per_kg
+  aggregation: geometric_mean
+  censored_handling: flagged_kept
+curation_summary:
+  raw_records: 10
+  after_parse: 10
+  after_standardisation: 10
+  after_filter: 10
+  after_aggregation: 10
+  rejection_rate: 0.0
+splits:
+  scaffold:
+    train: 7
+    cal: 2
+    test: 1
+    test_to_train_nn_tanimoto_mean: 0.16363636363636364
+  random:
+    train: 7
+    cal: 1
+    test: 2
+    seed: 42
+  time:
+    train: 10
+    cal: 0
+    test: 0
+    train_year_max: 2024
+    cal_year_range: null
+    test_year_range: null
+    status: available
+known_biases:
+- PPDB-derived data represents registered commercial pesticide active ingredients,
+  which may under-represent novel discovery chemotypes.
+- Significant bias towards legacy insecticide and herbicide chemical space.
+intended_use: Training and benchmarking Tier-1 QSAR earthworm acute LC50 prediction
+  models.
+not_intended_for:
+- Direct regulatory dossier submission without supplementary OECD 207 testing
+- Quantitative risk assessment for non-soil invertebrate species
+sha256:
+  scaffold_train: 29b20101a87557da09469c49a09aa06cd21e01af09d35816bba5284166ace3b5
+  scaffold_cal: f587bceeab31ea696c3926b06dbc8f4c41f8e347ce53ae53ca317c22089c3458
+  scaffold_test: d27a5fcc70f30a6014edd8ce305377551bc3f51c01812bcc17653bef0e674de5
+  random_train: f1bb61e1f2471dd31bf41c597382fc474655d5ea8afa61220f5eae180391b97d
+  random_cal: 0419b0adc41792493e700d215003632d10d02875031db9b9b3202838cde3dd52
+  random_test: d44226ab4724e8af0e2bb54b7b0c54871731bd596fcaa2b923785a9f4e85a6d0
+  time_train: 5cf57429ea5ecdcf8a3f491886fd7475ac6e8b6b90ee6c8b346735757a448f29
+  time_cal: d90387b3a8ce8248160c6c771306bd413a49bb2cd4c4ffbae9e320d7b1b15413
+  time_test: d90387b3a8ce8248160c6c771306bd413a49bb2cd4c4ffbae9e320d7b1b15413
+  curated_parquet: 5cf57429ea5ecdcf8a3f491886fd7475ac6e8b6b90ee6c8b346735757a448f29

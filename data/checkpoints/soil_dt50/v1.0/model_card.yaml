@@ -1,0 +1,48 @@
+model_id: t1_soil_dt50_v1.0
+name: Edeon Tier-1 Reference Soil Dt50 (Heteroscedastic)
+version: v1.0
+tier: 1
+endpoint: soil_dt50
+description: Heteroscedastic mean-variance reference QSAR model combining a 5-seed
+  PyTorch HeteroscedasticMLP ensemble and a 5-seed Chemprop MVE ensemble. Features
+  joint aleatoric-epistemic uncertainty modeling with post-hoc variance calibration.
+intended_use: Tier-1 high-precision prediction of DT50 with joint uncertainty for
+  GUS leaching risk propagation.
+not_intended_for: []
+training_data:
+  n_compounds: 242
+  sources:
+  - Phase 1 Curated Agrochemical Dataset
+  sha256: null
+  split_strategy: scaffold
+  license: null
+performance:
+  metrics:
+    rmse: 1.0086946168529132
+    r2: -13.399555696386788
+    mae: 0.7308450728562728
+    nll: 0.19105121761841257
+    spearman_sigma: 0.7999999999999999
+  test_set_n: 34
+  cv_folds: 5
+  calibration_coverage_95: 0.8529411764705882
+  subset_metrics: null
+applicability_domain:
+  method: tanimoto_knn
+  threshold: 0.6154132601808764
+  k: 5
+  training_set_size: 242
+  notes: null
+uncertainty_method: heteroscedastic_mean_variance_posthoc_calibrated
+known_failure_modes:
+- Compounds containing heavy atoms outside H, C, N, O, P, S, F, Cl, Br, I
+- Extremely macrocyclic compounds or highly fragmented mixtures
+references:
+- Nix, D. A., & Weigend, A. S. (1994). Estimating the mean and variance of target
+  distributions.
+- 'Gustafson, D. I. (1989). Groundwater ubiquity score: a simple method for assessing
+  pesticide leachability.'
+license: Proprietary
+created: '2026-06-20T10:55:06.864636'
+authors:
+- Edeon AI Team

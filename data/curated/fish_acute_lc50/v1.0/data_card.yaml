@@ -1,0 +1,106 @@
+dataset_id: edeon-fish-acute-lc50-v1.0
+endpoint: fish_acute_lc50
+version: 1.0.0
+created: '2026-06-20T07:13:51Z'
+created_by: edeon-data-pipeline
+sources:
+- name: US EPA ECOTOX
+  citation: US EPA ECOTOX database
+  doi: 10.2307/193988
+  url: https://cfpub.epa.gov/ecotox/
+  license: Public Domain (US Government)
+  access_date: '2026-05-30'
+  raw_records: 35738
+- name: EPA Williams et al. Ensemble
+  citation: Williams et al. (2017) / Sheffield (2019) QSAR Ensemble
+  doi: 10.1021/acs.est.9b03063
+  url: https://doi.org/10.1021/acs.est.9b03063
+  license: Open Access / Public Domain
+  access_date: '2026-05-30'
+  raw_records: 0
+inclusion_criteria:
+- In vivo fish acute LC50 toxicity records only
+- Effect = MOR (mortality)
+- Test duration = 96h (91.2h - 100.8h)
+- 'Species restricted to 6 target fish species: Oncorhynchus mykiss, Pimephales promelas,
+  Lepomis macrochirus, Cyprinus carpio, Danio rerio, Salmo salar'
+- Exposure = aquatic
+exclusion_criteria:
+- Mixtures, formulations, or records with missing structures
+- Non-aquatic exposure routes (injection, dietary, dermal, oral gavage, etc.)
+- Non-positive numeric concentration values
+- Compounds containing atoms outside default organic allowlist
+standardisation:
+  tool: chembl_structure_pipeline
+  version: 1.2.4
+  tautomer: rdkit-canonical
+  atom_allowlist:
+  - H
+  - B
+  - C
+  - N
+  - O
+  - F
+  - Si
+  - P
+  - S
+  - Cl
+  - Se
+  - Br
+  - I
+  mw_range:
+  - 50.0
+  - 1500.0
+activity:
+  units_canonical: mg/L
+  log_transform: log10_molar
+  aggregation: geometric_mean
+  censored_handling: flagged_kept
+curation_summary:
+  raw_records: 35738
+  after_parse: 24513
+  after_standardisation: 24513
+  after_filter: 24513
+  after_aggregation: 454
+  rejection_rate: 0.314091443281661
+splits:
+  scaffold:
+    train: 319
+    cal: 69
+    test: 66
+    test_to_train_nn_tanimoto_mean: 0.2814158798698179
+  random:
+    train: 317
+    cal: 68
+    test: 69
+    seed: 42
+  time:
+    train: 331
+    cal: 90
+    test: 33
+    train_year_max: 2019
+    cal_year_range:
+    - 2020
+    - 2022
+    test_year_range:
+    - 2023
+    - 2025
+    status: available
+known_biases:
+- Species-specific and chemical-specific bias in ECOTOX reporting (focus on standard
+  test species like Rainbow Trout and Fathead Minnow).
+intended_use: Training and benchmarking Tier-1 QSAR fish acute LC50 prediction models.
+not_intended_for:
+- Direct regulatory dossier submission without supplementary dossier review
+- Quantitative aquatic risk assessment without local validation
+sha256:
+  scaffold_train: ae913a161776947f23c5faa743d345fae2672d9fb9c3f34d741769cd2203e1e5
+  scaffold_cal: 7427eb889d3a591a54193ea5792b4591f6592c7992d573acde57bf76c6af20d2
+  scaffold_test: 61e636fecabbeee10654e49f816b7a88076649d14f3b0df9ed53bb5272c54908
+  random_train: 55b3b716a6d9f994f44b0b3e02b297409f677c9f6a63ec0e19794d1119ad78d8
+  random_cal: 46dcbc9944f137f06f1e5ccde82f52c89297a26c4a8e3b2c2507d570ace54b9c
+  random_test: 6f09818187960aa2fcd48f00cce5234541373c279b08359c7048063dad166d3e
+  time_train: f8bb167362247377408a23ea4a8cfcdcd6f4292d12a22005d8bbe6b4d843e9d3
+  time_cal: 56e6231eea40c03bccbb273806dcaae77140f48d620370d0472a27827f23a8e4
+  time_test: 7f7c403dee81be510111ae94502651ca4d5a283b95a013cc9ee455e399f1d1ed
+  curated_parquet: 6f94986fd3cdce2a7d8cf66daad090c4a1b8c672b2167a6be8c66e09ae259c63

@@ -1,0 +1,69 @@
+{% extends "base.html.j2" %}
+
+{% block title %}REGISTRATION READINESS PRE-SCREEN{% endblock %}
+{% block subtitle %}EU 1107/2009 & CLP Regulatory Screening Dossier{% endblock %}
+
+{% block content %}
+{% for comp in per_compound %}
+<div class="section">
+  <h2>{{ comp.name }} <span class="mono text-muted">({{ comp.smiles[:40] }}{% if comp.smiles|length > 40 %}…{% endif %})</span></h2>
+  
+  {# Compound verdict #}
+  <div class="verdict-banner {{ comp.verdict.band | band_class }}" style="margin-bottom:10px;">
+    <div class="band-label">{{ comp.verdict.band }}</div>
+    <div class="rationale">
+      <strong>{{ comp.verdict.driver }}</strong><br>
+      {{ comp.verdict.rationale }}
+    </div>
+    <div class="confidence-badge {{ comp.verdict.confidence | confidence_class }}">{{ comp.verdict.confidence }}</div>
+  </div>
+  
+  {# Regulatory scorecard #}
+  {% if comp.scorecard and comp.scorecard.criteria is defined %}
+  <h3>Regulatory Criteria Scorecard</h3>
+  <table>
+    <thead>
+      <tr><th>Criterion</th><th>Status</th><th>Evidence</th></tr>
+    </thead>
+    <tbody>
+      {% for crit in comp.scorecard.criteria %}
+      <tr class="{{ 'flagged' if crit.status == 'likely_showstopper' }}">
+        <td>{{ crit.criterion }}</td>
+        <td>
+          {% if crit.status == 'likely_showstopper' %}
+            <span class="pill pill-red">SHOWSTOPPER</span>
+          {% elif crit.status == 'watch' %}
+            <span class="pill pill-amber">WATCH</span>
+          {% else %}
+            <span class="pill pill-green">PASS</span>
+          {% endif %}
+        </td>
+        <td>{{ crit.evidence | join(', ') if crit.evidence else '—' }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+  
+  {# Metabolite risk #}
+  <h3>Metabolite Risk Assessment</h3>
+  <table>
+    <thead>
+      <tr><th>Metric</th><th>Value</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Transformation Products Evaluated</td><td>{{ comp.tp_count }}</td></tr>
+      <tr><td>Worst Metabolite Risk Level</td>
+        <td>
+          {% if comp.metabolite_risk == 'showstopper' %}<span class="pill pill-red">{{ comp.metabolite_risk | upper }}</span>
+          {% elif comp.metabolite_risk == 'high' %}<span class="pill pill-red">{{ comp.metabolite_risk | upper }}</span>
+          {% elif comp.metabolite_risk == 'medium' %}<span class="pill pill-amber">{{ comp.metabolite_risk | upper }}</span>
+          {% else %}<span class="pill pill-green">{{ comp.metabolite_risk | upper }}</span>
+          {% endif %}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endfor %}
+{% endblock %}

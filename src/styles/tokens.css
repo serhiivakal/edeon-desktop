@@ -1,73 +1,131 @@
 /* ==========================================================
    Edeon Desktop — Design Tokens
-   Extracted from edeon_desktop_workflow_view.svg
+   Integrated semantic variables & legacy assets
    ========================================================== */
 
 :root {
-  /* ── Brand Greens (primary palette) ────────────────────── */
+  /* ── Spacing scale (4px base) ──────────────────────────── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ── Typography ────────────────────────────────────────── */
+  --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-mono: "JetBrains Mono", "SF Mono", Menlo, "Courier New", monospace;
+  --font-size-xs: 11px;
+  --font-size-sm: 13px;
+  --font-size-base: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 32px;
+
+  /* ── Color Semantics — Status ──────────────────────────── */
+  --color-status-good: #16a34a;       /* In-domain, approved, stable, safe */
+  --color-status-good-bg: #f0fdf4;
+  --color-status-moderate: #ca8a04;   /* Borderline, restricted, moderate */
+  --color-status-moderate-bg: #fefce8;
+  --color-status-poor: #dc2626;       /* Out-of-domain, banned, susceptible, unsafe */
+  --color-status-poor-bg: #fef2f2;
+  --color-status-unknown: #71717a;
+  --color-status-unknown-bg: #f4f4f5;
+
+  /* ── Tier Colors ───────────────────────────────────────── */
+  --color-tier-1: #2563eb;
+  --color-tier-2: #6366f1;
+  --color-tier-3: #8b5cf6;
+  --color-tier-4: #a855f7;
+
+  /* ── Surface & Chrome (Light default) ──────────────────── */
+  --color-surface-base: #ffffff;
+  --color-surface-raised: #fafafa;
+  --color-surface-overlay: #ffffff;
+  --color-border-subtle: #e4e4e7;
+  --color-border-default: #d4d4d8;
+  --color-border-strong: #71717a;
+
+  /* ── Text ──────────────────────────────────────────────── */
+  --color-text-primary: #18181b;
+  --color-text-secondary: #52525b;
+  --color-text-tertiary: #71717a;
+  --color-text-inverse: #ffffff;
+
+  /* ── Interactive ───────────────────────────────────────── */
+  --color-action-primary: #2563eb;
+  --color-action-primary-hover: #1d4ed8;
+  --color-action-primary-active: #1e40af;
+  --color-action-secondary: #f4f4f5;
+  --color-action-secondary-hover: #e4e4e7;
+
+  /* ── Shadows ───────────────────────────────────────────── */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow-overlay: 0 25px 50px rgba(0, 0, 0, 0.25);
+
+  /* ── Border Radius ─────────────────────────────────────── */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-full: 9999px;
+
+  /* ── Z-Index Scale ─────────────────────────────────────── */
+  --z-base: 1;
+  --z-dropdown: 10;
+  --z-sticky: 20;
+  --z-overlay: 30;
+  --z-modal: 40;
+  --z-toast: 50;
+
+  /* ── Transitions & Animations ──────────────────────────── */
+  --transition-fast: 120ms ease;
+  --transition-normal: 200ms ease;
+  --transition-slow: 350ms ease;
+  --easing-default: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ── Layout Dimensions ─────────────────────────────────── */
+  --sidebar-width:    220px;
+  --inspector-width:  280px;
+  --header-height:    48px;
+  --statusbar-height: 30px;
+
+  /* ── Legacy Mappings (Maintained to prevent compile issues) ── */
   --color-brand-900: #173404;
   --color-brand-700: #2d5016;
   --color-brand-600: #3b6d11;
   --color-brand-100: #eaf3de;
   --color-brand-50:  #c0dd97;
 
-  /* ── Blues (running / active state) ─────────────────────── */
   --color-blue-700: #0c447c;
   --color-blue-500: #378add;
   --color-blue-100: #e6f1fb;
   --color-blue-50:  #cce0f5;
 
-  /* ── Amber (medium risk / warnings) ────────────────────── */
   --color-amber-700: #854f0b;
   --color-amber-100: #faeeda;
   --color-amber-50:  #fac775;
 
-  /* ── Red (high risk / danger) ──────────────────────────── */
   --color-red-700: #993c1d;
   --color-red-500: #791f1f;
   --color-red-100: #fceae5;
   --color-red-50:  #f7c1c1;
 
-  /* ── Neutrals ──────────────────────────────────────────── */
   --color-bg:       #fafaf7;
   --color-surface:  #ffffff;
   --color-sidebar:  #f5f5f0;
   --color-border:   #e5e5e0;
-  --color-border-subtle: #d3d1c7;
+  --color-border-subtle: #cbd5e1;
   --color-text-900: #1a1a1a;
   --color-text-600: #5a5a5a;
   --color-text-400: #888888;
-
-  /* ── Layout Dimensions ─────────────────────────────────── */
-  --sidebar-width:    220px;
-  --inspector-width:  280px;
-  --header-height:    50px;
-  --statusbar-height: 30px;
-
-  /* ── Typography ────────────────────────────────────────── */
   --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono:   'Courier New', Consolas, monospace;
-
-  /* ── Spacing scale ─────────────────────────────────────── */
-  --space-1:  4px;
-  --space-2:  8px;
-  --space-3:  12px;
-  --space-4:  16px;
-  --space-5:  20px;
-  --space-6:  24px;
-  --space-8:  32px;
-
-  /* ── Border radius ─────────────────────────────────────── */
-  --radius-sm: 3px;
-  --radius-md: 4px;
-  --radius-lg: 6px;
-  --radius-xl: 8px;
-
-  /* ── Shadows ───────────────────────────────────────────── */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.06);
-
-  /* ── Transitions ───────────────────────────────────────── */
-  --transition-fast:   120ms ease;
-  --transition-normal: 200ms ease;
 }

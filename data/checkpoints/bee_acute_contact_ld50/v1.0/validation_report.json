@@ -1,0 +1,92 @@
+{
+  "endpoint_id": "bee_acute_contact_ld50",
+  "timestamp": "2026-06-01T15:26:41.311927Z",
+  "train_samples": 401,
+  "cal_samples": 86,
+  "test_samples": 85,
+  "cv_train_rmse": 0.9175762051484654,
+  "cal_rmse": 0.7523590080936263,
+  "cal_r2": 0.4608444656143327,
+  "overall": {
+    "rmse": 0.7728707834160167,
+    "mae": 0.566488087482633,
+    "r2": 0.29027480343760836,
+    "pearson": 0.5698505219290134,
+    "spearman": 0.343789936977332,
+    "count": 85
+  },
+  "conformal": {
+    "overall_coverage": 0.9529411764705882,
+    "mean_width": 5.962727055479498,
+    "regions": {
+      "in": {
+        "count": 80,
+        "rmse": 0.792078949799643,
+        "coverage": 0.95,
+        "mean_width": 5.792690446600318
+      },
+      "borderline": {
+        "count": 5,
+        "rmse": 0.34113371298685813,
+        "coverage": 1.0,
+        "mean_width": 8.683312797546387
+      },
+      "out": {
+        "count": 0,
+        "rmse": NaN,
+        "coverage": NaN,
+        "mean_width": NaN
+      }
+    }
+  },
+  "classes": {
+    "unclassified": {
+      "count": 55,
+      "rmse": 0.8312119545291862,
+      "coverage": 0.9818181818181818,
+      "ad_coverage": 1.0
+    },
+    "organophosphate": {
+      "count": 7,
+      "rmse": 0.6997700322724432,
+      "coverage": 0.7142857142857143,
+      "ad_coverage": 1.0
+    },
+    "triazole": {
+      "count": 7,
+      "rmse": 0.8874594720029605,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    },
+    "carbamate": {
+      "count": 5,
+      "rmse": 0.3708385207941881,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    },
+    "sdhi": {
+      "count": 4,
+      "rmse": 0.17649850267253323,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    },
+    "triazine": {
+      "count": 3,
+      "rmse": 0.5345039811465132,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    },
+    "phenoxyacid": {
+      "count": 2,
+      "rmse": 0.28520433578103055,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    },
+    "strobilurin": {
+      "count": 3,
+      "rmse": 0.8240396764134392,
+      "coverage": 0.6666666666666666,
+      "ad_coverage": 1.0
+    }
+  }
+}

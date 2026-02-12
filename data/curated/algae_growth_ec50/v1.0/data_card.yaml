@@ -1,0 +1,99 @@
+dataset_id: edeon-algae-growth-ec50-v1.0
+endpoint: algae_growth_ec50
+version: 1.0.0
+created: '2026-06-20T07:15:07Z'
+created_by: edeon-data-pipeline
+sources:
+- name: US EPA ECOTOX
+  citation: US EPA ECOTOX database
+  doi: 10.2307/193988
+  url: https://cfpub.epa.gov/ecotox/
+  license: Public Domain (US Government)
+  access_date: '2026-05-31'
+  raw_records: 1238
+inclusion_criteria:
+- In vivo Algae growth EC50 toxicity records only
+- "Endpoint \u2208 {EC50, ErC50, EbC50}"
+- Effect = GRO (growth) or POP (population)
+- Test duration = 72h (64.8h - 79.2h)
+- Species restricted to Raphidocelis subcapitata, Selenastrum capricornutum, Chlorella
+  vulgaris, Desmodesmus subspicatus
+- Exposure = aquatic
+exclusion_criteria:
+- Mixtures, formulations, or records with missing structures
+- Non-aquatic exposure routes
+- Non-positive numeric concentration values
+- Compounds containing atoms outside default organic allowlist
+standardisation:
+  tool: chembl_structure_pipeline
+  version: 1.2.4
+  tautomer: rdkit-canonical
+  atom_allowlist:
+  - H
+  - B
+  - C
+  - N
+  - O
+  - F
+  - Si
+  - P
+  - S
+  - Cl
+  - Se
+  - Br
+  - I
+  mw_range:
+  - 50.0
+  - 1500.0
+activity:
+  units_canonical: mg/L
+  log_transform: log10_molar
+  aggregation: geometric_mean
+  censored_handling: flagged_kept
+curation_summary:
+  raw_records: 1238
+  after_parse: 193
+  after_standardisation: 193
+  after_filter: 193
+  after_aggregation: 108
+  rejection_rate: 0.8441033925686591
+splits:
+  scaffold:
+    train: 76
+    cal: 17
+    test: 15
+    test_to_train_nn_tanimoto_mean: 0.22335696843987873
+  random:
+    train: 75
+    cal: 16
+    test: 17
+    seed: 42
+  time:
+    train: 90
+    cal: 9
+    test: 9
+    train_year_max: 2019
+    cal_year_range:
+    - 2020
+    - 2021
+    test_year_range:
+    - 2022
+    - 2025
+    status: available
+known_biases:
+- Focus on four standardized regulatory green algae species in database reporting.
+intended_use: Training and benchmarking Tier-1 QSAR algae growth EC50 prediction models.
+not_intended_for:
+- Direct regulatory dossier submission without supplementary dossier review
+- Quantitative aquatic risk assessment without local validation
+sha256:
+  scaffold_train: 2c8caf0abb0d91f4b89b7dce9f186510333aaf5d9393b184e1ef5d5dab6a451c
+  scaffold_cal: 3453df5bc5e70ae9f1fb00b7a881ed3e70dac7f90c20e8a7c748639f2d546e48
+  scaffold_test: 33fddebeb5233b635c76a662bdad53d6367a1dc80c67171ccdce66d51060e47a
+  random_train: 94837cd21524ceb5036582d1b7d289f79e5914eb31e21668999209787fca0142
+  random_cal: 89e5bf5fda5564b2e4b3d87b2d74306d8188e066c7045d7b3852908e03aafc7f
+  random_test: bd802b647f6746bec023297dac101aead80832d4ec81648ff77677dad45de7e7
+  time_train: 80f9513423da04213a019c5f63eb8ad188001c4c6e5dcaad69f3bfc5c368bcbb
+  time_cal: 49c1a5ad6b1b85826b00bea6d92961672408a47a44c175e706dd08c5b16e0b08
+  time_test: 98e4d825189e013853b8d9b8be0390caad61c1610f69adeeb8c81d4c5dec5acf
+  curated_parquet: bc83f32437548d8abca5f414b4dd48b818c93776bf61f531716f24d5dc0e3543

@@ -1,0 +1,44 @@
+model_id: t1_fish_acute_lc50_v1.0_cls
+name: Edeon Tier-1 Reference Fish Acute Lc50 (Classification)
+version: v1.0_cls
+tier: 1
+endpoint: fish_acute_lc50
+description: Binary classification QSAR model combining Random Forest, XGBoost, and
+  a 5-seed Chemprop D-MPNN ensemble with inductive conformal prediction sets. Predicts
+  toxic/nontoxic with calibrated probabilities and a Tanimoto k-NN applicability domain
+  auditor.
+intended_use: Tier-1 binary hazard classification for regulatory screening.
+not_intended_for: []
+training_data:
+  n_compounds: 319
+  sources:
+  - Phase 1 Curated Agrochemical Dataset
+  sha256: null
+  split_strategy: scaffold
+  license: null
+performance:
+  metrics:
+    balanced_accuracy: 0.6696428571428571
+    auc_roc: 0.8253968253968254
+    f1: 0.8043478260869565
+    ece: 0.11248635384459114
+  test_set_n: 66
+  cv_folds: 5
+  calibration_coverage_95: 0.9393939393939394
+applicability_domain:
+  method: tanimoto_knn
+  threshold: 0.827187392905814
+  k: 5
+  training_set_size: 319
+  notes: null
+uncertainty_method: inductive_conformal_classification
+known_failure_modes:
+- Compounds containing heavy atoms outside H, C, N, O, P, S, F, Cl, Br, I
+- Extremely macrocyclic compounds or highly fragmented mixtures
+references:
+- Vovk, V., Gammerman, A., & Shafer, G. (2005). Algorithmic learning in a random world.
+- Norinder, U., et al. (2014). Introducing conformal prediction in predictive modeling.
+license: Proprietary
+created: '2026-06-18T18:57:24.948206'
+authors:
+- Edeon AI Team

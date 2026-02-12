@@ -1,0 +1,110 @@
+.dialogOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.paletteContainer {
+  background-color: var(--color-surface-base);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-overlay);
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-sans);
+  animation: scaleIn 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding: var(--space-4);
+  font-size: var(--font-size-md);
+  background: transparent;
+  color: var(--color-text-primary);
+  outline: none;
+}
+
+.list {
+  max-height: 330px;
+  overflow-y: auto;
+  padding: var(--space-2);
+}
+
+.empty {
+  padding: var(--space-4);
+  text-align: center;
+  color: var(--color-text-tertiary);
+  font-size: var(--font-size-sm);
+}
+
+.group {
+  margin-bottom: var(--space-2);
+}
+
+.groupHeading {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  padding: var(--space-2) var(--space-3);
+  letter-spacing: 0.5px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color var(--transition-fast);
+}
+
+/* cmdk automatically assigns data-selected="true" to the highlighted item */
+.item[data-selected="true"] {
+  background-color: var(--color-action-secondary-hover);
+  color: var(--color-action-primary);
+}
+
+.itemText {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.shortcut {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xs);
+  background-color: var(--color-action-secondary);
+  border: 1px solid var(--color-border-subtle);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

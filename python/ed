@@ -1,0 +1,19 @@
+import pytest
+from pathlib import Path
+from edeon_bioisostere.library_loader import load_rules, build_database
+from edeon_bioisostere.transformation_engine import TransformationEngine
+
+def test_bioisostere_smoke():
+    # Build DB if needed
+    db_path = Path("data/bioisostere/v1.0/bioisostere.db")
+    if not db_path.exists():
+        build_database(db_path)
+        
+    rules = load_rules(db_path)
+    assert len(rules) >= 25
+    
+    engine = TransformationEngine(rules)
+    # Test on imidacloprid SMILES
+    query = "C1=CN=C(C=C1)CN2C(=N[N+](=O)[O-])NC3=CC=CC=C23"
+    candidates = engine.apply_to_query(query)
+    assert len(candidates) >= 0

@@ -1,0 +1,57 @@
+{% extends "base.html.j2" %}
+
+{% block title %}COMPARATIVE BENCHMARKING{% endblock %}
+{% block subtitle %}Candidate vs Reference Active Environmental Profile Comparison{% endblock %}
+
+{% block content %}
+{% for comp in per_compound %}
+<div class="section">
+  <h2>{{ comp.name }}</h2>
+  
+  <div class="verdict-banner {{ comp.verdict.band | band_class }}" style="margin-bottom:10px;">
+    <div class="band-label">{{ comp.verdict.band }}</div>
+    <div class="rationale">
+      <strong>{{ comp.verdict.driver }}</strong><br>
+      {{ comp.verdict.rationale }}
+    </div>
+    <div class="confidence-badge {{ comp.verdict.confidence | confidence_class }}">{{ comp.verdict.confidence }}</div>
+  </div>
+  
+  {% if comp.comparisons %}
+  <h3>Reference Active Comparisons</h3>
+  {% for ref in comp.comparisons %}
+  <table style="margin-bottom:8px;">
+    <thead>
+      <tr>
+        <th colspan="5">vs {{ ref.reference_name }} 
+          ({{ ref.reference_use_class | default('—') }})
+          — Similarity: {{ ref.similarity | fmt_float(3) if ref.similarity is defined else '—' }}
+        </th>
+      </tr>
+      <tr><th>Axis</th><th>Candidate</th><th>Reference</th><th>Δ%</th><th>Assessment</th></tr>
+    </thead>
+    <tbody>
+      {% for axis in ref.axis_comparisons %}
+      <tr>
+        <td>{{ axis.axis }}</td>
+        <td class="right">{{ axis.candidate_value | fmt_float(2) }}</td>
+        <td class="right">{{ axis.reference_value | fmt_float(2) }}</td>
+        <td class="right">{{ axis.delta_pct | fmt_float(1) }}%</td>
+        <td>
+          {% if axis.assessment == 'better' %}<span class="pill pill-green">BETTER</span>
+          {% elif axis.assessment == 'worse' %}<span class="pill pill-red">WORSE</span>
+          {% else %}<span class="pill pill-grey">COMPARABLE</span>{% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endfor %}
+  
+  <p>Overall: <strong>{{ comp.better_count | default(0) }}</strong> better · 
+     <strong>{{ comp.comparable_count | default(0) }}</strong> comparable · 
+     <strong>{{ comp.worse_count | default(0) }}</strong> worse axes</p>
+  {% endif %}
+</div>
+{% endfor %}
+{% endblock %}

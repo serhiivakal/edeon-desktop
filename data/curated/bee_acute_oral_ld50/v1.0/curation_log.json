@@ -1,0 +1,47 @@
+[
+  {
+    "smiles_original": "[Al]#P",
+    "stage": "size_filter",
+    "reason": "mw_out_of_range:31.0"
+  },
+  {
+    "smiles_original": "CC[Hg]Cl",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Hg"
+  },
+  {
+    "smiles_original": "Cl[Cd]Cl",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "O=[As]([O-])([O-])[O-].O=[As]([O-])([O-])[O-].[Ca+2].[Ca+2].[Ca+2]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:As"
+  },
+  {
+    "smiles_original": "CC(=O)O[Hg]c1ccccc1",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Hg"
+  },
+  {
+    "smiles_original": "[Cd]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "Cl[Hg]c1ccccc1",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Hg"
+  },
+  {
+    "smiles_original": "[As]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:As"
+  },
+  {
+    "smiles_original": "O=[As]([O-])(O)O.[Na+]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:As"
+  }
+]

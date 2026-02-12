@@ -1,0 +1,75 @@
+{% extends "base.html.j2" %}
+
+{% block title %}SELECTIVITY WINDOW OPTIMIZATION{% endblock %}
+{% block subtitle %}Limiting Safety Margin Analysis & Analog Ranking{% endblock %}
+
+{% block content %}
+{% for comp in per_compound %}
+<div class="section">
+  <h2>{{ comp.name }}</h2>
+  
+  <div class="verdict-banner {{ comp.verdict.band | band_class }}" style="margin-bottom:10px;">
+    <div class="band-label">{{ comp.verdict.band }}</div>
+    <div class="rationale">
+      <strong>{{ comp.verdict.driver }}</strong><br>
+      {{ comp.verdict.rationale }}
+    </div>
+    <div class="confidence-badge {{ comp.verdict.confidence | confidence_class }}">{{ comp.verdict.confidence }}</div>
+  </div>
+  
+  <h3>Parent Selectivity Window</h3>
+  <table>
+    <thead>
+      <tr><th>Metric</th><th>Value</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Parent Minimum Selectivity Margin</td><td class="right"><strong>{{ comp.parent_min_margin | fmt_float(1) }}</strong></td></tr>
+      <tr><td>Limiting Organism</td><td>{{ comp.limiting_organism | default('—') }}</td></tr>
+    </tbody>
+  </table>
+  
+  {% if comp.ranked_analogs %}
+  <h3>Ranked Structural Analogs ({{ comp.ranked_analogs | length }})</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Analog</th>
+        <th>Transformation</th>
+        <th>New Min Margin</th>
+        <th>Lift</th>
+        <th>AD</th>
+        <th>Flags</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for a in comp.ranked_analogs %}
+      <tr class="{{ 'flagged' if a.collapsed_window is defined and a.collapsed_window }}">
+        <td>{{ loop.index }}</td>
+        <td class="mono">{{ a.smiles[:30] }}{% if a.smiles|length > 30 %}…{% endif %}</td>
+        <td>{{ a.transformation | default('—') }}</td>
+        <td class="right">{{ a.new_min_margin | fmt_float(1) if a.new_min_margin is defined else '—' }}</td>
+        <td class="right">
+          {% if a.lift is defined %}
+            {% if a.lift > 0 %}<span class="pill pill-green">+{{ a.lift | fmt_float(1) }}</span>
+            {% elif a.lift < 0 %}<span class="pill pill-red">{{ a.lift | fmt_float(1) }}</span>
+            {% else %}<span class="pill pill-grey">0</span>{% endif %}
+          {% else %}—{% endif %}
+        </td>
+        <td>
+          {% if a.ad_status is defined and a.ad_status in ['in', 'in_domain'] %}<span class="pill pill-green">IN</span>
+          {% else %}<span class="pill pill-red">OOD</span>{% endif %}
+        </td>
+        <td>
+          {% if a.collapsed_window is defined and a.collapsed_window %}<span class="pill pill-red">COLLAPSED</span>{% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="text-muted">No analogs generated for this compound.</p>
+  {% endif %}
+</div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,90 @@
+dataset_id: edeon-bcf-v1.0
+endpoint: bcf
+version: 1.0.0
+created: '2026-06-20T07:15:28Z'
+created_by: edeon-data-pipeline
+sources:
+- name: NIEHS OPERA BCF
+  citation: OPERA BCF training and testing datasets
+  doi: 10.1186/s13321-018-0263-1
+  url: https://github.com/NIEHS/OPERA
+  license: MIT License
+  access_date: '2026-06-01'
+  raw_records: 626
+inclusion_criteria:
+- Experimentally measured Fish BCF bioconcentration records only
+- Source restricted to NIEHS OPERA BCF dataset
+- Whole-fish measurements only; tissue-specific endpoints excluded
+- 'Canonical units: L/kg'
+exclusion_criteria:
+- Mixtures, formulations, or records with missing structures
+- Compounds containing atoms outside default organic allowlist
+- Tissue-specific measurements (liver, gills, muscle, kidney, etc.)
+standardisation:
+  tool: chembl_structure_pipeline
+  version: 1.2.4
+  tautomer: rdkit-canonical
+  atom_allowlist:
+  - H
+  - B
+  - C
+  - N
+  - O
+  - F
+  - Si
+  - P
+  - S
+  - Cl
+  - Se
+  - Br
+  - I
+  mw_range:
+  - 50.0
+  - 1500.0
+activity:
+  units_canonical: L/kg
+  log_transform: log10_l_per_kg
+  aggregation: geometric_mean
+  censored_handling: flagged_kept
+curation_summary:
+  raw_records: 626
+  after_parse: 607
+  after_standardisation: 607
+  after_filter: 607
+  after_aggregation: 606
+  rejection_rate: 0.03035143769968051
+splits:
+  scaffold:
+    train: 430
+    cal: 91
+    test: 85
+    test_to_train_nn_tanimoto_mean: 0.3028814903781614
+  random:
+    train: 424
+    cal: 91
+    test: 91
+    seed: 42
+  time:
+    train: 0
+    cal: 0
+    test: 0
+    train_year_max: null
+    cal_year_range: null
+    test_year_range: null
+    status: not_available
+known_biases:
+- 'OPERA BCF dataset representation bias: dominated by legacy hydrophobic pollutants
+  and standard agrochemicals, under-representing highly polar or complex biological
+  drug structures.'
+intended_use: Training and benchmarking Tier-1 QSAR BCF prediction models.
+not_intended_for:
+- Direct regulatory dossier submission without supplementary dossier review
+- Quantitative bioaccumulation risk assessment in non-aquatic environments
+sha256:
+  scaffold_train: 900eeae20fbb8a19229928d8000ecb0fea500cef0c349db08ddf903a5b47b12a
+  scaffold_cal: d64079f73ca168eb8056d36e5de07343f2fe1aa3a5777b3c549b6d1c63ea742d
+  scaffold_test: c805f29389ef24c2190837428b309410780bd430574bf1fab4c13f350037a2b3
+  random_train: 94d50e8eba5dfd2068301e3149e9e92cb791b3ab2d3036cdda6ce478b28e5bab
+  random_cal: c0d485647eeda19dcb18c3c5708dc44383c3e118ae32d49b6536eb08603279f0
+  random_test: 8b24f08e396ea95dd083b1c3a5834e3b866157ccb641c01d8bd8ed86645d0994
+  curated_parquet: 01d8ef7cd4d3ecf70b11cf0999ef8c6e904f9f1ab91fa088f998c93c483969de

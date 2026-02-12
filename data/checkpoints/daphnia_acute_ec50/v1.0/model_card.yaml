@@ -1,0 +1,45 @@
+model_id: t1_daphnia_acute_ec50_v1.0
+name: Edeon Tier-1 Reference Daphnia Acute Ec50
+version: v1.0
+tier: 1
+endpoint: daphnia_acute_ec50
+description: High-fidelity reference QSAR model combining Random Forest, XGBoost,
+  and a 5-seed Chemprop D-MPNN ensemble. Features split conformal prediction intervals
+  (95%) and a Tanimoto k-NN applicability domain auditor.
+intended_use: Tier-1 high-precision prediction of ecotoxicological hazard for regulatory
+  screening.
+not_intended_for: []
+training_data:
+  n_compounds: 274
+  sources:
+  - Phase 1 Curated Agrochemical Dataset
+  sha256: null
+  split_strategy: scaffold
+  license: null
+performance:
+  metrics:
+    rmse: 1.0153325495495626
+    r2: 0.5809786582399074
+    mae: 0.8294760905133407
+  test_set_n: 58
+  cv_folds: 5
+  calibration_coverage_95: 1.0
+applicability_domain:
+  method: tanimoto_knn
+  threshold: 0.8497217021171726
+  k: 5
+  training_set_size: 274
+  notes: null
+uncertainty_method: ensemble_variance_scaled
+known_failure_modes:
+- Compounds containing heavy atoms outside H, C, N, O, P, S, F, Cl, Br, I
+- Extremely macrocyclic compounds or highly fragmented mixtures
+references:
+- Bemis, G. W., & Murcko, M. A. (1996). The properties of known drugs. 1. Molecular
+  frameworks. J. Med. Chem.
+- Vovk, V., Gammerman, A., & Shafer, G. (2005). Algorithmic learning in a random world.
+  Springer Science & Business Media.
+license: Proprietary
+created: '2026-06-01T15:35:00.034210'
+authors:
+- Edeon AI Team

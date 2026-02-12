@@ -1,0 +1,67 @@
+{% extends "base.html.j2" %}
+
+{% block title %}HIT-TO-SHORTLIST TRIAGE{% endblock %}
+{% block subtitle %}Multi-Parameter Optimization Funnel Report{% endblock %}
+
+{% block content %}
+{# Attrition waterfall #}
+{% if sections.attrition %}
+<div class="section">
+  <h2>Attrition Waterfall</h2>
+  <table>
+    <thead>
+      <tr><th>Stage</th><th>In</th><th>Out</th><th>Dropped</th><th>Reason</th></tr>
+    </thead>
+    <tbody>
+      {% for stage in sections.attrition %}
+      <tr>
+        <td><strong>{{ stage.stage }}</strong></td>
+        <td class="right">{{ stage.in }}</td>
+        <td class="right">{{ stage.out }}</td>
+        <td class="right">
+          {% if stage.dropped > 0 %}<span class="pill pill-red">−{{ stage.dropped }}</span>
+          {% else %}<span class="pill pill-green">0</span>{% endif %}
+        </td>
+        <td>{{ stage.reason }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+
+{# Per-compound results #}
+<div class="section">
+  <h2>Compound Rankings</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>SMILES</th>
+        <th>Tier</th>
+        <th>MPO Score</th>
+        <th>Confidence</th>
+        <th>Driver</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for comp in per_compound %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td><strong>{{ comp.name }}</strong></td>
+        <td class="mono">{{ comp.smiles[:25] }}{% if comp.smiles|length > 25 %}…{% endif %}</td>
+        <td>
+          {% if comp.verdict.band == 'GO' %}<span class="pill pill-green">{{ comp.verdict.band }}</span>
+          {% elif comp.verdict.band == 'CONDITIONAL' %}<span class="pill pill-amber">{{ comp.verdict.band }}</span>
+          {% else %}<span class="pill pill-red">{{ comp.verdict.band }}</span>{% endif %}
+        </td>
+        <td class="right">{{ comp.get('mpo_score', '—') }}</td>
+        <td><span class="confidence-badge {{ comp.verdict.confidence | confidence_class }}">{{ comp.verdict.confidence }}</span></td>
+        <td>{{ comp.verdict.driver }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "base.html.j2" %}
+
+{% block title %}TRANSFORMATION PRODUCT LIABILITY SWEEP{% endblock %}
+{% block subtitle %}Parent vs Metabolite Environmental Liability Comparison{% endblock %}
+
+{% block content %}
+{% for comp in per_compound %}
+<div class="section">
+  <h2>{{ comp.name }}</h2>
+  
+  <div class="verdict-banner {{ comp.verdict.band | band_class }}" style="margin-bottom:10px;">
+    <div class="band-label">{{ comp.verdict.band | upper }}</div>
+    <div class="rationale">
+      <strong>{{ comp.verdict.driver }}</strong><br>
+      {{ comp.verdict.rationale }}
+    </div>
+    <div class="confidence-badge {{ comp.verdict.confidence | confidence_class }}">{{ comp.verdict.confidence }}</div>
+  </div>
+  
+  <p>Total transformation products evaluated: <strong>{{ comp.total_tps }}</strong> · 
+     Flagged with liabilities: <strong>{{ comp.flagged_tps | length }}</strong></p>
+  
+  {% if comp.flagged_tps %}
+  <h3>Flagged Transformation Products</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>TP SMILES</th>
+        <th>Probability</th>
+        <th>Route</th>
+        <th>Liabilities</th>
+        <th>Severity</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for tp in comp.flagged_tps %}
+      <tr class="flagged">
+        <td class="mono">{{ tp.smiles[:35] }}{% if tp.smiles|length > 35 %}…{% endif %}</td>
+        <td class="right">{{ tp.probability | fmt_float(2) }}</td>
+        <td>{{ tp.route }}</td>
+        <td>
+          <ul style="margin:0; padding-left:14px;">
+          {% for l in tp.liabilities %}
+            <li>{{ l }}</li>
+          {% endfor %}
+          </ul>
+        </td>
+        <td class="right">{{ tp.severity | fmt_float(1) }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="text-muted" style="margin-top:8px;">No transformation products exceeded parent liabilities.</p>
+  {% endif %}
+</div>
+{% endfor %}
+{% endblock %}

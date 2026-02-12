@@ -1,0 +1,26 @@
+accelerator: cpu
+config:
+  batch_size: 16
+  depth: 5
+  dropout: 0.17596272343243455
+  epochs: 30
+  ffn_hidden_size: 150
+  ffn_num_layers: 1
+  hidden_size: 300
+  hpo_trials: 10
+mean_val_balanced_accuracy: 0.5
+mean_val_rmse: null
+mean_val_score: 0.5
+seed_val_losses:
+  0: 0.5
+  1: 0.5
+  2: 0.5
+  3: 0.5
+  4: 0.5
+seeds:
+- 0
+- 1
+- 2
+- 3
+- 4
+task_kind: classification

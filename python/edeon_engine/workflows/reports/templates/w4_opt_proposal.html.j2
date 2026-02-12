@@ -1,0 +1,56 @@
+{% extends "base.html.j2" %}
+
+{% block title %}LEAD-OPTIMIZATION PROPOSAL{% endblock %}
+{% block subtitle %}Prescriptive Structural Analog Ranking{% endblock %}
+
+{% block content %}
+{% for comp in per_compound %}
+<div class="section">
+  <h2>{{ comp.name }} — Optimize: {{ comp.objective | title }}</h2>
+  <p>Parent {{ comp.objective }} score: <strong>{{ comp.parent_score | fmt_float(2) }}</strong></p>
+  
+  {% if comp.analogs %}
+  <h3>Ranked Analogs (Top {{ comp.analogs | length }})</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Analog SMILES</th>
+        <th>Transformation</th>
+        <th>Δ {{ comp.objective | title }}</th>
+        <th>Score</th>
+        <th>AD</th>
+        <th>Trade-offs</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for a in comp.analogs %}
+      <tr class="{{ 'flagged' if a.trade_offs }}">
+        <td>{{ loop.index }}</td>
+        <td class="mono">{{ a.smiles[:30] }}{% if a.smiles|length > 30 %}…{% endif %}</td>
+        <td>{{ a.transformation }}</td>
+        <td class="right {% if a.delta > 0 %}pill-green{% elif a.delta < 0 %}pill-red{% endif %}">
+          {{ a.delta | fmt_float(2) }}
+        </td>
+        <td class="right">{{ a.score | fmt_float(2) }}</td>
+        <td>
+          {% if a.is_in_domain %}<span class="pill pill-green">IN</span>
+          {% else %}<span class="pill pill-red">OOD</span>{% endif %}
+        </td>
+        <td>
+          {% if a.trade_offs %}
+            {% for t in a.trade_offs %}<span class="pill pill-amber">{{ t }}</span> {% endfor %}
+          {% else %}
+            <span class="text-muted">None</span>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="text-muted">No viable analogs were generated for this compound.</p>
+  {% endif %}
+</div>
+{% endfor %}
+{% endblock %}

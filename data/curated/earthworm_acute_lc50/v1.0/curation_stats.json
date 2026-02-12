@@ -1,0 +1,8 @@
+{
+  "raw_records": 10,
+  "after_parse": 10,
+  "after_standardisation": 10,
+  "after_filter": 10,
+  "after_aggregation": 10,
+  "rejection_rate": 0.0
+}

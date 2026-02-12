@@ -1,0 +1,12 @@
+# Curated Abiotic and Agro Degradation Rules for Edeon
+# Format: smirks <tab> probability <tab> rulename
+[CX3:1](=[O:2])-[O:3]-[CX4:4]>>[CX3:1](=[O:2])[OH].[OH]-[CX4:4]	0.50	ester_hydrolysis
+[CX3:1](=[O:2])-[NX3:3]>>[CX3:1](=[O:2])[OH].[NH:3]	0.30	amide_hydrolysis
+[NX3:1]-[CX4H3,CX4H2:2]>>[N:1].[C:2]=O	0.40	n_dealkylation
+[OX2:1]-[CX4H3,CX4H2:2]>>[O:1].[C:2]=O	0.35	o_dealkylation
+[#6:1]-[S:2]-[#6:3]>>[#6:1]-[S:2](=[O])-[#6:3]	0.45	sulfoxidation
+[cH:1]>>[c:1]O	0.20	ring_hydroxylation
+[OX2,SX2,NX3;!H0:1]>>[*:1]C1OC(CO)C(O)C(O)C1O	0.25	glucosylation
+[N+:1](=[O:2])-[O-:3]>>[N:1]	0.20	nitro_reduction
+[#6:1]-[Cl,Br,I:2]>>[#6:1]	0.15	dehalogenation
+[C:1]#[N:2]>>[C:1](=O)[NH2]	0.25	nitrile_to_amide

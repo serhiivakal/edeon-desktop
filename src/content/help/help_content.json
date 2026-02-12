@@ -1,0 +1,162 @@
+{
+  "honeycomb.cell": {
+    "title": "Honeycomb Cell",
+    "body": "Each hexagon represents a predictive endpoint (e.g. Honeycomb node). The color indicates domain applicability: green is in-domain, yellow is borderline, and red is out-of-domain. 🧪 overlay indicates that experimental measurements are available.",
+    "learn_more": "docs/HONEYCOMB.md"
+  },
+  "fate.koc": {
+    "title": "Organic Carbon Adsorption (Koc)",
+    "body": "Log10 Koc is the organic carbon-normalized adsorption coefficient in L/kg. It measures a pesticide's mobility in soil: higher values indicate tight binding and lower runoff potential.",
+    "learn_more": "docs/FATE_METHODOLOGY.md"
+  },
+  "fate.dt50": {
+    "title": "Soil Degradation Half-life (DT50)",
+    "body": "DT50 represents the time in days required for 50% of the active compound to degrade in aerobic soil. Captures persistence liabilities under environmental conditions.",
+    "learn_more": "docs/FATE_METHODOLOGY.md"
+  },
+  "fate.gus": {
+    "title": "Groundwater Ubiquity Score (GUS)",
+    "body": "GUS classifies leaching potential: GUS = log10(DT50) * (4 - log10(Koc)). Values > 2.8 are leachers, < 1.8 are non-leachers, and between are in the transition zone.",
+    "learn_more": "docs/GUS_METHODOLOGY.md"
+  },
+  "docking.vina_score": {
+    "title": "Vina Docking Score",
+    "body": "Estimated binding affinity in kcal/mol calculated via AutoDock Vina. Lower values represent more stable ligand-receptor complexes (stronger binding).",
+    "learn_more": "docs/DOCKING_PROTOCOL.md"
+  },
+  "docking.exhaustiveness": {
+    "title": "Search Exhaustiveness",
+    "body": "Defines the depth of the global search algorithm. Higher values increase accuracy (especially for large ligand conformation spaces) but take longer to compute.",
+    "learn_more": "docs/DOCKING_PROTOCOL.md"
+  },
+  "docking.box_size": {
+    "title": "Grid Box Size",
+    "body": "The dimensions (in Angstroms) of the search space centered on the binding pocket. Restricts the conformer search domain to the target active site.",
+    "learn_more": "docs/DOCKING_PROTOCOL.md"
+  },
+  "generation.mutations": {
+    "title": "CReM Mutations",
+    "body": "The number of structural mutations generated per generation cycle. Mutations are derived from a localSQLite database of fragments using size and charge rules.",
+    "learn_more": "docs/GENERATION_WORKBENCH_GUIDE.md"
+  },
+  "generation.mpo": {
+    "title": "Multi-Parameter Optimization (MPO)",
+    "body": "A composite score weighting ecotox, environmental fate, and mammalian toxicity alongside binding affinity to prioritize pesticide candidates.",
+    "learn_more": "docs/GENERATION_WORKBENCH_GUIDE.md"
+  },
+  "ad.status": {
+    "title": "Applicability Domain (AD)",
+    "body": "Classifies whether a query structure lies within the model's training space. Green (IN) is high confidence, Yellow (Borderline) is moderate, and Red (OUT) represents high uncertainty.",
+    "learn_more": "docs/CALIBRATION_DIAGNOSTICS.md"
+  },
+  "tier.badge": {
+    "title": "Prediction Confidence Tiers",
+    "body": "Tier-1 (Reference Ensembles, high confidence), Tier-2 (Screening assays, medium confidence), Tier-3 (External consensus/OPERA), and Tier-4 (Custom models trained locally).",
+    "learn_more": "docs/DESIGN_TOKENS.md"
+  },
+  "tox.bee_oral": {
+    "title": "Honeybee Acute Oral LD50",
+    "body": "Predicted dose (µg/bee) that causes 50% mortality after oral ingestion. Important threshold for pollinator safety screening.",
+    "learn_more": "docs/verification/SUMMARY.md"
+  },
+  "tox.bee_contact": {
+    "title": "Honeybee Acute Contact LD50",
+    "body": "Predicted dose (µg/bee) that causes 50% mortality upon direct physical contact. Used to evaluate field spray safety.",
+    "learn_more": "docs/verification/SUMMARY.md"
+  },
+  "tox.fish": {
+    "title": "Fish Acute LC50 (96h)",
+    "body": "Predicted concentration (mg/L) causing 50% mortality in rainbow trout or fathead minnow test sets after 96 hours of exposure.",
+    "learn_more": "docs/verification/SUMMARY.md"
+  },
+  "tox.daphnia": {
+    "title": "Daphnia Acute EC50 (48h)",
+    "body": "Predicted concentration (mg/L) resulting in immobilization or 50% effect rate in Daphnia magna after 48 hours.",
+    "learn_more": "docs/verification/SUMMARY.md"
+  },
+  "tox.algae": {
+    "title": "Algae Growth Inhibition EC50 (72h)",
+    "body": "Predicted concentration (mg/L) reducing green algae cell growth by 50% over a 72-hour exposure cycle.",
+    "learn_more": "docs/verification/SUMMARY.md"
+  },
+  "tox.earthworm": {
+    "title": "Earthworm Acute LC50 (14d)",
+    "body": "Predicted concentration (mg/kg dry soil) causing 50% mortality in earthworms after 14 days of soil contact.",
+    "learn_more": "docs/verification/SUMMARY.md"
+  },
+  "tox.bird": {
+    "title": "Bird Acute Oral LD50",
+    "body": "Predicted oral dose (mg/kg body weight) causing 50% mortality in Japanese quail or mallard ducks.",
+    "learn_more": "docs/verification/SUMMARY.md"
+  },
+  "tox.mammalian_oral": {
+    "title": "Mammalian Acute Oral GHS",
+    "body": "Predicted GHS hazard category (1 to 5) for acute oral toxicity. Category 1 is highly toxic; Category 5 is non-toxic.",
+    "learn_more": "docs/verification/SUMMARY.md"
+  },
+  "tox.sensitization": {
+    "title": "Skin Sensitization Alert",
+    "body": "Binary classification predicting whether the compound triggers contact hypersensitivity or allergic contact dermatitis.",
+    "learn_more": "docs/verification/SUMMARY.md"
+  },
+  "tox.irritation": {
+    "title": "Eye Irritation Alert",
+    "body": "Predicts whether the compound causes ocular irritation, conjunctival swelling, or reversible corneal opacity.",
+    "learn_more": "docs/verification/SUMMARY.md"
+  },
+  "tox.mutagenicity": {
+    "title": "Ames Mutagenicity Alert",
+    "body": "Binary classification predicting positive mutagenic response in Salmonella typhimurium strains (DNA damage liability).",
+    "learn_more": "docs/verification/SUMMARY.md"
+  },
+  "studio.model_type": {
+    "title": "QSAR Model Type",
+    "body": "Regression models fit continuous properties (e.g. affinity, log solubility), while Classification models predict binary states (e.g. toxic vs safe).",
+    "learn_more": "docs/CALIBRATION_DIAGNOSTICS.md"
+  },
+  "studio.algorithm": {
+    "title": "ML Estimator Algorithm",
+    "body": "Choose from ensemble tree methods (Random Forest, Gradient Boosting), SVM hyperplanes, or Ridge regularization linear regressors.",
+    "learn_more": "docs/CALIBRATION_DIAGNOSTICS.md"
+  },
+  "studio.shap": {
+    "title": "SHAP Attributions",
+    "body": "SHAP (SHapley Additive exPlanations) computes game-theoretic contribution weights highlighting which chemical features drive predictions.",
+    "learn_more": "docs/CALIBRATION_DIAGNOSTICS.md"
+  },
+  "studio.cv_folds": {
+    "title": "Cross-Validation Folds",
+    "body": "Splits the training dataset into K subsets to validate generalization capabilities and compute robust out-of-fold performance estimates.",
+    "learn_more": "docs/CALIBRATION_DIAGNOSTICS.md"
+  },
+  "crem.pharm": {
+    "title": "CReM-pharm Exclusions",
+    "body": "Excluded CReM pharmacophore guidance routines from default builds to prevent GPLv3 copyleft contagion within Edeon's commercial code.",
+    "learn_more": "docs/CREM_LICENSE_AUDIT.md"
+  },
+  "docking.pocket_detect": {
+    "title": "Pocket Detection",
+    "body": "Uses fpocket to automatically locate cavities, deep clefts, and potential binding sites on the receptor surface.",
+    "learn_more": "docs/DOCKING_PROTOCOL.md"
+  },
+  "docking.receptor_prep": {
+    "title": "Receptor Preparation",
+    "body": "Removes solvent molecules, adds polar hydrogens, calculates formal charges, and converts the target structure into PDBQT format.",
+    "learn_more": "docs/DOCKING_PROTOCOL.md"
+  },
+  "library.smiles": {
+    "title": "SMILES Representation",
+    "body": "Simplified Molecular Input Line Entry System. Represents chemical structures as strings for rapid RDKit featurization and processing.",
+    "learn_more": "docs/HONEYCOMB.md"
+  },
+  "reports.verdict": {
+    "title": "Registration Readiness Verdict",
+    "body": "Synthesizes AD status, ecotox safety margins, Persistence (DT50) limits, and Bioaccumulation (BCF) parameters into a regulatory dossier verdict.",
+    "learn_more": "docs/verification/SUMMARY.md"
+  },
+  "reports.metabolites": {
+    "title": "Transformation Product Sweep",
+    "body": "Simulates environmental transformation paths using syGMa rules (up to depth 2) and runs automated toxicity sweeps on predicted metabolites.",
+    "learn_more": "docs/verification/SUMMARY.md"
+  }
+}

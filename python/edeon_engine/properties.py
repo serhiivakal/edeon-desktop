@@ -44,6 +44,64 @@ def compute_properties_single(smiles: str) -> dict:
     }
 
 
-def compute_properties_batch(smiles_list: list[str]) -> list[dict]:
+def compute_properties_batch(smiles_list: list[str], num_workers: int = 1) -> list[dict]:
     """Compute properties for a batch of SMILES strings."""
-    return [compute_properties_single(s) for s in smiles_list]
+    if num_workers <= 1 or len(smiles_list) < 5:
+        return [compute_properties_single(s) for s in smiles_list]
+    from joblib import Parallel, delayed
+    return Parallel(n_jobs=num_workers, prefer="threads")(
+        delayed(compute_properties_single)(s) for s in smiles_list
+    )
+
+
+def export_results_sdf_batch(compounds: list[dict]) -> str:
+    """Assembles a multi-molecule SDF string from SMILES and property data using RDKit."""
+    import io
+    from rdkit.Chem import AllChem
+
+    out = io.StringIO()
+    writer = Chem.SDWriter(out)
+
+    for c in compounds:
+        smiles = c.get("smiles", "")
+        if not smiles:
+            continue
+        mol = Chem.MolFromSmiles(smiles)
+        if mol is None:
+            continue
+
+        # Set compound name as molecule title
+        name = c.get("name", "Unnamed")
+        mol.SetProp("_Name", name)
+
+        # Compute 2D coordinates so standard SDF viewers don't break
+        try:
+            AllChem.Compute2DCoords(mol)
+        except Exception:
+            pass
+
+        # Set SDF property tags
+        tags = {
+            "SMILES": smiles,
+            "MW": c.get("mol_weight"),
+            "LogP": c.get("logp"),
+            "TPSA": c.get("tpsa"),
+            "HBD": c.get("hbd"),
+            "HBA": c.get("hba"),
+            "RotBonds": c.get("rotatable_bonds"),
+            "MPO_Score": c.get("score"),
+            "Rank": c.get("rank"),
+            "Pesticide_Likeness": c.get("pesticide_likeness"),
+            "Selectivity_Level": c.get("selectivity_level"),
+            "Resistance_Level": c.get("resistance_level"),
+            "Toxicity_Level": c.get("toxicity_level"),
+        }
+
+        for k, v in tags.items():
+            if v is not None:
+                mol.SetProp(k, str(v))
+
+        writer.write(mol)
+
+    writer.close()
+    return out.getvalue()

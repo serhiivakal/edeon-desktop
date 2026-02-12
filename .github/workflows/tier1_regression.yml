@@ -1,0 +1,18 @@
+name: Tier-1 Model Regression
+on: [push, pull_request]
+jobs:
+  t1_smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          pip install -e ./python
+          pip install pytest rdkit pandas pyyaml pydantic
+      - name: Restore checkpoints
+        run: ./scripts/sync_checkpoints.sh pull
+      - name: Run T1 smoke tests
+        run: pytest tests/regression/test_t1_smoke.py -v

@@ -5,7 +5,7 @@
 
 import { create } from 'zustand';
 import { invoke } from '@tauri-apps/api/core';
-import type { CompoundRecord, CompoundPage } from '../types';
+import type { CompoundRecord, CompoundPage, PropertyFilters } from '../types';
 
 interface CompoundState {
   compounds: CompoundRecord[];
@@ -15,6 +15,7 @@ interface CompoundState {
   sortBy: string;
   sortDir: 'asc' | 'desc';
   searchQuery: string;
+  filters: PropertyFilters;
   loading: boolean;
   error: string | null;
 
@@ -23,7 +24,9 @@ interface CompoundState {
   setPage: (page: number, projectId: string) => Promise<void>;
   setSort: (column: string, projectId: string) => Promise<void>;
   setSearch: (query: string, projectId: string) => Promise<void>;
+  setFilters: (filters: PropertyFilters, projectId: string) => Promise<void>;
   importCSV: (projectId: string, filePath: string) => Promise<number>;
+  importSDF: (projectId: string, filePath: string) => Promise<number>;
   addCompound: (projectId: string, name: string, smiles: string) => Promise<void>;
   deleteCompounds: (projectId: string, ids: string[]) => Promise<void>;
   reset: () => void;
@@ -37,11 +40,12 @@ export const useCompoundStore = create<CompoundState>((set, get) => ({
   sortBy: 'name',
   sortDir: 'asc',
   searchQuery: '',
+  filters: {},
   loading: false,
   error: null,
 
   fetchCompounds: async (projectId: string) => {
-    const { page, pageSize, sortBy, sortDir, searchQuery } = get();
+    const { page, pageSize, sortBy, sortDir, searchQuery, filters } = get();
     set({ loading: true, error: null });
     try {
       const result = await invoke<CompoundPage>('list_compounds', {
@@ -51,6 +55,7 @@ export const useCompoundStore = create<CompoundState>((set, get) => ({
         sortBy,
         sortDir,
         search: searchQuery || null,
+        filters: Object.keys(filters).length > 0 ? filters : null,
       });
       set({
         compounds: result.compounds,
@@ -80,8 +85,24 @@ export const useCompoundStore = create<CompoundState>((set, get) => ({
     await get().fetchCompounds(projectId);
   },
 
+  setFilters: async (filters: PropertyFilters, projectId: string) => {
+    set({ filters, page: 1 });
+    await get().fetchCompounds(projectId);
+  },
+
   importCSV: async (projectId: string, filePath: string) => {
     const imported = await invoke<number>('import_compounds_csv', {
+      projectId,
+      filePath,
+    });
+    // Refresh compound list after import
+    set({ page: 1 });
+    await get().fetchCompounds(projectId);
+    return imported;
+  },
+
+  importSDF: async (projectId: string, filePath: string) => {
+    const imported = await invoke<number>('import_compounds_sdf', {
       projectId,
       filePath,
     });
@@ -108,6 +129,7 @@ export const useCompoundStore = create<CompoundState>((set, get) => ({
       total: 0,
       page: 1,
       searchQuery: '',
+      filters: {},
       loading: false,
       error: null,
     });

@@ -1,0 +1,53 @@
+{% extends "base.html.j2" %}
+
+{% block title %}POLLINATOR SAFETY SCREEN{% endblock %}
+{% block subtitle %}Honeybee Toxicity × Systemicity Risk Assessment{% endblock %}
+
+{% block content %}
+<div class="section">
+  <h2>Risk Matrix</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Compound</th>
+        <th>Bee Selectivity Index</th>
+        <th>Systemicity Index</th>
+        <th>Route</th>
+        <th>Risk Band</th>
+        <th>Confidence</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for comp in per_compound %}
+      <tr>
+        <td><strong>{{ comp.name }}</strong></td>
+        <td class="right">{{ comp.bee_oral_ld50 | fmt_float(1) }}</td>
+        <td class="right">{{ comp.systemicity_index | fmt_float(2) }}</td>
+        <td>{{ comp.systemicity_route }}</td>
+        <td>
+          {% if comp.verdict.band == 'High' %}<span class="pill pill-red">HIGH</span>
+          {% elif comp.verdict.band == 'Med' %}<span class="pill pill-amber">MEDIUM</span>
+          {% else %}<span class="pill pill-green">LOW</span>
+          {% endif %}
+        </td>
+        <td><span class="confidence-badge {{ comp.verdict.confidence | confidence_class }}">{{ comp.verdict.confidence }}</span></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% for comp in per_compound %}
+<div class="section">
+  <h3>{{ comp.name }} — Assessment Detail</h3>
+  <div class="verdict-banner {{ comp.verdict.band | band_class }}">
+    <div class="band-label">{{ comp.verdict.band }}</div>
+    <div class="rationale">
+      <strong>{{ comp.verdict.driver }}</strong><br>
+      {{ comp.verdict.rationale }}
+    </div>
+    <div class="confidence-badge {{ comp.verdict.confidence | confidence_class }}">{{ comp.verdict.confidence }}</div>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

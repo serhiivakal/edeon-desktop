@@ -1,0 +1,31 @@
+{
+  "model_type": "rf",
+  "task_kind": "classification",
+  "best_cv_score": 0.8230765033286043,
+  "best_cv_rmse": null,
+  "best_cv_balanced_accuracy": 0.7132111353277655,
+  "best_params": {
+    "n_estimators": 317,
+    "max_depth": 15,
+    "min_samples_leaf": 7,
+    "min_samples_split": 10,
+    "max_features": 0.3,
+    "class_weight": null
+  },
+  "n_trials": 1,
+  "cv_folds": 2,
+  "trials_history": [
+    {
+      "trial_num": 0,
+      "value": 0.7132111353277655,
+      "params": {
+        "n_estimators": 190,
+        "max_depth": 17,
+        "min_samples_leaf": 8,
+        "min_samples_split": 7,
+        "max_features": "sqrt",
+        "class_weight": null
+      }
+    }
+  ]
+}

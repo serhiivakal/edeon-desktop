@@ -1,0 +1,50 @@
+{
+  "endpoint_id": "earthworm_acute_lc50",
+  "timestamp": "2026-06-02T13:21:16.867640Z",
+  "train_samples": 7,
+  "cal_samples": 2,
+  "test_samples": 1,
+  "cv_train_rmse": 0.688692782062363,
+  "cal_rmse": 1.365228171563869,
+  "cal_r2": -13.23118325774205,
+  "overall": {
+    "rmse": 0.7691447482087697,
+    "mae": 0.7691447482087697,
+    "r2": NaN,
+    "pearson": null,
+    "spearman": null,
+    "count": 1
+  },
+  "conformal": {
+    "overall_coverage": 1.0,
+    "mean_width": 3.247739076803386,
+    "regions": {
+      "in": {
+        "count": 1,
+        "rmse": 0.7691447482087697,
+        "coverage": 1.0,
+        "mean_width": 3.247739076803386
+      },
+      "borderline": {
+        "count": 0,
+        "rmse": NaN,
+        "coverage": NaN,
+        "mean_width": NaN
+      },
+      "out": {
+        "count": 0,
+        "rmse": NaN,
+        "coverage": NaN,
+        "mean_width": NaN
+      }
+    }
+  },
+  "classes": {
+    "triazine": {
+      "count": 1,
+      "rmse": 0.7691447482087697,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    }
+  }
+}

@@ -1,0 +1,34 @@
+name: Data Smoke Tests
+on:
+  push:
+    paths:
+      - 'data/curated/**'
+      - 'python/edeon_data/**'
+  pull_request:
+    paths:
+      - 'data/curated/**'
+      - 'python/edeon_data/**'
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -e ./python/edeon_data
+          pip install pytest
+
+      - name: Verify manifests
+        run: |
+          python python/edeon_data/tools/verify_manifests.py
+
+      - name: Run smoke tests
+        run: pytest python/edeon_data/tests/test_endpoint_smoke.py -v

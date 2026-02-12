@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edeon Tier-1 Model Validation Report - soil_dt50</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js CDN for interactive visual parity and calibration plots -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: rgba(22, 29, 49, 0.7);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --accent-glow: #3b82f6;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            --header-font: 'Outfit', sans-serif;
+            --body-font: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.1) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            font-family: var(--body-font);
+            padding: 2rem 4rem;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .title-area h1 {
+            font-family: var(--header-font);
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.2rem;
+        }
+
+        .title-area p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .badge {
+            background: var(--accent-gradient);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Dashboard Grid Layout */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(16px);
+            padding: 1.5rem;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent-gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .stat-card:hover::before {
+            opacity: 1;
+        }
+
+        .stat-card h3 {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card .value {
+            font-family: var(--header-font);
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .stat-card .subtext {
+            color: var(--success);
+            font-size: 0.8rem;
+            margin-top: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .stat-card .subtext.warn {
+            color: var(--warning);
+        }
+
+        /* Content Sections */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(16px);
+        }
+
+        .section-card h2 {
+            font-family: var(--header-font);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #3b82f6;
+            padding-left: 0.8rem;
+        }
+
+        /* Charts styling */
+        .chart-container {
+            position: relative;
+            height: 380px;
+            width: 100%;
+        }
+
+        /* Premium Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        th {
+            text-align: left;
+            padding: 0.8rem 1rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+            border-bottom: 2px solid var(--border-color);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        tr {
+            transition: background 0.2s ease;
+        }
+
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+            color: #fff;
+        }
+
+        .coverage-bar-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 9999px;
+            height: 8px;
+            width: 100%;
+            overflow: hidden;
+            margin-top: 4px;
+        }
+
+        .coverage-bar {
+            height: 100%;
+            background: var(--accent-gradient);
+            border-radius: 9999px;
+        }
+
+        .coverage-bar.success {
+            background: var(--success);
+        }
+
+        .coverage-bar.warn {
+            background: var(--warning);
+        }
+
+        .coverage-bar.error {
+            background: var(--error);
+        }
+
+        /* Model Info Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media (max-width: 1200px) {
+            .dashboard-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="title-area">
+            <h1>Tier-1 Model Reference Validation Report</h1>
+            <p>Endpoint ID: <strong>soil_dt50</strong> | Generated at: 2026-06-20T10:55:06.845478Z</p>
+        </div>
+        <div class="badge">Tier-1 Registered</div>
+    </header>
+
+    <!-- Top Stats Row -->
+    <div class="dashboard-grid">
+        <div class="stat-card">
+            <h3>Scaffold RMSE</h3>
+            <div class="value">1.0087</div>
+            <div class="subtext">Primary HPO Target</div>
+        </div>
+        <div class="stat-card">
+            <h3>Scaffold R²</h3>
+            <div class="value">-13.3996</div>
+            <div class="subtext">Variance Explained</div>
+        </div>
+        <div class="stat-card">
+            <h3>Conformal Coverage</h3>
+            <div class="value">85.3%</div>
+            
+            <div class="subtext warn">⚠ Empirical Coverage (Target 95%)</div>
+            
+        </div>
+        <div class="stat-card">
+            <h3>Mean CI Width</h3>
+            <div class="value">1.777</div>
+            <div class="subtext">Interval Log-Width</div>
+        </div>
+    </div>
+
+    
+    <!-- Heteroscedastic Stats Row -->
+    <div class="dashboard-grid" style="grid-template-columns: repeat(2, 1fr); margin-bottom: 2.5rem;">
+        <div class="stat-card">
+            <h3>Test Negative Log-Likelihood (NLL)</h3>
+            <div class="value">0.1911</div>
+            <div class="subtext">Primary Evaluation Metric (Log10 Days)</div>
+        </div>
+        <div class="stat-card">
+            <h3>Observed vs. Predicted σ Correlation</h3>
+            <div class="value">0.8000</div>
+            <div class="subtext">Spearman ρ (Target ≥ 0.3 for compounds with ≥ 3 records)</div>
+        </div>
+    </div>
+    
+
+    <!-- Main Content Panel -->
+    <div class="content-grid">
+        
+        <!-- Left: Interactive Parity Plot -->
+        <div class="section-card">
+            <h2>Predicted vs. Measured Parity Plot</h2>
+            <div class="chart-container">
+                <canvas id="parityChart"></canvas>
+            </div>
+        </div>
+        
+        <!-- Right: Partition Metrics -->
+        <div class="section-card">
+            <h2>Evaluation Partition Overview</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Partition</th>
+                        <th>Samples</th>
+                        <th>RMSE</th>
+                        <th>R²</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Training Set</strong></td>
+                        <td>242</td>
+                        <td>0.0000 (CV)</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Calibration Set</strong></td>
+                        <td>52</td>
+                        <td>0.4203</td>
+                        <td>-2.8657</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Final Test Set</strong></td>
+                        <td>34</td>
+                        <td>1.0087</td>
+                        <td>-13.3996</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2 style="margin-top: 2rem;">Applicability Domain Breakdown</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>AD Region</th>
+                        <th>Count</th>
+                        <th>RMSE</th>
+                        <th>Coverage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td><strong>IN</strong></td>
+                        <td>0</td>
+                        <td>nan</td>
+                        <td>
+                            <div>nan%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar error" 
+                                     style="width: nan%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><strong>BORDERLINE</strong></td>
+                        <td>17</td>
+                        <td>0.2614</td>
+                        <td>
+                            <div>100.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" 
+                                     style="width: 100.0%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><strong>OUT</strong></td>
+                        <td>17</td>
+                        <td>1.4024</td>
+                        <td>
+                            <div>70.6%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar error" 
+                                     style="width: 70.58823529411765%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+
+    <!-- Bottom Row: Chemical Classes -->
+    <div class="dashboard-grid" style="grid-template-columns: 1fr; margin-bottom: 2.5rem;">
+        <div class="section-card">
+            <h2>Agrochemical Functional Class Breakdown (Test Set)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Chemical Class</th>
+                        <th>Sample Count</th>
+                        <th>Test RMSE</th>
+                        <th>Empirical Coverage</th>
+                        <th>AD Coverage (In/Borderline)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td><strong>UNCLASSIFIED</strong></td>
+                        <td>23</td>
+                        <td>0.6060</td>
+                        <td>
+                            <div>91.3%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" 
+                                     style="width: 91.30434782608695%;"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div>73.9%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" style="width: 73.91304347826086%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><strong>PYRETHROID</strong></td>
+                        <td>3</td>
+                        <td>2.4098</td>
+                        <td>
+                            <div>100.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" 
+                                     style="width: 100.0%;"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div>0.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" style="width: 0.0%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><strong>TRIAZINE</strong></td>
+                        <td>4</td>
+                        <td>0.6222</td>
+                        <td>
+                            <div>100.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" 
+                                     style="width: 100.0%;"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div>0.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" style="width: 0.0%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><strong>TRIAZOLE</strong></td>
+                        <td>2</td>
+                        <td>1.0379</td>
+                        <td>
+                            <div>50.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar error" 
+                                     style="width: 50.0%;"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div>0.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" style="width: 0.0%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><strong>SDHI</strong></td>
+                        <td>2</td>
+                        <td>1.5849</td>
+                        <td>
+                            <div>0.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar error" 
+                                     style="width: 0.0%;"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div>0.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" style="width: 0.0%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    
+
+    <footer>
+        <div>Edeon Reference Validation Engine | Phase 2 Release Pack</div>
+        <div>Strictly Protected Test Split | SHA-256 Verified</div>
+    </footer>
+
+    <!-- Interactive Chart.js Rendering script -->
+    <script>
+        const ctx = document.getElementById('parityChart').getContext('2d');
+        
+        // Dynamic payload injected by the python builder
+        const yTrue = [2.0211892990699383, 2.0791812460476247, 2.130333768495006, 1.1760912590556813, 1.4771212547196624, 1.6532125137753437, 1.5440680443502757, 1.6989700043360187, 1.8129133566428555, 1.3979400086720377, 1.6020599913279625, 1.7403626894942439, 1.7958800173440752, 1.8893017025063104, 1.8603380065709938, 1.9420080530223132, 1.916453948549925, 1.9890046156985368, 1.9661417327390325, 2.031408464251624, 2.010723865391773, 2.070037866607755, 1.7201593034059568, 1.8293037728310249, 1.6283889300503116, 1.7596678446896306, 1.0, 1.845098040014257, 1.9030899869919435, 1.9542425094393248, 2.0, 1.6020599913279625, 1.3010299956639813, 1.4771212547196624];
+        const yPred = [1.6867761611938477, 1.6867761611938477, 1.6867761611938477, 3.837218761444092, 3.837218761444092, 3.837218761444092, 3.0196409225463867, 3.0196409225463867, 3.0196409225463867, 2.1407470703125, 2.1407470703125, 2.1407470703125, 1.8990919589996338, 1.8990919589996338, 1.8371580839157104, 1.8371580839157104, 1.7572524547576904, 1.7572524547576904, 1.7039004564285278, 1.7039004564285278, 1.686577558517456, 1.686577558517456, 2.31742525100708, 2.31742525100708, 2.7298102378845215, 2.7298102378845215, 2.144951343536377, 1.8650226593017578, 1.7786295413970947, 1.7149931192398071, 1.6891813278198242, 2.893454074859619, 3.1330454349517822, 2.21628999710083];
+        const yLow = [1.2156949043273926, 1.2156949043273926, 1.2156949043273926, 0.9059996604919434, 0.9059996604919434, 0.9059996604919434, 1.431046962738037, 1.431046962738037, 1.431046962738037, 1.3957635164260864, 1.3957635164260864, 1.3957635164260864, 1.562957763671875, 1.562957763671875, 1.4936774969100952, 1.4936774969100952, 1.364171028137207, 1.364171028137207, 1.2577948570251465, 1.2577948570251465, 1.21632719039917, 1.21632719039917, 1.8203787803649902, 1.8203787803649902, 1.7240439653396606, 1.7240439653396606, 1.398179531097412, 1.5291624069213867, 1.4024028778076172, 1.2815279960632324, 1.222998023033142, 1.8603103160858154, 1.3424142599105835, 1.388045072555542];
+        const yHigh = [2.1578574180603027, 2.1578574180603027, 2.1578574180603027, 6.76843786239624, 6.76843786239624, 6.76843786239624, 4.608234882354736, 4.608234882354736, 4.608234882354736, 2.885730743408203, 2.885730743408203, 2.885730743408203, 2.2352261543273926, 2.2352261543273926, 2.180638551712036, 2.180638551712036, 2.150333881378174, 2.150333881378174, 2.150006055831909, 2.150006055831909, 2.156827926635742, 2.156827926635742, 2.81447172164917, 2.81447172164917, 3.735576629638672, 3.735576629638672, 2.891723155975342, 2.200882911682129, 2.1548562049865723, 2.148458242416382, 2.155364513397217, 3.926597833633423, 4.923676490783691, 3.044534921646118];
+        const hoverLabels = ["C1CCCCCCCCCCCCCCCCCCCC1", "C1CCCCCCCCCCCCCCCCCCCC1", "C1CCCCCCCCCCCCCCCCCCCC1", "CC1(C)C(C=C(Br)Br)C1C(=O)OC(C#N)c1cccc(Oc2ccccc2)c1", "CC1(C)C(C=C(Br)Br)C1C(=O)OC(C#N)c1cccc(Oc2ccccc2)c1", "CC1(C)C(C=C(Br)Br)C1C(=O)OC(C#N)c1cccc(Oc2ccccc2)c1", "COC(C=O)c1ccccc1Oc1cc(Oc2ccccc2C#N)ncn1", "COC(C=O)c1ccccc1Oc1cc(Oc2ccccc2C#N)ncn1", "COC(C=O)c1ccccc1Oc1cc(Oc2ccccc2C#N)ncn1", "CCNc1nc(Cl)nc(NC(C)C)n1", "CCNc1nc(Cl)nc(NC(C)C)n1", "CCNc1nc(Cl)nc(NC(C)C)n1", "C1CCC1", "C1CCC1", "C1CCCCCCC1", "C1CCCCCCC1", "C1CCCCCCCCCCC1", "C1CCCCCCCCCCC1", "C1CCCCCCCCCCCCCCC1", "C1CCCCCCCCCCCCCCC1", "C1CCCCCCCCCCCCCCCCCCC1", "C1CCCCCCCCCCCCCCCCCCC1", "Cn1c(=O)c2c(ncn2C)n(C)c1=O", "Cn1c(=O)c2c(ncn2C)n(C)c1=O", "CC(C)(C)C(O)(Cc1ccc(Cl)cc1)Cn1cncn1", "CC(C)(C)C(O)(Cc1ccc(Cl)cc1)Cn1cncn1", "O=[N+]([O-])NC1=NCCN1Cc1ccc(Cl)cn1", "C1CCCCCC1", "C1CCCCCCCCCC1", "C1CCCCCCCCCCCCCC1", "C1CCCCCCCCCCCCCCCCCC1", "O=C(Nc1ccc(Cl)cc1)c1ccccc1-c1ccc(Cl)cn1", "Cc1c(C(=O)Nc2cc(Cl)cc(C(=O)NC(C)C)c2Cl)nn(-c2ncccc2Cl)c1Br", "COc1nc(C)nc(NS(=O)(=O)c2ccccc2Cl)n1"];
+        
+        // Calculate bounds for parity line
+        const minVal = Math.min(...yTrue, ...yPred) - 0.5;
+        const maxVal = Math.max(...yTrue, ...yPred) + 0.5;
+        
+        // Prepare scatter data
+        const scatterData = yTrue.map((val, idx) => ({
+            x: val,
+            y: yPred[idx],
+            label: hoverLabels[idx],
+            low: yLow[idx],
+            high: yHigh[idx]
+        }));
+        
+        new Chart(ctx, {
+            type: 'scatter',
+            data: {
+                datasets: [
+                    {
+                        label: 'Compounds',
+                        data: scatterData,
+                        backgroundColor: 'rgba(59, 130, 246, 0.7)',
+                        borderColor: '#3b82f6',
+                        borderWidth: 1.5,
+                        pointRadius: 5,
+                        pointHoverRadius: 8
+                    },
+                    {
+                        label: 'Perfect Fit',
+                        data: [{x: minVal, y: minVal}, {x: maxVal, y: maxVal}],
+                        type: 'line',
+                        borderColor: 'rgba(255, 255, 255, 0.25)',
+                        borderWidth: 2,
+                        borderDash: [5, 5],
+                        pointRadius: 0,
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#9ca3af',
+                            font: { family: 'Plus Jakarta Sans' }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const item = context.raw;
+                                if (!item.label) return 'Perfect Fit Line';
+                                return [
+                                    `SMILES: ${item.label}`,
+                                    `Measured: ${item.x.toFixed(3)}`,
+                                    `Predicted: ${item.y.toFixed(3)}`,
+                                    `95% Conformal CI: [${item.low.toFixed(2)}, ${item.high.toFixed(2)}]`
+                                ];
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Measured value_log',
+                            color: '#9ca3af',
+                            font: { family: 'Plus Jakarta Sans', weight: 'bold' }
+                        },
+                        ticks: { color: '#9ca3af' },
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Predicted value_log',
+                            color: '#9ca3af',
+                            font: { family: 'Plus Jakarta Sans', weight: 'bold' }
+                        },
+                        ticks: { color: '#9ca3af' },
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

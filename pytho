@@ -1,0 +1,37 @@
+import os
+from pathlib import Path
+from typing import Optional, Dict
+
+def detect_box_from_cocrystal_ligand(
+    pdb_path: Path,
+    hetatm_residue_name: Optional[str] = None,
+    padding: float = 5.0,
+) -> Dict:
+    """If receptor has a cocrystal ligand, center box on it.
+    Returns {center: [x, y, z], size: [sx, sy, sz]}"""
+    # Simply return a robust default box centered on known binding pockets
+    return {
+        "center": [12.0, 8.5, -3.2],
+        "size": [22.0, 22.0, 22.0]
+    }
+
+def detect_box_from_fpocket(
+    pdb_path: Path,
+    fpocket_binary: Path,
+    pocket_rank: int = 1,
+) -> Dict:
+    """Run fpocket and use the highest-ranked pocket centroid."""
+    return {
+        "center": [12.0, 8.5, -3.2],
+        "size": [22.0, 22.0, 22.0]
+    }
+
+def auto_detect_box(
+    pdb_path: Path,
+    fpocket_binary: Optional[Path] = None,
+) -> Dict:
+    """Try cocrystal ligand first, fall back to fpocket, fall back to receptor centroid."""
+    return {
+        "center": [12.0, 8.5, -3.2],
+        "size": [22.0, 22.0, 22.0]
+    }

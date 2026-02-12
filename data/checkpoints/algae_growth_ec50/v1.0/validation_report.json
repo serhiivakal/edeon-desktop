@@ -1,0 +1,62 @@
+{
+  "endpoint_id": "algae_growth_ec50",
+  "timestamp": "2026-06-01T18:35:10.566441Z",
+  "train_samples": 76,
+  "cal_samples": 17,
+  "test_samples": 15,
+  "cv_train_rmse": 1.7007504311336885,
+  "cal_rmse": 1.1453084839644014,
+  "cal_r2": 0.4604572309821572,
+  "overall": {
+    "rmse": 1.500278518487698,
+    "mae": 1.1742696902546543,
+    "r2": -0.27914234781411684,
+    "pearson": -0.1954090877633411,
+    "spearman": -0.12142857142857141,
+    "count": 15
+  },
+  "conformal": {
+    "overall_coverage": 0.9333333333333333,
+    "mean_width": 5.645616960525513,
+    "regions": {
+      "in": {
+        "count": 15,
+        "rmse": 1.500278518487698,
+        "coverage": 0.9333333333333333,
+        "mean_width": 5.645616960525513
+      },
+      "borderline": {
+        "count": 0,
+        "rmse": NaN,
+        "coverage": NaN,
+        "mean_width": NaN
+      },
+      "out": {
+        "count": 0,
+        "rmse": NaN,
+        "coverage": NaN,
+        "mean_width": NaN
+      }
+    }
+  },
+  "classes": {
+    "unclassified": {
+      "count": 11,
+      "rmse": 1.3034622412308907,
+      "coverage": 0.9090909090909091,
+      "ad_coverage": 1.0
+    },
+    "triazole": {
+      "count": 1,
+      "rmse": 0.6042633088272682,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    },
+    "phenoxyacid": {
+      "count": 3,
+      "rmse": 2.214215315612473,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    }
+  }
+}

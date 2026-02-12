@@ -1,0 +1,94 @@
+dataset_id: edeon-skin-sensitization-v1.0
+endpoint: skin_sensitization
+version: 1.0.0
+created: '2026-06-20T07:15:32Z'
+created_by: edeon-data-pipeline
+sources:
+- name: NICEATM LLNA
+  citation: NICEATM LLNA Database. National Toxicology Program Interagency Center
+    for the Evaluation of Alternative Toxicological Methods.
+  doi: null
+  url: https://ntp.niehs.nih.gov/whatwestudy/topics/toxico/niceatm
+  license: Public Domain (US Government Work)
+  access_date: '2026-06-02'
+  raw_records: 270
+inclusion_criteria:
+- Skin sensitization binary and categorical classification records
+- Mouse Local Lymph Node Assay (LLNA) records with EC3 values
+- ICCVAM Cosmetics Substance (CCS) binary records
+- Prefer LLNA labels over CCS labels in case of compound overlap
+exclusion_criteria:
+- Mixtures, formulations, or records with missing chemical structures
+- Compounds containing atoms outside default organic allowlist
+standardisation:
+  tool: chembl_structure_pipeline
+  version: 1.2.4
+  tautomer: rdkit-canonical
+  atom_allowlist:
+  - H
+  - B
+  - C
+  - N
+  - O
+  - F
+  - Si
+  - P
+  - S
+  - Cl
+  - Se
+  - Br
+  - I
+  mw_range:
+  - 50.0
+  - 1500.0
+activity:
+  units_canonical: class
+  log_transform: null
+  aggregation: majority_vote
+  censored_handling: null
+curation_summary:
+  raw_records: 270
+  after_parse: 264
+  after_standardisation: 264
+  after_filter: 264
+  after_aggregation: 132
+  rejection_rate: 0.022222222222222223
+splits:
+  scaffold:
+    train: 97
+    cal: 20
+    test: 15
+    test_to_train_nn_tanimoto_mean: 0.3620675606926926
+  random:
+    train: 92
+    cal: 20
+    test: 20
+    seed: 42
+  time:
+    train: 0
+    cal: 0
+    test: 0
+    train_year_max: null
+    cal_year_range: null
+    test_year_range: null
+    status: not_available
+known_biases:
+- Strong bias toward fragrance chemicals, cosmetic ingredients, and common industrial
+  preservatives.
+- Over-represents strong and non-sensitizers relative to weak sensitizers.
+- Binary classifications collapse potency ranges, masking the distinction between
+  weak and strong sensitizers.
+intended_use: Training and benchmarking Tier-1 classification QSAR skin sensitization
+  models.
+not_intended_for:
+- Direct clinical or regulatory dossier submissions without expert dermatological
+  review
+- Quantitative potency estimation from binary class assignments.
+sha256:
+  scaffold_train: cfe38477d166ae058ee5659a3bd96bcfe3252a9d1936ac97c29db8268d90c502
+  scaffold_cal: c2965157045a9ce24ba8e992851e7a90a0dfca273630018427d143d0397abacf
+  scaffold_test: e02f5c83db8dbcae6f97425537d2ed250a98fb29e4fae60156b93654a03c9c64
+  random_train: 1a31f583a978b3453a849595aaccd28fcb5c90153a7463f2671299b5f2b53dc2
+  random_cal: d66da005d19eb759fc684d88d3d010579683ddd0d4343bcaa271c83a0efd0a39
+  random_test: 67519c550c305676ea6b0b38f6f98256c2a5745d26dcc4ddd540b7c472384f4e
+  curated_parquet: 8971f90140f643e1a630b3d4c5c5334d791537711cc60e3607dc2bc78d257ab8

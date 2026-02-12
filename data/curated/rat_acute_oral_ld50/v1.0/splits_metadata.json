@@ -1,0 +1,28 @@
+{
+  "scaffold": {
+    "train": 4480,
+    "cal": 960,
+    "test": 956,
+    "test_to_train_nn_tanimoto_mean": 0.3675429860573271
+  },
+  "random": {
+    "train": 4477,
+    "cal": 959,
+    "test": 960,
+    "seed": 42
+  },
+  "time": {
+    "train": 0,
+    "cal": 0,
+    "test": 0,
+    "status": "not_available"
+  },
+  "hashes": {
+    "scaffold_train": "197c1ae35e0b71d311cac0de4d4861e02405931513d9ff44a2dc338d8ee1b28b",
+    "scaffold_cal": "7556c0147519fcd39068bfdf8bb208fd9a02bcd3b4c0ccb9db6cb481848c43ba",
+    "scaffold_test": "ca100a636d48b2737ed105ffa5a80529492f000b1fc5a674c48f2ecdf83175b7",
+    "random_train": "2c1f2c514c738f2ed20c6e75ca2c90865cfa0aadbcc3e55d1715da054f6c47ae",
+    "random_cal": "0a6286c35e60d29fa8dd0cbeb98e9ce6003842fc8ee3360ae21b9149b96d8a9a",
+    "random_test": "43c015beea7aa4f8f3a8b64b57c32a88cb4d6fc5ddbaff4a50d88af058ad2687"
+  }
+}

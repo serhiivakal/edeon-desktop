@@ -1,0 +1,15 @@
+# Cofactor Whitelist for Edeon Docking Workbench
+cofactors:
+  - HEM
+  - HEC
+  - FAD
+  - FMN
+  - NAD
+  - NAP
+  - NDP
+  - ATP
+  - ADP
+  - SAM
+  - CLA
+  - BCL
+  - PLP

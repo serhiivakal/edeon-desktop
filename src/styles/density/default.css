@@ -1,0 +1,5 @@
+[data-density="default"] {
+  --space-multiplier: 1.0;
+  --font-size-base: 14px;
+  --row-height: 36px;
+}

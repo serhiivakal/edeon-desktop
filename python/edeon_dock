@@ -1,0 +1,17 @@
+import pytest
+from pathlib import Path
+from edeon_docking.receptor_prep import prepare_receptor_pdb_to_pdbqt
+from edeon_docking.ligand_prep import prepare_ligand_smiles_to_pdbqt
+from edeon_docking.vina_runner import VinaRunner
+
+def test_docking_smoke():
+    # Test ligand prep
+    lig_pdbqt = Path("ligand_temp.pdbqt")
+    smiles = "C1=CN=C(C=C1)CN2C(=N[N+](=O)[O-])NC3=CC=CC=C23"
+    meta = prepare_ligand_smiles_to_pdbqt(smiles, lig_pdbqt)
+    assert meta["atom_count"] > 0
+    assert lig_pdbqt.exists()
+    
+    # Clean up
+    if lig_pdbqt.exists():
+        lig_pdbqt.unlink()

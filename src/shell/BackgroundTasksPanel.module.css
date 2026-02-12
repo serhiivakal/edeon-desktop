@@ -1,0 +1,136 @@
+.panelContainer {
+  position: fixed;
+  top: var(--header-height);
+  right: 0;
+  bottom: var(--statusbar-height);
+  width: 320px;
+  background-color: var(--color-surface-base);
+  border-left: 1px solid var(--color-border-subtle);
+  box-shadow: var(--shadow-lg);
+  z-index: var(--z-sticky);
+  display: flex;
+  flex-direction: column;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-sans);
+  animation: slideIn 200ms ease-out;
+}
+
+.header {
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--color-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+  padding: var(--space-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+}
+
+.closeButton:hover {
+  background-color: var(--color-action-secondary-hover);
+  color: var(--color-text-primary);
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.taskItem {
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  background-color: var(--color-surface-raised);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.taskHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.taskName {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.taskStatus {
+  font-size: var(--font-size-xs);
+  color: var(--color-action-primary);
+  font-weight: 500;
+}
+
+.progressBarContainer {
+  background-color: var(--color-border-subtle);
+  border-radius: var(--radius-full);
+  height: 6px;
+  overflow: hidden;
+  position: relative;
+  margin-top: var(--space-1);
+}
+
+.progressBarFill {
+  background-color: var(--color-action-primary);
+  height: 100%;
+  transition: width 200ms ease;
+}
+
+.taskMeta {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary);
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancelBtn {
+  background-color: transparent;
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  align-self: flex-end;
+  margin-top: var(--space-1);
+}
+
+.cancelBtn:hover {
+  background-color: var(--color-status-poor-bg);
+  border-color: var(--color-status-poor);
+  color: var(--color-status-poor);
+}
+
+.emptyText {
+  color: var(--color-text-tertiary);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  padding-top: var(--space-10);
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}

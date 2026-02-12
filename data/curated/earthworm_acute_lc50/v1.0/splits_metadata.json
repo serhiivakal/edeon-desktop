@@ -1,0 +1,34 @@
+{
+  "scaffold": {
+    "train": 7,
+    "cal": 2,
+    "test": 1,
+    "test_to_train_nn_tanimoto_mean": 0.16363636363636364
+  },
+  "random": {
+    "train": 7,
+    "cal": 1,
+    "test": 2,
+    "seed": 42
+  },
+  "time": {
+    "train": 10,
+    "cal": 0,
+    "test": 0,
+    "train_year_max": 2024,
+    "cal_year_range": null,
+    "test_year_range": null,
+    "status": "available"
+  },
+  "hashes": {
+    "scaffold_train": "29b20101a87557da09469c49a09aa06cd21e01af09d35816bba5284166ace3b5",
+    "scaffold_cal": "f587bceeab31ea696c3926b06dbc8f4c41f8e347ce53ae53ca317c22089c3458",
+    "scaffold_test": "d27a5fcc70f30a6014edd8ce305377551bc3f51c01812bcc17653bef0e674de5",
+    "random_train": "f1bb61e1f2471dd31bf41c597382fc474655d5ea8afa61220f5eae180391b97d",
+    "random_cal": "0419b0adc41792493e700d215003632d10d02875031db9b9b3202838cde3dd52",
+    "random_test": "d44226ab4724e8af0e2bb54b7b0c54871731bd596fcaa2b923785a9f4e85a6d0",
+    "time_train": "5cf57429ea5ecdcf8a3f491886fd7475ac6e8b6b90ee6c8b346735757a448f29",
+    "time_cal": "d90387b3a8ce8248160c6c771306bd413a49bb2cd4c4ffbae9e320d7b1b15413",
+    "time_test": "d90387b3a8ce8248160c6c771306bd413a49bb2cd4c4ffbae9e320d7b1b15413"
+  }
+}

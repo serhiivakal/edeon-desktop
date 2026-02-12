@@ -1,0 +1,50 @@
+import re
+from pathlib import Path
+from typing import List
+from .schema import DockedPose
+
+def parse_vina_output_pdbqt(pdbqt_path: Path) -> List[DockedPose]:
+    """Parse Vina's multi-model PDBQT output.
+    Each MODEL block is one pose. Extract score from REMARK lines.
+    """
+    pdbqt_path = Path(pdbqt_path)
+    if not pdbqt_path.exists():
+        return []
+        
+    poses = []
+    current_model = None
+    current_lines = []
+    score = 0.0
+    rmsd_lb = 0.0
+    rmsd_ub = 0.0
+    
+    score_re = re.compile(r"REMARK VINA RESULT:\s*([-\d.]+)\s*([-\d.]+)\s*([-\d.]+)")
+    
+    with open(pdbqt_path, "r") as f:
+        for line in f:
+            if line.startswith("MODEL"):
+                current_model = int(line.split()[1])
+                current_lines = [line]
+            elif line.startswith("ENDMDL"):
+                current_lines.append(line)
+                if current_model is not None:
+                    poses.append(DockedPose(
+                        pose_index=current_model,
+                        score_kcal_per_mol=score,
+                        rmsd_lb=rmsd_lb,
+                        rmsd_ub=rmsd_ub,
+                        pdbqt_block="".join(current_lines),
+                        sdf_representation=None
+                    ))
+                current_model = None
+                current_lines = []
+            else:
+                if current_model is not None:
+                    current_lines.append(line)
+                    match = score_re.search(line)
+                    if match:
+                        score = float(match.group(1))
+                        rmsd_lb = float(match.group(2))
+                        rmsd_ub = float(match.group(3))
+                        
+    return poses

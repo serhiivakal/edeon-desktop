@@ -1,0 +1,16 @@
+[data-density="compact"] {
+  --space-multiplier: 0.75;
+  --font-size-base: 12px;
+  --row-height: 28px;
+  
+  --space-1: 3px;
+  --space-2: 6px;
+  --space-3: 9px;
+  --space-4: 12px;
+  --space-5: 15px;
+  --space-6: 18px;
+  --space-8: 24px;
+  --space-10: 30px;
+  --space-12: 36px;
+  --space-16: 48px;
+}

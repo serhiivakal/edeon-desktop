@@ -1,0 +1,45 @@
+name: Regenerate Demo Bundle
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  build-and-run-demos:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        
+    - name: Install Conda and Setup Env
+      uses: conda-incubator/setup-miniconda@v3
+      with:
+        activate-environment: poe
+        environment-file: python/environment.yml
+        auto-activate-base: false
+        
+    - name: Install ReportLab and Dependencies
+      shell: bash -el {0}
+      run: |
+        conda install -y -c conda-forge reportlab pyyaml matplotlib pydantic rdkit
+        pip install -e python/
+        
+    - name: Execute Demo Orchestrator
+      shell: bash -el {0}
+      run: |
+        export PYTHONPATH=python
+        python scripts/generate_reference_demos.py
+        
+    - name: Archive Demo Assets
+      uses: actions/upload-artifact@v4
+      with:
+        name: edeon-reference-demo-bundle
+        path: data/demos/
+        retention-days: 14

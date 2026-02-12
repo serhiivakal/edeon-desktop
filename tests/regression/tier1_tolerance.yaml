@@ -1,0 +1,25 @@
+# Edeon Phase 2 — Tier-1 Reference Models Regression Test Tolerances
+
+bee_acute_oral_ld50:
+  rel_tol: 0.001
+  abs_tol: 0.001
+
+bee_acute_contact_ld50:
+  rel_tol: 0.001
+  abs_tol: 0.001
+
+fish_acute_lc50:
+  rel_tol: 0.001
+  abs_tol: 0.001
+
+daphnia_acute_ec50:
+  rel_tol: 0.001
+  abs_tol: 0.001
+
+algae_growth_ec50:
+  rel_tol: 0.001
+  abs_tol: 0.001
+
+bird_acute_oral_ld50:
+  rel_tol: 0.001
+  abs_tol: 0.001

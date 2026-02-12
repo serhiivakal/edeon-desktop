@@ -1,0 +1,297 @@
+================================================================================
+                           EDEON DESKTOP SYSTEM
+             DETAILED GRANULAR TECHNICAL DIRECTORY OF FEATURES
+================================================================================
+
+This document details every specific endpoint, equation, regulatory cutoff,
+heuristic profile, SMIRKS rules, database schema, and workflow stage (including
+declarative pre-made workflows and legacy interactive workflows) implemented
+in Edeon.
+
+--------------------------------------------------------------------------------
+1. SCIENCE ENGINES: EQUATIONS, COEFFICIENTS & THRESHOLDS
+--------------------------------------------------------------------------------
+
+- H1: Pesticide-Likeness (Tice Herbicide Rules) [tice_rules.py]
+  * Evaluated descriptors & boundaries:
+    - Molecular Weight (MW): 150 to 500 g/mol
+    - LogP: -1.0 to 8.0
+    - Hydrogen Bond Donors (HBD): 0 to 3
+    - Hydrogen Bond Acceptors (HBA): 1 to 12
+    - Rotatable Bonds: 0 to 12
+    - TPSA: 20 to 150 Å²
+  * Rating System:
+    - High: 0 violations
+    - Med:  1 violation
+    - Low:  2+ violations (compounds with Low rating are gated out of W5 Triage)
+
+- H2: Environmental Fate Models & Reg. scorecards [parent_fate.py, cutoffs.py]
+  * log Kow (Octanol-Water Partition):
+    - Uses RDKit's SlogP (Crippen LogP) directly.
+  * Henry's Law Constant (H, atm-m³/mol):
+    - Heuristic: log_h = -4.5 + (0.5 * Log Kow) - (0.05 * TPSA) - (0.2 * HBD)
+    - bound to range [-15.0, 2.0]. Value = 10^(log_h).
+  * Groundwater Ubiquity Score (GUS) Leaching Index:
+    - Equation: GUS = log10(Soil_DT50) * (4.0 - log10(Soil_Koc)) (where Koc < 10000)
+    - Leaching risk classes:
+      * GUS > 2.8: Leacher (highly mobile, potential to leach)
+      * 1.8 <= GUS <= 2.8: Transitional (medium leaching risk)
+      * GUS < 1.8: Non-leacher (retained in soil, low leaching risk)
+  * REACH Annex XIII PBT/vPvB cutoff thresholds:
+    - Persistent (P): Soil DT50 > 120 days OR Water DT50 > 40 days
+    - Very Persistent (vP): Soil DT50 > 180 days OR Water DT50 > 60 days
+    - Bioaccumulative (B): BCF > 2000 L/kg OR Log Kow > 4.5
+    - Very Bioaccumulative (vB): BCF > 5000 L/kg
+    - Toxic (T): Fish LC50 < 0.1 mg/L, Daphnia EC50 < 0.1 mg/L, or Algae EC50 < 0.1 mg/L
+    - Overall Classification:
+      * vPvB: Both vP and vB flags are true
+      * PBT: All P, B, and T flags are true
+      * Concern (X): Sub-combinations (e.g. P+B, B+T, etc.)
+  * Soil Persistence (EU 1107/2009):
+    - DT50 > 365 days: likely_showstopper (Very Persistent, accumulates)
+    - DT50 > 120 days: likely_showstopper (Persistent cut-off)
+    - DT50 > 90 days: watch (requires further risk assessment)
+    - DT50 <= 90 days: pass
+  * CLP/GHS Acute mammalian Oral Toxicity:
+    - Category 1: LD50 <= 5 mg/kg (Fatal if swallowed)
+    - Category 2: 5 < LD50 <= 50 mg/kg (Fatal if swallowed)
+    - Category 3: 50 < LD50 <= 300 mg/kg (Toxic if swallowed)
+    - Category 4: 300 < LD50 <= 2000 mg/kg (Harmful if swallowed)
+    - Category 5: 2000 < LD50 <= 5000 mg/kg (May be harmful)
+    - Not classified: LD50 > 5000 mg/kg
+
+- H3: Briggs/Kleier Systemicity Estimator [systemicity.py]
+  * Xylem concentration factor (TSCF - Briggs model):
+    - TSCF = 0.784 * exp(-((Log Kow - 1.78)² / 2.44)) + 0.03
+    - Xylem index = min(1.0, max(0.0, TSCF / 0.8))
+  * Phloem concentration factor (PCF - Kleier model):
+    - For weak acids (containing carboxylic acid group `C(=O)O` / `C(=O)[O-]` or explicitly marked):
+      * pKa defaults to 4.8 if not provided.
+      * pKa Factor: pka_factor = max(0.0, 1.0 - (|pKa - 6.0| / 3.0))
+      * Kow Factor: kow_factor = max(0.0, 1.0 - (|Log Kow - 1.5| / 2.0))
+      * PCF = 0.9 * pka_factor * kow_factor
+    - For neutrals (no acid group):
+      * PCF = 0.3 * max(0.0, 1.0 - (|Log Kow - 1.0| / 2.0))
+    - Phloem index = min(1.0, max(0.0, PCF))
+  * Systemicity Index: Overall index = max(Xylem index, Phloem index)
+  * Mobility Route Classification:
+    - contact: systemicity_index < 0.2
+    - phloem: (phloem_index > xylem_index OR is_acid) AND phloem_index > 0.3
+    - xylem: all other cases
+
+- H4: Cross-Species Selectivity margins [selectivity.py]
+  * Evaluated non-target indicator species:
+    - Honeybee: Minimum of oral and contact LD50; conversion factor = 10.0 (1 ug/bee ~= 10 ppm)
+    - Earthworm: Soil LC50; conversion factor = 1.0
+    - Fish: Aquatic LC50; conversion factor = 1.0
+    - Bird: Avian oral LD50; conversion factor = 1.0
+    - Daphnia: Aquatic EC50; conversion factor = 1.0
+    - Mammal: Rat oral LD50; conversion factor = 1.0
+  * QSAR Fallback Heuristics (when ML models fail or are absent):
+    - Honeybee: 10^(2.5 - 0.5 * Log Kow)
+    - Earthworm: 10^(3.0 - 0.4 * Log Kow)
+    - Fish: 10^(1.6 - 0.55 * Log Kow - 0.001 * MW)
+    - Daphnia: 10^(1.5 - 0.6 * Log Kow)
+    - Bird: 10^(3.5 - 0.3 * Log Kow)
+    - Mammal: 10^(4.0 - 0.3 * Log Kow - 0.002 * MW)
+  * Target Potency Estimate:
+    - Calculated from Tice Rule scorecards: High = 0.5 uM; Med = 2.0 uM; Low = 10.0 uM.
+    - converted to ppm: potency_ppm = potency_uM * MW / 1000.0
+  * Selectivity Index (SI): SI = Species_LC50_or_LD50_in_ppm / potency_ppm
+  * safety margin levels:
+    - safe: SI > 100.0
+    - moderate: 10.0 <= SI <= 100.0
+    - danger: SI < 10.0
+
+- H5: Resistance Risk Engine [resistance.py]
+  * Heuristic MoA Class Assignment:
+    - HRAC Group B (ALS inhibitors): 200<=MW<=400, 1.0<=LogP<=4.5, 40<=TPSA<=100, LogP<=2.5, HBA>=4.
+    - HRAC Group A (ACCase inhibitors): 200<=MW<=400, 1.0<=LogP<=4.5, 40<=TPSA<=100, LogP>=3.0, TPSA<=60.
+    - HRAC Group C1 (Photosystem II inhibitors): Other compounds in general herbicide range.
+    - IRAC Group 3A (Pyrethroids): MW<=350, LogP>=2.0, TPSA<=50.
+    - IRAC Group 4A (Neonicotinoids): MW<=350, LogP>=2.0, TPSA>50.
+    - FRAC Group 3 (DMI fungicides): MW>=250, HBA>=3.
+    - Group Z (Unknown/novel MoA): default fallback.
+  * base Risk Score = 5.0 (adjusted on a 0-10 scale):
+    - Cross-Resistance (MoA group based): High-risk group (+1.0), Med-risk group (+0.5).
+    - Metabolic Stability (LogP based): LogP > 4.0 (+1.5), LogP > 2.5 (+0.5), LogP <= 2.5 (-1.0).
+    - Target Site Diversity (complexity = (HBD + HBA + RotBonds)/3): Complexity > 5 (-1.5), Complexity > 3 (-0.5), Complexity <= 3 (+1.0).
+    - Cross-Resistance Proxy (TPSA based): TPSA < 40 (+1.0), TPSA > 100 (-0.5).
+    - Molecular Size: MW < 250 (+0.5), MW > 400 (-0.5).
+  * Risk Levels: Low (score <= 3.5), Med (score <= 6.5), High (score > 6.5).
+
+--------------------------------------------------------------------------------
+2. TRANSFORMATION PRODUCT DEGRADATION RULES (SMIRKS) [pathway.py]
+--------------------------------------------------------------------------------
+
+- Curated Abiotic and Biotic Degradation SMIRKS:
+  * Ester Hydrolysis: `[C:1](=[O:2])[O:3][C:4].[O:5]>>[C:1](=[O:2])[O:5].[O:3][C:4]`
+  * Amide Hydrolysis: `[C:1](=[O:2])[N:3].[O:4]>>[C:1](=[O:2])[O:4].[N:3]`
+  * N-Dealkylation: `[N:1][C:2][#6:3]>>[N:1].[C:2](=[O])`
+  * O-Dealkylation: `[O:1][C:2][#6:3]>>[O:1].[C:2](=[O])`
+  * Sulfoxidation: `[#6:1][S:2][#6:3]>>[#6:1][S:2](=[O])[#6:3]`
+  * Ring Hydroxylation: `[c:1][H:2]>>[c:1][O][H:2]`
+  * Glucosylation: `[O,N,S:1][H:2]>>[O,N,S:1]C1OC(CO)C(O)C(O)C1O`
+  * Nitro Reduction: `[N+:1](=[O:2])([O-:3])>>[N:1]`
+  * Dehalogenation: `[C,c:1][Cl,Br,I:2]>>[C,c:1]`
+  * Nitrile-to-Amide: `[C:1]#[N:2]>>[C:1](=[O])[N:2]`
+
+--------------------------------------------------------------------------------
+3. MACHINE LEARNING TRAINING & EXPLAINER CONFIGURATIONS [models/arena.py]
+--------------------------------------------------------------------------------
+
+- ML Arena Algorithms (`run_arena`):
+  * Ridge Regression (linear baseline).
+  * Random Forest (ensemble baseline).
+  * LightGBM (gradient boosted trees).
+- Featurization Selectors:
+  * Morgan Fingerprints (1024 or 2048 bit size, radius = 2).
+  * MACCS Keys (166 bit structural keys).
+  * RDKit 2D physical descriptors (MW, logP, TPSA, HBD, HBA, rotatable bonds, charge, etc.).
+- Explainer Engine (SHAP):
+  * SHAP TreeExplainer for Random Forest and LightGBM models.
+  * KernelExplainer or LinearExplainer for Ridge regression.
+  * local shap value calculations returning individual feature contribution vectors.
+  * Atom Map Drawing: Maps calculated atom-level SHAP contributions to 2D structure SVG drawings.
+
+--------------------------------------------------------------------------------
+4. SQLITE DATABASE SCHEMA SCHEMAS & MIGRATION HISTORY [db.rs]
+--------------------------------------------------------------------------------
+
+- SQLite Migrations structure:
+  * `v1` to `v5` initial tables:
+    - `projects`: `id TEXT PRIMARY KEY`, `name TEXT`, `created_at TEXT`
+    - `compounds`: `id TEXT PRIMARY KEY`, `project_id TEXT`, `name TEXT`, `smiles TEXT`,
+      `mol_weight REAL`, `logp REAL`, `tpsa REAL`, `hbd INTEGER`, `hba INTEGER`,
+      `rotatable_bonds INTEGER`, `properties_json TEXT`, `created_at TEXT`
+    - `settings`: `key TEXT PRIMARY KEY`, `value TEXT`
+  * `v6` migration:
+    - `workflows`: `id TEXT PRIMARY KEY`, `project_id TEXT`, `name TEXT`, `status TEXT`,
+      `started_at TEXT`, `completed_at TEXT`, `workflow_id TEXT`, `params_json TEXT`,
+      `verdict_json TEXT`, `provenance_json TEXT`
+    - `workflow_results`: `id TEXT PRIMARY KEY`, `workflow_id TEXT`, `compound_id TEXT`,
+      `results_json TEXT`, `score REAL`, `uq_json TEXT`, `created_at TEXT`
+  * `v10` migration:
+    - `transformation_products`: `id TEXT PRIMARY KEY`, `parent_compound_id TEXT`,
+      `metabolite_smiles TEXT`, `formation_route TEXT`, `formation_probability REAL`,
+      `results_json TEXT`, `risk_flags TEXT`, `created_at TEXT`
+
+--------------------------------------------------------------------------------
+5. FRONTEND & STATE VARIABLES
+--------------------------------------------------------------------------------
+
+- Zustand State Stores (`src/store/`):
+  * `workflowStore.ts`:
+    - `selectedWorkflowId`: ID of active workflow.
+    - `workflowResult`: stores `WorkflowResult` (verdict, warnings, dossier sections).
+    - `results`: stores `WorkflowResultRecord[]` (MPO score, selectivity profiles, etc.).
+    - `availableWorkflows`: holds the list of recipes returned by `list_workflows`.
+    - `workflowParams`: records user-configured parameters.
+  * `uiStore.ts`:
+    - `selectedCompoundId`: tracks active compound selected in the ResultsTable.
+    - `isResultsTableMaximized`: boolean for split-pane sizing.
+  * `projectStore.ts`:
+    - `activeProjectId`: tracks active workspace scope.
+- Custom visualizer Render Keys:
+  * AttritionWaterfall (`sections.attrition`): displays funnel stages (reason, gated, out).
+  * PositioningChartbook (`selectedCompound.comparisons`): candidate vs standard actives.
+  * SelectivityWindow (`selectedCompound.analogs`): dual-bar margin comparison.
+  * Scaffold-Hop Banner (`sections.legal_disclaimer`): structural novelty warning notice.
+
+--------------------------------------------------------------------------------
+6. DECLARATIVE WORKFLOW DECISION ENGINE (W1-W8 DECISION DOSSIERS)
+--------------------------------------------------------------------------------
+
+- Packaged Decision Workflows:
+  * Declares workflows as recipes in `workflows/registry.py`, aggregating multiple steps
+    reproducibly without hardcoded UI logic. Contains:
+  * **W1: Registration Readiness Pre-Screen**: Maps candidate and TPs to EU 1107/2009 cutoff
+    rules, outputting registration dossiers.
+  * **W2: Pollinator Safety Screen**: Evaluates contact/oral bee hazard indexes, weighing
+    toxic margins against systemic exposure. Uses the **Briggs/Kleier Systemicity Estimator**
+    calculating phloem/xylem mobility indexes.
+  * **W3: Transformation-Product Liability Sweep**: Identifies secondary risks arising
+    from metabolite degradation cascades.
+  * **W4: Lead-Optimization Cycle**: Automatically diagnoses series liabilities and suggests
+    R-group MMP transformations.
+  * **W5: Hit-to-Shortlist Triage**: Filters libraries of hits by likeness and alerts,
+    down-sampling to diverse candidates. Outputs an interactive `AttritionWaterfall`.
+  * **W6: Comparative Benchmarking**: Aligns candidate fate/tox profiles against marketed
+    standard active agrochemicals. Utilizes a read-only database (`reference_actives.sqlite`
+    and `reference_library.py`) of standard actives. Outputs a `PositioningChartbook`.
+  * **W7: Selectivity Window Optimization**: Focuses on widening narrow safety margins
+    using a **maximin objective** to improve limiting organisms without collapsing other margins.
+    Outputs a `SelectivityWindow` comparison chart.
+  * **W8: Scaffold-Hop / Novelty Explorer**: Generates novel Bemis-Murcko scaffolds retaining
+    parent profiles. Displays structural novelty legal/FTO disclaimer warning banners.
+- Provenance & Reproducibility Spine:
+  * Generates and registers reproducibility manifests (`provenance_json`) logging
+    active model versions, data source timestamps, input file hashes, and parameters.
+  * Automated verdict confidence grading: Downgrades confidence to Low/Conditional
+    if any input metric is Out of Domain (OOD), ensuring transparent alerts.
+- Virtual Screening (VS) Pipeline Integration:
+  * direct **🚀 Send to VS workflow** redirects to load screening candidates,
+    supporting active learning loops.
+
+--------------------------------------------------------------------------------
+7. INTERACTIVE LEGACY WORKFLOWS (MULTI-STAGE SCHEDULER & PIPELINE RUNNER)
+--------------------------------------------------------------------------------
+
+Edeon features a multi-stage pipeline runner supporting interactive, step-by-step
+simulation and curation runs across five legacy workflows:
+
+- Screening Library Preparation (`library_prep`):
+  * Designed for top-of-funnel library imports, filtration, and conformation optimization.
+  * Stages:
+    1. Standardization: Salt stripping, tautomer normalization & structure canonicalization.
+    2. Property Curation: Evaluates Lipinski-style and custom agrochemical boundaries.
+    3. PAINS & Alerts Filter: Identifies and removes reactive alerts & toxicophores.
+    4. Diversity Clustering: Applies Bemis-Murcko/Butina/MaxMin clustering to down-sample structures.
+    5. 3D & pH Protonation: Generates optimized 3D conformer coordinates at target pH (7.4).
+    6. Library Export: Packages processed structures into SDF, CSV, or SMILES files.
+
+- Virtual Screening & Active Learning Gate (`active_learning`):
+  * Designed to execute high-throughput virtual screening (HTVS) cycles combined with active learning loops.
+  * Stages:
+    1. Curation & Prep: Standardizes structures and incoming activity datasets.
+    2. Property Filters: Filters libraries based on Tice properties and custom ranges.
+    3. QSAR Inference: Predicts target activity across multiple deployed QSAR models.
+    4. AD Gate Filtering: Excludes compounds outside the models' Applicability Domain (AD) coverage.
+    5. Docking Validation: Performs confirmatory AutoDock Vina target docking simulations on candidates.
+    6. Active Learning Select: Analyzes model confidence values to select borderline candidates (active learning query strategy).
+    7. Curation Output: Exports high-confidence hit sets for synthesis or validation.
+
+- Bioisosteric Lead Optimization (`bioisostere_opt`):
+  * Designed to interactively discover bioisosteres and run rescoring/docking loops.
+  * Stages:
+    1. Standardize: Salt stripping, tautomer normalization, and structure canonicalization.
+    2. Bioisostere Gen: Suggests transformations using structural rules.
+    3. Properties & Filters: Profiles physicochemical parameters.
+    4. QSAR & AD Profiling: Evaluates predicted activity and UQ confidence envelopes.
+    5. MPO Scoring: Ranks suggestions using weighted multi-objective metrics.
+    6. Conformer & Docking: Generates 3D coordinates and docks candidates onto targets.
+    7. 3D Interaction Maps: Renders 2D/3D interaction diagrams of residue binding contacts.
+
+- Resistance Mitigation Workflow (`resistance_mitigation`):
+  * Designed to profile target mutation escape rates and select bypass chemistries.
+  * Stages:
+    1. Mutation Look-up: Queries database of known target site mutations.
+    2. Docking Preparation: Automatically prepares Wildtype (WT) and Mutant receptors.
+    3. Wildtype Simulation: Runs AutoDock Vina docking simulation against WT receptors.
+    4. Mutant Simulation: Runs AutoDock Vina docking simulation against mutated receptors.
+    5. Ecotox Profiling: Evaluates safety margins for non-target indicator species.
+    6. Bypass Scoring: Scores compounds by their binding affinity delta (WT vs Mutant).
+    7. Interactive Pose View: Visually inspects WT and mutant binding pockets side-by-side.
+
+- Lead Optimization Workflow (`lead_opt`):
+  * Designed to run standard property screening and rescoring for a lead series.
+  * Stages:
+    1. Standardize: Normalizes salts and stereochemistry.
+    2. Properties: Computes MW, LogP, TPSA, HBD, and HBA.
+    3. Pesticide-likeness: Evaluates Tice herbicide rule compliance.
+    4. Selectivity: Predicts safety margins across non-target species.
+    5. Resistance: Scores resistance development risk and cross-resistance potential.
+    6. Toxicity: Profiles ecotoxicity endpoints.
+    7. MPO Score: Computes weighted multi-parameter scores and compound ranks.
+
+================================================================================

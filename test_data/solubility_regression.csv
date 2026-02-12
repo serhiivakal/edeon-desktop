@@ -1,0 +1,81 @@
+name,smiles,activity
+Methanol,CO,1.0858
+Ethanol,CCO,0.1053
+Propan-1-ol,CCCO,-0.2857
+Butan-1-ol,CCCCO,-0.8476
+Pentan-1-ol,CCCCCO,-1.2717
+Hexan-1-ol,CCCCCCCO,-2.4361
+Heptan-1-ol,CCCCCCCO,-2.5683
+Ethylene glycol,OCCO,0.6784
+Propylene glycol,CC(O)CO,-0.4373
+Glycerol,OCC(O)CO,0.8310
+Cyclopropanol,OC1CC1,-0.1706
+Cyclobutanol,OC1CCC1,-0.9109
+Cyclopentanol,OC1CCCC1,-1.1774
+Cyclohexanol,OC1CCCCC1,-1.8752
+Benzyl alcohol,OCC1=CC=CC=C1,-1.9152
+Acetic acid,CC(=O)O,-0.0500
+Propionic acid,CCC(=O)O,-0.7020
+Butyric acid,CCCC(=O)O,-0.7159
+Valeric acid,CCCCC(=O)O,-1.0200
+Hexanoic acid,CCCCCC(=O)O,-1.9615
+Methyl acetate,COC(=O)C,-0.4478
+Ethyl acetate,CCOC(=O)C,-0.5609
+Propyl acetate,CCCOC(=O)C,-1.8717
+Butyl acetate,CCCCOC(=O)C,-2.1959
+Acetone,CC(=O)C,-0.6771
+Butanone,CCC(=O)C,-1.0067
+Pentan-2-one,CCCC(=O)C,-1.5235
+Hexan-2-one,CCCCC(=O)C,-1.9800
+Diethyl ether,CCOCC,-0.9696
+Dipropyl ether,CCCOCCC,-2.0751
+Dibutyl ether,CCCCOCCCC,-2.8555
+Tetrahydrofuran,C1CCOC1,-0.8805
+Tetrahydropyran,C1CCOCC1,-1.5481
+1,4-Dioxane,C1COCCO1,-0.7707
+Benzene,C1=CC=CC=C1,-1.9382
+Toluene,CC1=CC=CC=C1,-1.9808
+Ethylbenzene,CCC1=CC=CC=C1,-2.4900
+o-Xylene,CC1=CC=CC=C(C)1,-2.0262
+m-Xylene,CC1=CC=CC(C)=C1,-2.4421
+p-Xylene,CC1=CC=C(C)C=C1,-2.0024
+Chlorobenzene,ClC1=CC=CC=C1,-2.8540
+Bromobenzene,BrC1=CC=CC=C1,-3.1717
+Fluorobenzene,FC1=CC=CC=C1,-2.3067
+Iodobenzene,IC1=CC=CC=C1,-3.6664
+Phenol,OC1=CC=CC=C1,-1.4170
+Aniline,NC1=CC=CC=C1,-1.6083
+Benzoic acid,OC(=O)C1=CC=CC=C1,-2.0120
+Benzonitrile,N#CC1=CC=CC=C1,-1.7437
+Benzamide,NC(=O)C1=CC=CC=C1,-1.0041
+Nitrobenzene,[O-][N+](=O)C1=CC=CC=C1,-2.3260
+Anisole,COC1=CC=CC=C1,-2.2579
+Acetophenone,CC(=O)C1=CC=CC=C1,-2.4453
+Naphthalene,C1=CC=C2C=CC=CC2=C1,-3.1312
+Biphenyl,C1=CC=CC=C1C2=CC=CC=C2,-3.9856
+Pyridine,C1=CC=NC=C1,-1.1207
+Pyrimidine,C1=NC=NC=C1,-0.5623
+Pyrazine,C1=CN=CC=N1,-1.0500
+Pyridazine,C1=CC=NN=C1,-0.3528
+Quinoline,C1=CC=C2C(=C1)C=CC=N2,-3.0095
+Isoquinoline,C1=CC=C2C(=C1)C=NC=C2,-2.5734
+Pyrrole,C1=CNC=C1,-0.9696
+Furan,C1=COC=C1,-0.7556
+Thiophene,C1=CSC=C1,-1.9149
+Imidazole,C1=CN=CN1,-0.5666
+Pyrazole,C1=CNN=C1,-0.4539
+Oxazole,C1=CN=CO1,-0.5759
+Thiazole,C1=CN=CS1,-1.3867
+Indole,C1=CC=C2C(=C1)C=CN2,-2.0468
+Benzofuran,C1=CC=C2C(=C1)C=CO2,-2.9935
+Benzothiophene,C1=CC=C2C(=C1)C=CS2,-3.4719
+Methylamine,CN,0.4929
+Ethylamine,CCN,-0.1980
+Propylamine,CCCN,-0.8214
+Butylamine,CCCCN,-0.5659
+Diethylamine,CCNCC,-0.5992
+Triethylamine,CCN(CC)CC,-2.2607
+Piperidine,C1CCNCC1,-0.8436
+Piperazine,C1CNCCN1,0.3800
+Morpholine,C1COCCN1,-0.5118
+Thiomorpholine,C1CSCCN1,-0.6572

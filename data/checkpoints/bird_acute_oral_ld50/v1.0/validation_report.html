@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edeon Tier-1 Model Validation Report - bird_acute_oral_ld50</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js CDN for interactive visual parity and calibration plots -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: rgba(22, 29, 49, 0.7);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --accent-glow: #3b82f6;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            --header-font: 'Outfit', sans-serif;
+            --body-font: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.1) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            font-family: var(--body-font);
+            padding: 2rem 4rem;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .title-area h1 {
+            font-family: var(--header-font);
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.2rem;
+        }
+
+        .title-area p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .badge {
+            background: var(--accent-gradient);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Dashboard Grid Layout */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(16px);
+            padding: 1.5rem;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent-gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .stat-card:hover::before {
+            opacity: 1;
+        }
+
+        .stat-card h3 {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card .value {
+            font-family: var(--header-font);
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .stat-card .subtext {
+            color: var(--success);
+            font-size: 0.8rem;
+            margin-top: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .stat-card .subtext.warn {
+            color: var(--warning);
+        }
+
+        /* Content Sections */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(16px);
+        }
+
+        .section-card h2 {
+            font-family: var(--header-font);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #3b82f6;
+            padding-left: 0.8rem;
+        }
+
+        /* Charts styling */
+        .chart-container {
+            position: relative;
+            height: 380px;
+            width: 100%;
+        }
+
+        /* Premium Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        th {
+            text-align: left;
+            padding: 0.8rem 1rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+            border-bottom: 2px solid var(--border-color);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        tr {
+            transition: background 0.2s ease;
+        }
+
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+            color: #fff;
+        }
+
+        .coverage-bar-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 9999px;
+            height: 8px;
+            width: 100%;
+            overflow: hidden;
+            margin-top: 4px;
+        }
+
+        .coverage-bar {
+            height: 100%;
+            background: var(--accent-gradient);
+            border-radius: 9999px;
+        }
+
+        .coverage-bar.success {
+            background: var(--success);
+        }
+
+        .coverage-bar.warn {
+            background: var(--warning);
+        }
+
+        .coverage-bar.error {
+            background: var(--error);
+        }
+
+        /* Model Info Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media (max-width: 1200px) {
+            .dashboard-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="title-area">
+            <h1>Tier-1 Model Reference Validation Report</h1>
+            <p>Endpoint ID: <strong>bird_acute_oral_ld50</strong> | Generated at: 2026-06-02T13:49:29.890815Z</p>
+        </div>
+        <div class="badge">Tier-1 Registered</div>
+    </header>
+
+    <!-- Top Stats Row -->
+    <div class="dashboard-grid">
+        <div class="stat-card">
+            <h3>Scaffold RMSE</h3>
+            <div class="value">0.5016</div>
+            <div class="subtext">Primary HPO Target</div>
+        </div>
+        <div class="stat-card">
+            <h3>Scaffold R²</h3>
+            <div class="value">0.3272</div>
+            <div class="subtext">Variance Explained</div>
+        </div>
+        <div class="stat-card">
+            <h3>Conformal Coverage</h3>
+            <div class="value">98.6%</div>
+            
+            <div class="subtext warn">⚠ Empirical Coverage (Target 95%)</div>
+            
+        </div>
+        <div class="stat-card">
+            <h3>Mean CI Width</h3>
+            <div class="value">3.222</div>
+            <div class="subtext">Interval Log-Width</div>
+        </div>
+    </div>
+
+    <!-- Main Content Panel -->
+    <div class="content-grid">
+        
+        <!-- Left: Interactive Parity Plot -->
+        <div class="section-card">
+            <h2>Predicted vs. Measured Parity Plot</h2>
+            <div class="chart-container">
+                <canvas id="parityChart"></canvas>
+            </div>
+        </div>
+        
+        <!-- Right: Partition Metrics -->
+        <div class="section-card">
+            <h2>Evaluation Partition Overview</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Partition</th>
+                        <th>Samples</th>
+                        <th>RMSE</th>
+                        <th>R²</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Training Set</strong></td>
+                        <td>350</td>
+                        <td>0.6255 (CV)</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Calibration Set</strong></td>
+                        <td>75</td>
+                        <td>0.5162</td>
+                        <td>-0.2877</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Final Test Set</strong></td>
+                        <td>74</td>
+                        <td>0.5016</td>
+                        <td>0.3272</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2 style="margin-top: 2rem;">Applicability Domain Breakdown</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>AD Region</th>
+                        <th>Count</th>
+                        <th>RMSE</th>
+                        <th>Coverage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td><strong>IN</strong></td>
+                        <td>68</td>
+                        <td>0.5165</td>
+                        <td>
+                            <div>98.5%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" 
+                                     style="width: 98.52941176470588%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><strong>BORDERLINE</strong></td>
+                        <td>6</td>
+                        <td>0.2815</td>
+                        <td>
+                            <div>100.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" 
+                                     style="width: 100.0%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><strong>OUT</strong></td>
+                        <td>0</td>
+                        <td>nan</td>
+                        <td>
+                            <div>nan%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar error" 
+                                     style="width: nan%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+
+    <!-- Bottom Row: Chemical Classes -->
+    <div class="dashboard-grid" style="grid-template-columns: 1fr; margin-bottom: 2.5rem;">
+        <div class="section-card">
+            <h2>Agrochemical Functional Class Breakdown (Test Set)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Chemical Class</th>
+                        <th>Sample Count</th>
+                        <th>Test RMSE</th>
+                        <th>Empirical Coverage</th>
+                        <th>AD Coverage (In/Borderline)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td><strong>UNCLASSIFIED</strong></td>
+                        <td>51</td>
+                        <td>0.5523</td>
+                        <td>
+                            <div>98.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" 
+                                     style="width: 98.0392156862745%;"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div>100.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" style="width: 100.0%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><strong>TRIAZOLE</strong></td>
+                        <td>12</td>
+                        <td>0.3923</td>
+                        <td>
+                            <div>100.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" 
+                                     style="width: 100.0%;"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div>100.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" style="width: 100.0%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><strong>ORGANOPHOSPHATE</strong></td>
+                        <td>1</td>
+                        <td>0.8439</td>
+                        <td>
+                            <div>100.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" 
+                                     style="width: 100.0%;"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div>100.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" style="width: 100.0%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><strong>TRIAZINE</strong></td>
+                        <td>3</td>
+                        <td>0.2209</td>
+                        <td>
+                            <div>100.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" 
+                                     style="width: 100.0%;"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div>100.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" style="width: 100.0%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><strong>PHENOXYACID</strong></td>
+                        <td>2</td>
+                        <td>0.1938</td>
+                        <td>
+                            <div>100.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" 
+                                     style="width: 100.0%;"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div>100.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" style="width: 100.0%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><strong>STROBILURIN</strong></td>
+                        <td>2</td>
+                        <td>0.2058</td>
+                        <td>
+                            <div>100.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" 
+                                     style="width: 100.0%;"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div>100.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" style="width: 100.0%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><strong>SDHI</strong></td>
+                        <td>2</td>
+                        <td>0.2500</td>
+                        <td>
+                            <div>100.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" 
+                                     style="width: 100.0%;"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div>100.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" style="width: 100.0%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><strong>CARBAMATE</strong></td>
+                        <td>2</td>
+                        <td>0.1906</td>
+                        <td>
+                            <div>100.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" 
+                                     style="width: 100.0%;"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div>100.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" style="width: 100.0%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><strong>DIAMIDE</strong></td>
+                        <td>1</td>
+                        <td>0.0104</td>
+                        <td>
+                            <div>100.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" 
+                                     style="width: 100.0%;"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div>100.0%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" style="width: 100.0%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <div>Edeon Reference Validation Engine | Phase 2 Release Pack</div>
+        <div>Strictly Protected Test Split | SHA-256 Verified</div>
+    </footer>
+
+    <!-- Interactive Chart.js Rendering script -->
+    <script>
+        const ctx = document.getElementById('parityChart').getContext('2d');
+        
+        // Dynamic payload injected by the python builder
+        const yTrue = [3.100995591908401, 3.3521825181113627, 2.056851901219235, 0.39633589457078366, 3.045469820301139, 2.895494237544408, 3.367435014964921, 3.4771212547196626, 3.420288894139953, 0.915649589824486, 3.3010299956639813, 3.1347616671740357, 2.392696953259666, 3.041218871980688, 2.214843848047698, 3.35237549500052, 3.3324384599156054, 3.3521825181113627, 2.6475477653548474, 1.7935185588717277, 3.0146867013818377, 3.6989700043360187, 3.3010299956639813, 1.8512583487190752, 2.244524511570084, 3.197831693328903, 3.3010299956639813, 3.095445858461085, 1.2252785047091646, 3.103461622094705, 3.2686134720237146, 3.3351491738377645, 3.6450507103795715, 2.0349407429031743, 2.412638072825237, 3.3324384599156054, 3.3010299956639813, 3.2432489139568346, 2.8868932224905968, 3.3324384599156054, 3.2984163800612945, 3.0501852725587817, 3.234149446060218, 3.3010299956639813, 3.2038484637462346, 3.3521825181113627, 3.477892221740442, 3.3010299956639813, 3.3521825181113627, 3.250907699700856, 2.8996566681120064, 3.382042678559413, 3.6665179805548807, 3.3521825181113627, 3.3010299956639813, 3.3167342277897935, 3.2801228963023075, 3.3521825181113627, 3.3010299956639813, 3.2038484637462346, 2.112260610953843, 3.3521825181113627, 3.4232755778778814, 3.3521825181113627, 3.3376588910261424, 3.3010299956639813, 3.3010299956639813, 3.051645235778875, 3.1068584644852004, 3.112818831201535, 3.281714970027296, 2.8750612633917, 3.255039112188768, 2.7481880270062002];
+        const yPred = [3.040325823051931, 2.2633507579188823, 2.5962545773483545, 2.0960406696301646, 3.2482547968126765, 3.067341230812702, 2.9585439025433544, 3.186477768261352, 2.796400790040797, 1.7595706169370242, 3.1203044199456946, 2.7490876069249413, 2.665407555792409, 3.1492055677856516, 2.6987421414879407, 3.024309683289223, 2.984407995452373, 2.9350347386559728, 2.615160408724111, 2.589008424045942, 2.8870909168688237, 2.8992793386486335, 2.7174359036660354, 2.7331710304141144, 2.8880011991453287, 2.7479247888672624, 3.122363649659739, 3.2432747579314283, 2.9229480569689676, 2.812272450075136, 3.0761686442738494, 2.9544576279313524, 3.1096483068230976, 3.1336044528595948, 3.0226716557956164, 2.6414281328587075, 3.025801322169278, 2.759445775508591, 2.8293725616605907, 2.956090100558618, 3.001288513394294, 3.05380709123045, 3.121839510485054, 2.9682556493130305, 3.126298725185279, 3.161068619569348, 3.0974230784926595, 2.9476318633978975, 3.1866215759126213, 3.036454264355566, 3.1964689547544074, 3.206065624669999, 3.1813773861596086, 3.195323172786883, 3.0815839658259794, 2.7848391507293258, 3.1654618844950146, 3.2158511123372997, 3.0931846390600346, 2.9366303143484296, 2.8405441289216014, 3.10911158440198, 3.1539826796719996, 2.943415120179892, 2.9283576491832157, 3.2905952947558452, 2.824366585959259, 3.023952555199587, 2.926563254243368, 3.1281035457060113, 2.949236029840689, 3.1312422122441865, 3.167036175726836, 2.7579592448161443];
+        const yLow = [1.040465178711416, 0.647720012031126, 1.8131505152679712, 0.8535367881756968, 1.2003853529192439, 1.0849639400869941, 0.7562590896161083, 1.5572091220211175, 0.44962406617910267, 0.2814233486417361, 1.5005081438531653, 0.45235160495655746, 0.3253864223695575, 1.626175286718757, 0.06915997481618774, 1.3456861261984638, 1.5179936630625415, 1.1129052506646397, 1.0491506488211568, 1.6187664601825693, 1.8324081852404057, 1.6015596216228767, 1.1067233754372756, 1.4115847791552643, 2.096794720072758, 1.2559295734513078, 2.0197890627914528, 1.9576243854262403, 1.0807860439150736, 1.5220508781528337, 1.2175676701909026, 1.7282868496568162, 1.441675742125832, 1.3268359162919068, 1.4479958573794787, 1.5588928659824868, 1.093393466181729, 1.1053169856068576, 1.8699180252226024, 1.7304282267411741, 0.9123517076691963, 1.9250235075893976, 1.727442490145088, 1.413521300062237, 1.459096967754249, 1.0388793361983764, 1.930690290406722, 1.3490929878180635, 2.060956149658349, 1.1219659487732905, 2.0245904976850104, 1.209579914525956, 0.9586555710503557, 1.58347839472597, 1.8865190635203763, 1.886382756056932, 2.360899256225819, 1.870653196306416, 1.8517017851705693, 1.2281695065481366, 0.7534741406708689, 1.1997384202250392, 1.6187941239545314, 1.4367420225694185, 0.5561817172526737, 1.7764352577151348, 0.5506637260807188, 0.8440221066674827, 1.5810563477339685, 1.6581433329984918, 0.8044766132604888, 1.535754736848984, 1.4266203641881399, 0.49632251080735523];
+        const yHigh = [5.040186467392447, 3.8789815038066386, 3.379358639428738, 3.3385445510846323, 5.296124240706109, 5.04971852153841, 5.1608287154706005, 4.815746414501586, 5.143177513902492, 3.2377178852323123, 4.740100696038224, 5.0458236088933255, 5.005428689215261, 4.672235848852546, 5.328324308159694, 4.702933240379982, 4.4508223278422046, 4.757164226647306, 4.181170168627065, 3.559250387909315, 3.9417736484972417, 4.19699905567439, 4.328148431894795, 4.0547572816729645, 3.6792076782178995, 4.239920004283217, 4.2249382365280255, 4.528925130436616, 4.765110070022862, 4.102494021997439, 4.934769618356796, 4.180628406205889, 4.777620871520363, 4.940372989427283, 4.597347454211754, 3.723963399734928, 4.958209178156826, 4.4135745654103244, 3.788827098098579, 4.181751974376062, 5.090225319119392, 4.182590674871502, 4.51623653082502, 4.522989998563824, 4.7935004826163095, 5.28325790294032, 4.264155866578597, 4.5461707389777315, 4.312287002166894, 4.950942579937841, 4.368347411823804, 5.202551334814042, 5.404099201268862, 4.807167950847797, 4.276648868131582, 3.6832955454017196, 3.97002451276421, 4.561049028368183, 4.3346674929494995, 4.645091122148722, 4.927614117172334, 5.018484748578921, 4.689171235389468, 4.450088217790366, 5.300533581113758, 4.804755331796556, 5.098069445837799, 5.203883003731692, 4.272070160752767, 4.598063758413531, 5.093995446420889, 4.72672968763939, 4.9074519872655324, 5.019595978824933];
+        const hoverLabels = ["Cc1nnc(-c2ccccc2)c(=O)n1N", "CCc1cc(C)cc(CC)c1-c1c(OC(=O)C(C)(C)C)n2n(c1=O)CCOCC2", "O=c1c(C(CC(O)c2ccc(-c3ccc(Br)cc3)cc2)c2ccccc2)c(O)oc2ccccc12", "O=c1c(C2CC(c3ccc(-c4ccc(Br)cc4)cc3)Cc3ccccc32)c(O)sc2ccccc12", "O=c1c2cc(F)ccc2nc(-n2cncn2)n1-c1ccc(Cl)cc1Cl", "N#Cc1sc2c(=O)c3ccccc3c(=O)c=2sc1C#N", "CC(C)(C)c1ccc(CSc2cnn(C(C)(C)C)c(=O)c2Cl)cc1", "CCCCc1c(C)[nH]c(NCC)nc1=O", "O=c1ccc(=O)[nH][nH]1", "CCOP(=S)(OCC)Oc1ccc2c(C)c(Cl)c(=O)oc2c1", "Nc1cnn(-c2ccccc2)c(=O)c1Cl", "Cc1cc(=O)[nH]o1", "O=c1ssc(Cl)c1Cl", "COCCOc1cccc2c1c(=O)c(C(=O)O)nn2-c1ccc(Cl)cc1", "CSc1nnc(C(C)(C)C)c(=O)n1N", "CN(C)c1nc(=O)n(C2CCCCC2)c(=O)n1C", "CC(C)Oc1cc(-n2nc(C(C)(C)C)oc2=O)c(Cl)cc1Cl", "COC(=O)CSc1cc(N=c2sc(=O)n3n2CCCC3)c(F)cc1Cl", "CN1CSC(=S)N(C)C1", "CC(=N)NP(=S)(Oc1ccc(Cl)cc1)Oc1ccc(Cl)cc1", "OC(Cc1ccccc1Cl)(Cn1[nH]cnc1=S)C1(Cl)CC1", "Cc1ncc([N+](=O)[O-])n1CCO", "N#Cc1c[nH]cc1-c1cccc2c1OC(F)(F)O2", "c1cc[n+]2c(c1)-c1cccc[n+]1CC2", "CCCCCCCCCCCCCCCC[n+]1ccccc1", "Cn1c(-c2ccccc2)cc(-c2ccccc2)[n+]1C", "CCOC(=O)COc1cc(-c2nn(C)c(OC(F)F)c2Cl)c(F)cc1Cl", "CC(C)(C)C(O)C(Oc1ccc(-c2ccccc2)cc1)n1cncn1", "CCOCn1c(-c2ccc(Cl)cc2)c(C#N)c(Br)c1C(F)(F)F", "CCCCCCCCSC(=O)Oc1cc(Cl)nnc1-c1ccccc1", "Cc1ccc(-c2c(Cl)nc(C#N)n2S(=O)(=O)N(C)C)cc1", "CNc1oc(-c2ccccc2)c(O)c1-c1cccc(C(F)(F)F)c1", "Clc1ccccc1-c1nnc(-c2ccccc2Cl)nn1", "N#Cc1nn(-c2c(Cl)cc(C(F)(F)F)cc2Cl)c(N)c1[S+]([O-])C(F)(F)F", "CC(C1CC1)C(O)(Cn1cncn1)c1ccc(Cl)cc1", "Clc1ccc(C2(Cn3cncn3)CC(Br)CO2)c(Cl)c1", "CCOc1cc(C(C)(C)C)ccc1C1COC(c2c(F)cccc2F)=N1", "Fc1ccc(C2(Cn3cncn3)OC2c2ccccc2Cl)cc1", "OC(Cc1ccccc1Cl)(Cn1cncn1)C1(Cl)CC1", "N#CC(CCc1ccc(Cl)cc1)(Cn1cncn1)c1ccccc1", "CC(C)(C)C(O)(CCc1ccc(Cl)cc1)Cn1cncn1", "CCOc1ccc(C(C)(C)COCc2cccc(Oc3ccccc3)c2)cc1", "CC(C)(C)c1ccc(CCOc2ncnc3ccccc23)cc1", "CCN(Cc1c(F)cccc1Cl)c1c([N+](=O)[O-])cc(C(F)(F)F)cc1[N+](=O)[O-]", "c1ccc(CNc2ncnc3[nH]cnc23)cc1", "CO/C=C(/C(=O)OC)c1ccccc1COc1cccc(C(F)(F)F)n1", "CC(C)C(O)(c1ccc(OC(F)(F)F)cc1)c1cncnc1", "Cc1cccc(C)c1N(Cn1cccn1)C(=O)CCl", "c1ccc(Nc2ccccc2)cc1", "O=[N+]([O-])c1cc(C(F)(F)F)c(Cl)c([N+](=O)[O-])c1Nc1ncc(C(F)(F)F)cc1Cl", "Cc1cc(C2CC2)nc(Nc2ccccc2)n1", "Clc1nc(Cl)nc(Nc2ccccc2Cl)n1", "C#CCOS(=O)OC1CCCCC1Oc1ccc(C(C)(C)C)cc1", "FC(F)(F)c1cccc(OCCCOc2c(Cl)cc(OCC=C(Cl)Cl)cc2Cl)n1", "CO/C=C(/C(=O)OC)c1ccccc1Oc1cc(Oc2ccccc2C#N)ncn1", "CC1COC(Cn2cncn2)(c2ccc(Oc3ccc(Cl)cc3)cc2Cl)O1", "CC(COc1ccc(Oc2ccccc2)cc1)Oc1ccccn1", "Fc1ccc(Oc2ccnc3cc(Cl)cc(Cl)c23)cc1", "CCOC(=O)C(C)Oc1ccc(Oc2nc3ccc(Cl)cc3o2)cc1", "COc1cc(OC)nc(Sc2cccc(Cl)c2C(=O)O)n1", "[O-][n+]1nc(-n2ccnc2)nc2ccc(Cl)cc21", "c1ccc2[nH]c(-c3cscn3)nc2c1", "COC(=O)Nc1nc2ccccc2[nH]1", "CCCCOCCOCCOCc1cc2c(cc1CCC)OCO2", "Cc1cccc2sc3nncn3c12", "CC(C)OC(=O)NC(C(=O)N[C@H](C)c1nc2ccc(F)cc2s1)C(C)C", "CSC(=O)c1cccc2nnsc12", "Cn1cc(C(N)=O)c(C(F)(F)F)n1", "COc1cc(OC)nc(Oc2cccc(Oc3nc(OC)cc(OC)n3)c2C(=O)O)n1", "CCCCCCCCc1c(CC)nc2ncnn2c1N", "COC(=O)c1c(C(F)F)nc(C(F)(F)F)c(C2=NCCS2)c1CC(C)C", "c1coc(-c2nc3ccccc3[nH]2)c1", "Nc1nc(N)nc(NC2CC2)n1", "CCOc1nc(C(Cl)(Cl)Cl)ns1"];
+        
+        // Calculate bounds for parity line
+        const minVal = Math.min(...yTrue, ...yPred) - 0.5;
+        const maxVal = Math.max(...yTrue, ...yPred) + 0.5;
+        
+        // Prepare scatter data
+        const scatterData = yTrue.map((val, idx) => ({
+            x: val,
+            y: yPred[idx],
+            label: hoverLabels[idx],
+            low: yLow[idx],
+            high: yHigh[idx]
+        }));
+        
+        new Chart(ctx, {
+            type: 'scatter',
+            data: {
+                datasets: [
+                    {
+                        label: 'Compounds',
+                        data: scatterData,
+                        backgroundColor: 'rgba(59, 130, 246, 0.7)',
+                        borderColor: '#3b82f6',
+                        borderWidth: 1.5,
+                        pointRadius: 5,
+                        pointHoverRadius: 8
+                    },
+                    {
+                        label: 'Perfect Fit',
+                        data: [{x: minVal, y: minVal}, {x: maxVal, y: maxVal}],
+                        type: 'line',
+                        borderColor: 'rgba(255, 255, 255, 0.25)',
+                        borderWidth: 2,
+                        borderDash: [5, 5],
+                        pointRadius: 0,
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#9ca3af',
+                            font: { family: 'Plus Jakarta Sans' }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const item = context.raw;
+                                if (!item.label) return 'Perfect Fit Line';
+                                return [
+                                    `SMILES: ${item.label}`,
+                                    `Measured: ${item.x.toFixed(3)}`,
+                                    `Predicted: ${item.y.toFixed(3)}`,
+                                    `95% Conformal CI: [${item.low.toFixed(2)}, ${item.high.toFixed(2)}]`
+                                ];
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Measured value_log',
+                            color: '#9ca3af',
+                            font: { family: 'Plus Jakarta Sans', weight: 'bold' }
+                        },
+                        ticks: { color: '#9ca3af' },
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Predicted value_log',
+                            color: '#9ca3af',
+                            font: { family: 'Plus Jakarta Sans', weight: 'bold' }
+                        },
+                        ticks: { color: '#9ca3af' },
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

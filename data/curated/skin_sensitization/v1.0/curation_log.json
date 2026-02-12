@@ -1,0 +1,32 @@
+[
+  {
+    "smiles_original": "COC(=O)Nc1nc2ccccc2n1",
+    "stage": "standardisation",
+    "reason": "parse_failed"
+  },
+  {
+    "smiles_original": "CCO",
+    "stage": "standardisation",
+    "reason": "mw_out_of_range:46.0"
+  },
+  {
+    "smiles_original": "C1CC1",
+    "stage": "standardisation",
+    "reason": "mw_out_of_range:42.0"
+  },
+  {
+    "smiles_original": "COC(=O)Nc1nc2ccccc2n1",
+    "stage": "standardisation",
+    "reason": "parse_failed"
+  },
+  {
+    "smiles_original": "CCO",
+    "stage": "standardisation",
+    "reason": "mw_out_of_range:46.0"
+  },
+  {
+    "smiles_original": "C1CC1",
+    "stage": "standardisation",
+    "reason": "mw_out_of_range:42.0"
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "model_type": "rf",
+  "best_cv_rmse": 1.3977018460302078,
+  "best_params": {
+    "n_estimators": 249,
+    "max_depth": 8,
+    "min_samples_leaf": 7,
+    "min_samples_split": 7,
+    "max_features": 0.5
+  },
+  "n_trials": 1,
+  "cv_folds": 2,
+  "trials_history": [
+    {
+      "trial_num": 0,
+      "value": 1.4314339113525085,
+      "params": {
+        "n_estimators": 216,
+        "max_depth": 26,
+        "min_samples_leaf": 5,
+        "min_samples_split": 12,
+        "max_features": 0.3
+      }
+    }
+  ]
+}

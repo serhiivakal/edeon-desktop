@@ -1,0 +1,40 @@
+{
+  "scaffold": {
+    "train": 350,
+    "cal": 75,
+    "test": 74,
+    "test_to_train_nn_tanimoto_mean": 0.3102757381429083
+  },
+  "random": {
+    "train": 349,
+    "cal": 75,
+    "test": 75,
+    "seed": 42
+  },
+  "time": {
+    "train": 357,
+    "cal": 85,
+    "test": 57,
+    "train_year_max": 2013,
+    "cal_year_range": [
+      2014,
+      2015
+    ],
+    "test_year_range": [
+      2016,
+      2020
+    ],
+    "status": "available"
+  },
+  "hashes": {
+    "scaffold_train": "de62c786dbee5d8f2fff0d248a4d41282d300f724a6519d5dc9b7163a697745d",
+    "scaffold_cal": "fe3ab570ee7f34e1775ccaea5c96f8b0fc0da5521bd30717ced9f83a38307f37",
+    "scaffold_test": "7c163dea71ee9e6b6984de19c6b3960d2547d3e620b077a5a1df3f5c4bb40ea6",
+    "random_train": "2b3e21cae761ebe456c7efc5dd901ba9b386d6b5a442f65d8223061af09b3bc4",
+    "random_cal": "4f35fe91c38c70f6ebb2e89b9e348810d93cbecce3003c1b40ff4ebcf18bef6b",
+    "random_test": "55f1a09f4aef9f536b5a2bd219b93bf0c933c902ecc253ac73f55818c4f10c9d",
+    "time_train": "a406605d327b88dbc316349f3d67d978292ec18261e72c8c7f830200d9d28b38",
+    "time_cal": "acad9e026fb989056887ded28b5d8ef9bbf66058a4de337fed69b3f713f32da9",
+    "time_test": "6ca87dc343ce09129f3946189c4e4f87694ce40450555bc96a96cace848f4d76"
+  }
+}

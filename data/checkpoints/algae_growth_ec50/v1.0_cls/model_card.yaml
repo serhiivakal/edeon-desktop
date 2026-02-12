@@ -1,0 +1,44 @@
+model_id: t1_algae_growth_ec50_v1.0_cls
+name: Edeon Tier-1 Reference Algae Growth Ec50 (Classification)
+version: v1.0_cls
+tier: 1
+endpoint: algae_growth_ec50
+description: Binary classification QSAR model combining Random Forest, XGBoost, and
+  a 5-seed Chemprop D-MPNN ensemble with inductive conformal prediction sets. Predicts
+  toxic/nontoxic with calibrated probabilities and a Tanimoto k-NN applicability domain
+  auditor.
+intended_use: Tier-1 binary hazard classification for regulatory screening.
+not_intended_for: []
+training_data:
+  n_compounds: 76
+  sources:
+  - Phase 1 Curated Agrochemical Dataset
+  sha256: null
+  split_strategy: scaffold
+  license: null
+performance:
+  metrics:
+    balanced_accuracy: 0.5
+    auc_roc: 0.27999999999999997
+    f1: 0.47058823529411764
+    ece: 0.3529814088782338
+  test_set_n: 15
+  cv_folds: 5
+  calibration_coverage_95: 0.9333333333333333
+applicability_domain:
+  method: tanimoto_knn
+  threshold: 0.9041051854401448
+  k: 5
+  training_set_size: 76
+  notes: null
+uncertainty_method: inductive_conformal_classification
+known_failure_modes:
+- Compounds containing heavy atoms outside H, C, N, O, P, S, F, Cl, Br, I
+- Extremely macrocyclic compounds or highly fragmented mixtures
+references:
+- Vovk, V., Gammerman, A., & Shafer, G. (2005). Algorithmic learning in a random world.
+- Norinder, U., et al. (2014). Introducing conformal prediction in predictive modeling.
+license: Proprietary
+created: '2026-06-18T19:00:40.023566'
+authors:
+- Edeon AI Team

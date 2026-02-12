@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edeon Tier-1 Model Validation Report - {{ endpoint_id }}</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js CDN for interactive visual parity and calibration plots -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: rgba(22, 29, 49, 0.7);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --accent-glow: #3b82f6;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            --header-font: 'Outfit', sans-serif;
+            --body-font: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.1) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            font-family: var(--body-font);
+            padding: 2rem 4rem;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .title-area h1 {
+            font-family: var(--header-font);
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.2rem;
+        }
+
+        .title-area p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        .badge {
+            background: var(--accent-gradient);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Dashboard Grid Layout */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(16px);
+            padding: 1.5rem;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent-gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .stat-card:hover::before {
+            opacity: 1;
+        }
+
+        .stat-card h3 {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card .value {
+            font-family: var(--header-font);
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .stat-card .subtext {
+            color: var(--success);
+            font-size: 0.8rem;
+            margin-top: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .stat-card .subtext.warn {
+            color: var(--warning);
+        }
+
+        /* Content Sections */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(16px);
+        }
+
+        .section-card h2 {
+            font-family: var(--header-font);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #3b82f6;
+            padding-left: 0.8rem;
+        }
+
+        /* Charts styling */
+        .chart-container {
+            position: relative;
+            height: 380px;
+            width: 100%;
+        }
+
+        /* Premium Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        th {
+            text-align: left;
+            padding: 0.8rem 1rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+            border-bottom: 2px solid var(--border-color);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        tr {
+            transition: background 0.2s ease;
+        }
+
+        tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+            color: #fff;
+        }
+
+        .coverage-bar-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 9999px;
+            height: 8px;
+            width: 100%;
+            overflow: hidden;
+            margin-top: 4px;
+        }
+
+        .coverage-bar {
+            height: 100%;
+            background: var(--accent-gradient);
+            border-radius: 9999px;
+        }
+
+        .coverage-bar.success {
+            background: var(--success);
+        }
+
+        .coverage-bar.warn {
+            background: var(--warning);
+        }
+
+        .coverage-bar.error {
+            background: var(--error);
+        }
+
+        /* Model Info Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media (max-width: 1200px) {
+            .dashboard-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="title-area">
+            <h1>Tier-1 Model Reference Validation Report</h1>
+            <p>Endpoint ID: <strong>{{ endpoint_id }}</strong> | Generated at: {{ timestamp }}</p>
+        </div>
+        <div class="badge">Tier-1 Registered</div>
+    </header>
+
+    <!-- Top Stats Row -->
+    <div class="dashboard-grid">
+        <div class="stat-card">
+            <h3>Scaffold RMSE</h3>
+            <div class="value">{{ "%.4f"|format(overall.rmse) }}</div>
+            <div class="subtext">Primary HPO Target</div>
+        </div>
+        <div class="stat-card">
+            <h3>Scaffold R²</h3>
+            <div class="value">{{ "%.4f"|format(overall.r2) }}</div>
+            <div class="subtext">Variance Explained</div>
+        </div>
+        <div class="stat-card">
+            <h3>Conformal Coverage</h3>
+            <div class="value">{{ "%.1f"|format(conformal.overall_coverage * 100) }}%</div>
+            {% if 0.93 <= conformal.overall_coverage <= 0.97 %}
+            <div class="subtext">✓ Fully Calibrated (95% CI)</div>
+            {% else %}
+            <div class="subtext warn">⚠ Empirical Coverage (Target 95%)</div>
+            {% endif %}
+        </div>
+        <div class="stat-card">
+            <h3>Mean CI Width</h3>
+            <div class="value">{{ "%.3f"|format(conformal.mean_width) }}</div>
+            <div class="subtext">Interval Log-Width</div>
+        </div>
+    </div>
+
+    {% if overall.nll is defined and overall.nll is not none %}
+    <!-- Heteroscedastic Stats Row -->
+    <div class="dashboard-grid" style="grid-template-columns: repeat(2, 1fr); margin-bottom: 2.5rem;">
+        <div class="stat-card">
+            <h3>Test Negative Log-Likelihood (NLL)</h3>
+            <div class="value">{{ "%.4f"|format(overall.nll) }}</div>
+            <div class="subtext">Primary Evaluation Metric (Log10 Days)</div>
+        </div>
+        <div class="stat-card">
+            <h3>Observed vs. Predicted σ Correlation</h3>
+            <div class="value">{{ "%.4f"|format(overall.spearman_sigma) if overall.spearman_sigma is not none else "--" }}</div>
+            <div class="subtext">Spearman ρ (Target ≥ 0.3 for compounds with ≥ 3 records)</div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Main Content Panel -->
+    <div class="content-grid">
+        
+        <!-- Left: Interactive Parity Plot -->
+        <div class="section-card">
+            <h2>Predicted vs. Measured Parity Plot</h2>
+            <div class="chart-container">
+                <canvas id="parityChart"></canvas>
+            </div>
+        </div>
+        
+        <!-- Right: Partition Metrics -->
+        <div class="section-card">
+            <h2>Evaluation Partition Overview</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Partition</th>
+                        <th>Samples</th>
+                        <th>RMSE</th>
+                        <th>R²</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Training Set</strong></td>
+                        <td>{{ train_samples }}</td>
+                        <td>{{ "%.4f"|format(cv_train_rmse) }} (CV)</td>
+                        <td>--</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Calibration Set</strong></td>
+                        <td>{{ cal_samples }}</td>
+                        <td>{{ "%.4f"|format(cal_rmse) }}</td>
+                        <td>{{ "%.4f"|format(cal_r2) }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Final Test Set</strong></td>
+                        <td>{{ test_samples }}</td>
+                        <td>{{ "%.4f"|format(overall.rmse) }}</td>
+                        <td>{{ "%.4f"|format(overall.r2) }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h2 style="margin-top: 2rem;">Applicability Domain Breakdown</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>AD Region</th>
+                        <th>Count</th>
+                        <th>RMSE</th>
+                        <th>Coverage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for region, stats in conformal.regions.items() %}
+                    <tr>
+                        <td><strong>{{ region.upper() }}</strong></td>
+                        <td>{{ stats.count }}</td>
+                        <td>{{ "%.4f"|format(stats.rmse) }}</td>
+                        <td>
+                            <div>{{ "%.1f"|format(stats.coverage * 100) }}%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar {% if stats.coverage >= 0.92 %}success{% elif stats.coverage >= 0.85 %}warn{% else %}error{% endif %}" 
+                                     style="width: {{ stats.coverage * 100 }}%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+
+    <!-- Bottom Row: Chemical Classes -->
+    <div class="dashboard-grid" style="grid-template-columns: 1fr; margin-bottom: 2.5rem;">
+        <div class="section-card">
+            <h2>Agrochemical Functional Class Breakdown (Test Set)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Chemical Class</th>
+                        <th>Sample Count</th>
+                        <th>Test RMSE</th>
+                        <th>Empirical Coverage</th>
+                        <th>AD Coverage (In/Borderline)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for class_name, stats in classes.items() %}
+                    <tr>
+                        <td><strong>{{ class_name.upper() }}</strong></td>
+                        <td>{{ stats.count }}</td>
+                        <td>{{ "%.4f"|format(stats.rmse) }}</td>
+                        <td>
+                            <div>{{ "%.1f"|format(stats.coverage * 100) }}%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar {% if stats.coverage >= 0.90 %}success{% elif stats.coverage >= 0.80 %}warn{% else %}error{% endif %}" 
+                                     style="width: {{ stats.coverage * 100 }}%;"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div>{{ "%.1f"|format(stats.ad_coverage * 100) }}%</div>
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar success" style="width: {{ stats.ad_coverage * 100 }}%;"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    {% if subset_metrics %}
+    <!-- Subset Metrics Row -->
+    <div class="dashboard-grid" style="grid-template-columns: 1fr; margin-bottom: 2.5rem;">
+        <div class="section-card">
+            <h2>Subset Performance Breakdown (Test Set)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subset</th>
+                        <th>Sample Count</th>
+                        <th>Test RMSE</th>
+                        <th>Test R²</th>
+                        <th>Empirical Coverage</th>
+                        <th>Mean CI Width</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for subset_name, stats in subset_metrics.items() %}
+                    <tr>
+                        <td><strong>{{ subset_name.upper().replace('_', ' ') }}</strong></td>
+                        <td>{{ stats.count }}</td>
+                        <td>{{ "%.4f"|format(stats.rmse) if stats.rmse is not none else "--" }}</td>
+                        <td>{{ "%.4f"|format(stats.r2) if stats.r2 is not none else "--" }}</td>
+                        <td>
+                            <div>{{ "%.1f"|format(stats.coverage * 100) if stats.coverage is not none else "--" }}%</div>
+                            {% if stats.coverage is not none %}
+                            <div class="coverage-bar-container">
+                                <div class="coverage-bar {% if stats.coverage >= 0.90 %}success{% elif stats.coverage >= 0.80 %}warn{% else %}error{% endif %}" 
+                                     style="width: {{ stats.coverage * 100 }}%;"></div>
+                            </div>
+                            {% endif %}
+                        </td>
+                        <td>{{ "%.3f"|format(stats.mean_width) if stats.mean_width is not none else "--" }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endif %}
+
+    <footer>
+        <div>Edeon Reference Validation Engine | Phase 2 Release Pack</div>
+        <div>Strictly Protected Test Split | SHA-256 Verified</div>
+    </footer>
+
+    <!-- Interactive Chart.js Rendering script -->
+    <script>
+        const ctx = document.getElementById('parityChart').getContext('2d');
+        
+        // Dynamic payload injected by the python builder
+        const yTrue = {{ y_true_raw | safe }};
+        const yPred = {{ y_pred_raw | safe }};
+        const yLow = {{ y_low_raw | safe }};
+        const yHigh = {{ y_high_raw | safe }};
+        const hoverLabels = {{ hover_labels | safe }};
+        
+        // Calculate bounds for parity line
+        const minVal = Math.min(...yTrue, ...yPred) - 0.5;
+        const maxVal = Math.max(...yTrue, ...yPred) + 0.5;
+        
+        // Prepare scatter data
+        const scatterData = yTrue.map((val, idx) => ({
+            x: val,
+            y: yPred[idx],
+            label: hoverLabels[idx],
+            low: yLow[idx],
+            high: yHigh[idx]
+        }));
+        
+        new Chart(ctx, {
+            type: 'scatter',
+            data: {
+                datasets: [
+                    {
+                        label: 'Compounds',
+                        data: scatterData,
+                        backgroundColor: 'rgba(59, 130, 246, 0.7)',
+                        borderColor: '#3b82f6',
+                        borderWidth: 1.5,
+                        pointRadius: 5,
+                        pointHoverRadius: 8
+                    },
+                    {
+                        label: 'Perfect Fit',
+                        data: [{x: minVal, y: minVal}, {x: maxVal, y: maxVal}],
+                        type: 'line',
+                        borderColor: 'rgba(255, 255, 255, 0.25)',
+                        borderWidth: 2,
+                        borderDash: [5, 5],
+                        pointRadius: 0,
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#9ca3af',
+                            font: { family: 'Plus Jakarta Sans' }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const item = context.raw;
+                                if (!item.label) return 'Perfect Fit Line';
+                                return [
+                                    `SMILES: ${item.label}`,
+                                    `Measured: ${item.x.toFixed(3)}`,
+                                    `Predicted: ${item.y.toFixed(3)}`,
+                                    `95% Conformal CI: [${item.low.toFixed(2)}, ${item.high.toFixed(2)}]`
+                                ];
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Measured value_log',
+                            color: '#9ca3af',
+                            font: { family: 'Plus Jakarta Sans', weight: 'bold' }
+                        },
+                        ticks: { color: '#9ca3af' },
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Predicted value_log',
+                            color: '#9ca3af',
+                            font: { family: 'Plus Jakarta Sans', weight: 'bold' }
+                        },
+                        ticks: { color: '#9ca3af' },
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

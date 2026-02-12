@@ -1,0 +1,88 @@
+dataset_id: edeon-rat-acute-oral-ld50-v1.0
+endpoint: rat_acute_oral_ld50
+version: 1.0.0
+created: '2026-06-20T07:16:43Z'
+created_by: edeon-data-pipeline
+sources:
+- name: NICEATM ICE / CATMoS
+  citation: Mansouri K, et al. (2021). Environ Health Perspect 129:47013.
+  doi: 10.1289/EHP8495
+  url: https://doi.org/10.1289/EHP8495
+  license: Public Domain (US Government)
+  access_date: '2026-05-30'
+  raw_records: 8994
+inclusion_criteria:
+- In vivo rat acute oral toxicity records only (LD50)
+- NICEATM ICE / CATMoS compiled inventory
+exclusion_criteria:
+- Mixtures, formulations, or records with missing structures
+- Non-positive numeric values (cannot log-transform)
+- Compounds containing atoms outside default organic allowlist
+standardisation:
+  tool: chembl_structure_pipeline
+  version: 1.2.4
+  tautomer: rdkit-canonical
+  atom_allowlist:
+  - H
+  - B
+  - C
+  - N
+  - O
+  - F
+  - Si
+  - P
+  - S
+  - Cl
+  - Se
+  - Br
+  - I
+  mw_range:
+  - 50.0
+  - 1500.0
+activity:
+  units_canonical: mg/kg bw
+  log_transform: log10_molar
+  aggregation: geometric_mean
+  censored_handling: flagged_kept
+curation_summary:
+  raw_records: 8994
+  after_parse: 6709
+  after_standardisation: 6707
+  after_filter: 6707
+  after_aggregation: 6396
+  rejection_rate: 0.25428063153213254
+splits:
+  scaffold:
+    train: 4480
+    cal: 960
+    test: 956
+    test_to_train_nn_tanimoto_mean: 0.3675429860573271
+  random:
+    train: 4477
+    cal: 959
+    test: 960
+    seed: 42
+  time:
+    train: 0
+    cal: 0
+    test: 0
+    train_year_max: null
+    cal_year_range: null
+    test_year_range: null
+    status: not_available
+known_biases:
+- Over-represents industrial chemicals and legacy pesticide compounds relative to
+  modern pesticide discovery chemistry.
+intended_use: Training and benchmarking Tier-1 QSAR rat acute oral LD50 prediction
+  models.
+not_intended_for:
+- Direct regulatory dossier submission without supplementary dossier review
+- Quantitative human risk assessment
+sha256:
+  scaffold_train: 197c1ae35e0b71d311cac0de4d4861e02405931513d9ff44a2dc338d8ee1b28b
+  scaffold_cal: 7556c0147519fcd39068bfdf8bb208fd9a02bcd3b4c0ccb9db6cb481848c43ba
+  scaffold_test: ca100a636d48b2737ed105ffa5a80529492f000b1fc5a674c48f2ecdf83175b7
+  random_train: 2c1f2c514c738f2ed20c6e75ca2c90865cfa0aadbcc3e55d1715da054f6c47ae
+  random_cal: 0a6286c35e60d29fa8dd0cbeb98e9ce6003842fc8ee3360ae21b9149b96d8a9a
+  random_test: 43c015beea7aa4f8f3a8b64b57c32a88cb4d6fc5ddbaff4a50d88af058ad2687
+  curated_parquet: 1a13a64f01483036fb8ded6f98c0e795910884bc854e04e49bf7066423210a00

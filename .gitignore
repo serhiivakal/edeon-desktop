@@ -21,3 +21,27 @@ Thumbs.db
 
 # Tauri
 src-tauri/gen/
+
+# Python & Temporary Files
+__pycache__/
+*.pyc
+*.egg-info/
+*.db-wal
+*.db-shm
+*.log
+*_out.txt
+*_err.txt
+err.log
+out.log
+status_*.txt
+test_err.txt
+test_out.txt
+workflow_err.txt
+workflow_res.txt
+# Runtime & Docking Cache & Bulky Raw Data Dumps
+data/docking/cache/
+data/cache/
+data/raw/
+
+
+

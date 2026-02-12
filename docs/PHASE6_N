@@ -1,0 +1,24 @@
+# Edeon Phase 6 — Engineering Fixes Implementation Plan
+
+We are implementing Phase 6 of Edeon:
+1. **Bioisostere Engine**: Proper SMARTS-transformation library backed by SQLite (derived from SwissBioisostere, mmpdb-derived rules from ChEMBL, and manual rules) with computed property deltas using Tier-1 backends.
+2. **3D Docking**: Actual AutoDock Vina docking against loaded receptor structures with user-defined or auto-detected binding boxes and optional GNINA support.
+
+## Task Checklist
+- [ ] Scaffold bioisostere engine project (`python/edeon_bioisostere/`)
+- [ ] Implement transformation rule schema (`python/edeon_bioisostere/schema.py`)
+- [ ] Build SwissBioisostere, mmpdb, and manual rule builder (`python/edeon_bioisostere/library_builder.py`)
+- [ ] Compile SQLite database and library loader (`python/edeon_bioisostere/library_loader.py`)
+- [ ] Implement transformation engine (`python/edeon_bioisostere/transformation_engine.py`)
+- [ ] Implement property delta calculator (`python/edeon_bioisostere/property_delta.py`)
+- [ ] Expose bioisostere suggest IPC command
+- [ ] Scaffold docking service project (`python/edeon_docking/`)
+- [ ] Implement receptor and ligand preparation (`python/edeon_docking/receptor_prep.py`, `python/edeon_docking/ligand_prep.py`)
+- [ ] Implement box detection and Vina/GNINA runners (`python/edeon_docking/box_detection.py`, `python/edeon_docking/vina_runner.py`, `python/edeon_docking/gnina_runner.py`)
+- [ ] Bundle Vina binaries and pre-prepare preset receptors
+- [ ] Expose docking run IPC command
+- [ ] Build Bioisostere Carousel & ranking controls frontend
+- [ ] Build Docking Dialog & Pose List frontend
+- [ ] Remove fake-docking remnants
+- [ ] Write smoke/integration tests and CI workflow
+- [ ] Create Phase 6 documentation files

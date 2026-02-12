@@ -1,0 +1,98 @@
+{
+  "endpoint_id": "bird_acute_oral_ld50",
+  "timestamp": "2026-06-02T13:49:29.890815Z",
+  "train_samples": 350,
+  "cal_samples": 75,
+  "test_samples": 74,
+  "cv_train_rmse": 0.6255170012391135,
+  "cal_rmse": 0.5162227293037975,
+  "cal_r2": -0.28769912027756694,
+  "overall": {
+    "rmse": 0.5015870589286371,
+    "mae": 0.37785764212655826,
+    "r2": 0.32719488339465386,
+    "pearson": 0.612468484683259,
+    "spearman": 0.34946202876756427,
+    "count": 74
+  },
+  "conformal": {
+    "overall_coverage": 0.9864864864864865,
+    "mean_width": 3.2219232981269426,
+    "regions": {
+      "in": {
+        "count": 68,
+        "rmse": 0.5165259858845638,
+        "coverage": 0.9852941176470589,
+        "mean_width": 3.179166767527075
+      },
+      "borderline": {
+        "count": 6,
+        "rmse": 0.28145169812744425,
+        "coverage": 1.0,
+        "mean_width": 3.706497311592102
+      },
+      "out": {
+        "count": 0,
+        "rmse": NaN,
+        "coverage": NaN,
+        "mean_width": NaN
+      }
+    }
+  },
+  "classes": {
+    "unclassified": {
+      "count": 51,
+      "rmse": 0.5522663375129078,
+      "coverage": 0.9803921568627451,
+      "ad_coverage": 1.0
+    },
+    "triazole": {
+      "count": 12,
+      "rmse": 0.39230756651107784,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    },
+    "organophosphate": {
+      "count": 1,
+      "rmse": 0.8439210271125382,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    },
+    "triazine": {
+      "count": 3,
+      "rmse": 0.22086165891443799,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    },
+    "phenoxyacid": {
+      "count": 2,
+      "rmse": 0.1938057732064881,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    },
+    "strobilurin": {
+      "count": 2,
+      "rmse": 0.20576817322850088,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    },
+    "sdhi": {
+      "count": 2,
+      "rmse": 0.24999912287065995,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    },
+    "carbamate": {
+      "count": 2,
+      "rmse": 0.190561732789096,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    },
+    "diamide": {
+      "count": 1,
+      "rmse": 0.01043470090813603,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    }
+  }
+}

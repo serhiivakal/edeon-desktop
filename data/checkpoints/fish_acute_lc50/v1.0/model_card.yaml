@@ -1,0 +1,45 @@
+model_id: t1_fish_acute_lc50_v1.0
+name: Edeon Tier-1 Reference Fish Acute Lc50
+version: v1.0
+tier: 1
+endpoint: fish_acute_lc50
+description: High-fidelity reference QSAR model combining Random Forest, XGBoost,
+  and a 5-seed Chemprop D-MPNN ensemble. Features split conformal prediction intervals
+  (95%) and a Tanimoto k-NN applicability domain auditor.
+intended_use: Tier-1 high-precision prediction of ecotoxicological hazard for regulatory
+  screening.
+not_intended_for: []
+training_data:
+  n_compounds: 319
+  sources:
+  - Phase 1 Curated Agrochemical Dataset
+  sha256: null
+  split_strategy: scaffold
+  license: null
+performance:
+  metrics:
+    rmse: 0.9540774827814891
+    r2: 0.3566709338781595
+    mae: 0.7345500374327835
+  test_set_n: 66
+  cv_folds: 5
+  calibration_coverage_95: 0.9393939393939394
+applicability_domain:
+  method: tanimoto_knn
+  threshold: 0.827187392905814
+  k: 5
+  training_set_size: 319
+  notes: null
+uncertainty_method: ensemble_variance_scaled
+known_failure_modes:
+- Compounds containing heavy atoms outside H, C, N, O, P, S, F, Cl, Br, I
+- Extremely macrocyclic compounds or highly fragmented mixtures
+references:
+- Bemis, G. W., & Murcko, M. A. (1996). The properties of known drugs. 1. Molecular
+  frameworks. J. Med. Chem.
+- Vovk, V., Gammerman, A., & Shafer, G. (2005). Algorithmic learning in a random world.
+  Springer Science & Business Media.
+license: Proprietary
+created: '2026-06-01T15:31:00.657457'
+authors:
+- Edeon AI Team

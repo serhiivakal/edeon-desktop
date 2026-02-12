@@ -1,0 +1,23 @@
+accelerator: cpu
+config:
+  batch_size: 50
+  depth: 5
+  dropout: 0.058277716052876946
+  epochs: 50
+  ffn_hidden_size: 300
+  ffn_num_layers: 1
+  hidden_size: 500
+  hpo_trials: 20
+mean_val_rmse: 0.8225529381850201
+seed_val_losses:
+  0: 0.8237262945181938
+  1: 0.8231734491767875
+  2: 0.7934774911730635
+  3: 0.8572394676866854
+  4: 0.8151479883703705
+seeds:
+- 0
+- 1
+- 2
+- 3
+- 4

@@ -1,0 +1,80 @@
+import math
+from typing import Dict, Any, List
+from edeon_models.registry import BackendRegistry
+from edeon_models.endpoints import Endpoint
+from .schema import EndpointDelta, PredictionValue
+
+class PropertyDeltaCalculator:
+    """Computes predicted property deltas via the registered Tier-1 backends."""
+
+    def __init__(self, registry: BackendRegistry, endpoints: List[str] = None):
+        self._registry = registry
+        self._endpoints = endpoints or [
+            "bee_acute_oral_ld50",
+            "fish_acute_lc50",
+            "daphnia_acute_ec50",
+            "rat_acute_oral_ld50",
+            "skin_sensitization",
+            "mutagenicity_ames",
+            "soil_dt50",
+            "bcf",
+            "photostability_class"
+        ]
+
+    def predict_both(self, original_smiles: str, candidate_smiles: str) -> List[EndpointDelta]:
+        """Returns a list of EndpointDelta objects comparing original and candidate predictions."""
+        deltas = []
+        
+        for ep_str in self._endpoints:
+            try:
+                ep = Endpoint(ep_str)
+                backend = self._registry.get(ep)
+                
+                # Predict for original
+                orig_preds = backend.predict([original_smiles])
+                # Predict for candidate
+                cand_preds = backend.predict([candidate_smiles])
+                
+                if not orig_preds or not cand_preds:
+                    continue
+                    
+                orig = orig_preds[0]
+                cand = cand_preds[0]
+                
+                # Extract numerical value/probability
+                orig_val = orig.value if hasattr(orig, 'value') else 0.0
+                cand_val = cand.value if hasattr(cand, 'value') else 0.0
+                
+                # Check for log space delta calculation
+                # If endpoint is a dose/concentration endpoint, compute delta in log space to avoid scale artifacts
+                is_log_space = "lc50" in ep_str or "ld50" in ep_str or "ec50" in ep_str or "dt50" in ep_str
+                if is_log_space and orig_val > 0 and cand_val > 0:
+                    delta_val = math.log10(cand_val) - math.log10(orig_val)
+                else:
+                    delta_val = cand_val - orig_val
+                    
+                # Applicability Domain status
+                orig_ad = orig.ad_status.value if hasattr(orig.ad_status, 'value') else str(orig.ad_status)
+                cand_ad = cand.ad_status.value if hasattr(cand.ad_status, 'value') else str(cand.ad_status)
+                
+                # AD Warning: candidate is OUT while original was IN
+                ad_warning = (orig_ad == "IN" and cand_ad != "IN")
+                
+                deltas.append(EndpointDelta(
+                    endpoint=ep_str,
+                    original_value=orig_val,
+                    original_ci_lower=getattr(orig, 'ci_lower', None),
+                    original_ci_upper=getattr(orig, 'ci_upper', None),
+                    original_ad_status=orig_ad,
+                    transformed_value=cand_val,
+                    transformed_ci_lower=getattr(cand, 'ci_lower', None),
+                    transformed_ci_upper=getattr(cand, 'ci_upper', None),
+                    transformed_ad_status=cand_ad,
+                    delta=delta_val,
+                    ad_warning=ad_warning
+                ))
+            except Exception:
+                # Fallback if endpoint backend is not registered
+                continue
+                
+        return deltas

@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "build_date": "2026-06-02",
+  "rule_counts": {
+    "manual_curation": 83,
+    "swissbioisostere": 12,
+    "mmpdb_chembl_approved": 21,
+    "total": 116
+  }
+}

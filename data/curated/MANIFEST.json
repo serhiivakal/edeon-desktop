@@ -1,0 +1,793 @@
+{
+  "generator": "edeon-release-pipeline",
+  "version": "1.0.0",
+  "release_date": "2026-06-20T07:16:45Z",
+  "endpoints": {
+    "algae_growth_ec50": {
+      "dataset_id": "edeon-algae-growth-ec50-v1.0",
+      "version": "1.0.0",
+      "license": "Public Domain (US Government)",
+      "citation": "US EPA ECOTOX database",
+      "doi": "10.2307/193988",
+      "url": "https://cfpub.epa.gov/ecotox/",
+      "compounds_count": 108
+    },
+    "bcf": {
+      "dataset_id": "edeon-bcf-v1.0",
+      "version": "1.0.0",
+      "license": "MIT License",
+      "citation": "OPERA BCF training and testing datasets",
+      "doi": "10.1186/s13321-018-0263-1",
+      "url": "https://github.com/NIEHS/OPERA",
+      "compounds_count": 606
+    },
+    "bee_acute_contact_ld50": {
+      "dataset_id": "edeon-bee-acute-contact-ld50-v1.0",
+      "version": "1.0.0",
+      "license": "CC BY-NC 4.0",
+      "citation": "Adamczyk J, Poziemski J, Siedlecki P (2025). Sci Data 12:5.",
+      "doi": "10.1038/s41597-024-04232-w",
+      "url": "https://zenodo.org/records/11062076",
+      "compounds_count": 572
+    },
+    "bee_acute_oral_ld50": {
+      "dataset_id": "edeon-bee-acute-oral-ld50-v1.0",
+      "version": "1.0.0",
+      "license": "CC BY-NC 4.0",
+      "citation": "Adamczyk J, Poziemski J, Siedlecki P (2025). Sci Data 12:5.",
+      "doi": "10.1038/s41597-024-04232-w",
+      "url": "https://zenodo.org/records/11062076",
+      "compounds_count": 268
+    },
+    "bird_acute_oral_ld50": {
+      "dataset_id": "edeon-bird-acute-oral-ld50-v1.0",
+      "version": "1.0.0",
+      "license": "Public Domain (US Government)",
+      "citation": "US EPA ECOTOX database",
+      "doi": "10.2307/193988",
+      "url": "https://cfpub.epa.gov/ecotox/",
+      "compounds_count": 499
+    },
+    "daphnia_acute_ec50": {
+      "dataset_id": "edeon-daphnia-acute-ec50-v1.0",
+      "version": "1.0.0",
+      "license": "Public Domain (US Government)",
+      "citation": "US EPA ECOTOX database",
+      "doi": "10.2307/193988",
+      "url": "https://cfpub.epa.gov/ecotox/",
+      "compounds_count": 259
+    },
+    "earthworm_acute_lc50": {
+      "dataset_id": "edeon-earthworm-acute-lc50-v1.0",
+      "version": "1.0.0",
+      "license": "Creative Commons Attribution-NonCommercial-NoDerivs 3.0",
+      "citation": "Kotli M, Piir G, Maran U (2024). J. Hazard. Mater. 461:132577.",
+      "doi": "10.15152/QDB.258",
+      "url": "https://qsardb.org/repository/handle/10967/258",
+      "compounds_count": 10
+    },
+    "fish_acute_lc50": {
+      "dataset_id": "edeon-fish-acute-lc50-v1.0",
+      "version": "1.0.0",
+      "license": "Public Domain (US Government)",
+      "citation": "US EPA ECOTOX database",
+      "doi": "10.2307/193988",
+      "url": "https://cfpub.epa.gov/ecotox/",
+      "compounds_count": 454
+    },
+    "rat_acute_oral_ld50": {
+      "dataset_id": "edeon-rat-acute-oral-ld50-v1.0",
+      "version": "1.0.0",
+      "license": "Public Domain (US Government)",
+      "citation": "Mansouri K, et al. (2021). Environ Health Perspect 129:47013.",
+      "doi": "10.1289/EHP8495",
+      "url": "https://doi.org/10.1289/EHP8495",
+      "compounds_count": 6396
+    },
+    "skin_sensitization": {
+      "dataset_id": "edeon-skin-sensitization-v1.0",
+      "version": "1.0.0",
+      "license": "Public Domain (US Government Work)",
+      "citation": "NICEATM LLNA Database. National Toxicology Program Interagency Center for the Evaluation of Alternative Toxicological Methods.",
+      "doi": null,
+      "url": "https://ntp.niehs.nih.gov/whatwestudy/topics/toxico/niceatm",
+      "compounds_count": 132
+    },
+    "soil_dt50": {
+      "dataset_id": "edeon-soil-dt50-v1.0",
+      "version": "1.0.0",
+      "license": "Creative Commons Attribution 4.0 International",
+      "citation": "Wicker J, Fenner K, Ellis L, Wackett L, Griebel S (2016). enviPath - The environmental fate pathway database. Nucleic Acids Res. 44(D1):D502-D508.",
+      "doi": "10.1093/nar/gkw974",
+      "url": "https://envipath.org",
+      "compounds_count": 328
+    },
+    "soil_koc": {
+      "dataset_id": "edeon-soil-koc-v1.0",
+      "version": "1.0.0",
+      "license": "MIT License",
+      "citation": "OPERA Soil Koc training and testing datasets",
+      "doi": "10.1186/s13321-018-0263-1",
+      "url": "https://github.com/NIEHS/OPERA",
+      "compounds_count": 714
+    }
+  },
+  "files": {
+    "algae_growth_ec50/v1.0/curated.csv": {
+      "size_bytes": 41849,
+      "sha256": "73f38b7853368e2bd1c49679e317da1cce37ef1aba8d9d102cbc0da9bc457bf5"
+    },
+    "algae_growth_ec50/v1.0/curated.parquet": {
+      "size_bytes": 26848,
+      "sha256": "bc83f32437548d8abca5f414b4dd48b818c93776bf61f531716f24d5dc0e3543"
+    },
+    "algae_growth_ec50/v1.0/curation_log.json": {
+      "size_bytes": 114634,
+      "sha256": "e9870d7e63ceed2c6925fabfa90b0108c3663d74439d80c93c47ba36a0be69c0"
+    },
+    "algae_growth_ec50/v1.0/curation_stats.json": {
+      "size_bytes": 170,
+      "sha256": "07f74dee7690aed487c3359748c941e192016079057200d51eb489e7175f1f16"
+    },
+    "algae_growth_ec50/v1.0/data_card.yaml": {
+      "size_bytes": 2950,
+      "sha256": "f7933c8c8e6f4906aa5d8eca1c63596d0fc38b1a1be6fd00243f6fd3ef0600e7"
+    },
+    "algae_growth_ec50/v1.0/splits/random/cal.parquet": {
+      "size_bytes": 17235,
+      "sha256": "89e5bf5fda5564b2e4b3d87b2d74306d8188e066c7045d7b3852908e03aafc7f"
+    },
+    "algae_growth_ec50/v1.0/splits/random/test.parquet": {
+      "size_bytes": 17604,
+      "sha256": "bd802b647f6746bec023297dac101aead80832d4ec81648ff77677dad45de7e7"
+    },
+    "algae_growth_ec50/v1.0/splits/random/train.parquet": {
+      "size_bytes": 23438,
+      "sha256": "94837cd21524ceb5036582d1b7d289f79e5914eb31e21668999209787fca0142"
+    },
+    "algae_growth_ec50/v1.0/splits/scaffold/cal.parquet": {
+      "size_bytes": 17906,
+      "sha256": "3453df5bc5e70ae9f1fb00b7a881ed3e70dac7f90c20e8a7c748639f2d546e48"
+    },
+    "algae_growth_ec50/v1.0/splits/scaffold/test.parquet": {
+      "size_bytes": 17287,
+      "sha256": "33fddebeb5233b635c76a662bdad53d6367a1dc80c67171ccdce66d51060e47a"
+    },
+    "algae_growth_ec50/v1.0/splits/scaffold/train.parquet": {
+      "size_bytes": 22879,
+      "sha256": "2c8caf0abb0d91f4b89b7dce9f186510333aaf5d9393b184e1ef5d5dab6a451c"
+    },
+    "algae_growth_ec50/v1.0/splits/time/cal.parquet": {
+      "size_bytes": 16166,
+      "sha256": "49c1a5ad6b1b85826b00bea6d92961672408a47a44c175e706dd08c5b16e0b08"
+    },
+    "algae_growth_ec50/v1.0/splits/time/test.parquet": {
+      "size_bytes": 16269,
+      "sha256": "98e4d825189e013853b8d9b8be0390caad61c1610f69adeeb8c81d4c5dec5acf"
+    },
+    "algae_growth_ec50/v1.0/splits/time/train.parquet": {
+      "size_bytes": 25182,
+      "sha256": "80f9513423da04213a019c5f63eb8ad188001c4c6e5dcaad69f3bfc5c368bcbb"
+    },
+    "algae_growth_ec50/v1.0/splits_metadata.json": {
+      "size_bytes": 1238,
+      "sha256": "3fb07875af43aed6c4c92b9dfc607fe915161e09a6a4b4db9fc39cc97d7a62fe"
+    },
+    "bcf/v1.0/curated.csv": {
+      "size_bytes": 228644,
+      "sha256": "d7f36d0b1ece90aee926890ba1af6464a395572ef325dc199b1c2fb82b2441f4"
+    },
+    "bcf/v1.0/curated.parquet": {
+      "size_bytes": 68465,
+      "sha256": "01d8ef7cd4d3ecf70b11cf0999ef8c6e904f9f1ab91fa088f998c93c483969de"
+    },
+    "bcf/v1.0/curation_log.json": {
+      "size_bytes": 2509,
+      "sha256": "036f8c6a556783a05ec2b72f7a69d10665132e233cf1180ffb30bdb9f41913c7"
+    },
+    "bcf/v1.0/curation_stats.json": {
+      "size_bytes": 170,
+      "sha256": "1ddd44ef18ad6596a0a1ce28bbc5a5d41fd03b9cd032812e470f315d864308b2"
+    },
+    "bcf/v1.0/data_card.yaml": {
+      "size_bytes": 2658,
+      "sha256": "83ec13e0d787e1c4294d046779ee60074ca3b3c978b00e06cbb30c97bd854a24"
+    },
+    "bcf/v1.0/splits/random/cal.parquet": {
+      "size_bytes": 24562,
+      "sha256": "c0d485647eeda19dcb18c3c5708dc44383c3e118ae32d49b6536eb08603279f0"
+    },
+    "bcf/v1.0/splits/random/test.parquet": {
+      "size_bytes": 24677,
+      "sha256": "8b24f08e396ea95dd083b1c3a5834e3b866157ccb641c01d8bd8ed86645d0994"
+    },
+    "bcf/v1.0/splits/random/train.parquet": {
+      "size_bytes": 53390,
+      "sha256": "94d50e8eba5dfd2068301e3149e9e92cb791b3ab2d3036cdda6ce478b28e5bab"
+    },
+    "bcf/v1.0/splits/scaffold/cal.parquet": {
+      "size_bytes": 24817,
+      "sha256": "d64079f73ca168eb8056d36e5de07343f2fe1aa3a5777b3c549b6d1c63ea742d"
+    },
+    "bcf/v1.0/splits/scaffold/test.parquet": {
+      "size_bytes": 24576,
+      "sha256": "c805f29389ef24c2190837428b309410780bd430574bf1fab4c13f350037a2b3"
+    },
+    "bcf/v1.0/splits/scaffold/train.parquet": {
+      "size_bytes": 50608,
+      "sha256": "900eeae20fbb8a19229928d8000ecb0fea500cef0c349db08ddf903a5b47b12a"
+    },
+    "bcf/v1.0/splits_metadata.json": {
+      "size_bytes": 850,
+      "sha256": "5253b743487ec8a26a43123712e2e1666847b589a11bd7cf1fc67f6c1ca296c5"
+    },
+    "bee_acute_contact_ld50/v1.0/curated.csv": {
+      "size_bytes": 227463,
+      "sha256": "f3b0f52b30ae9e25e8311aa1a66a0a47bd56f40fc1e62c69d85df5d14d1375b8"
+    },
+    "bee_acute_contact_ld50/v1.0/curated.parquet": {
+      "size_bytes": 82443,
+      "sha256": "c4b3816df536980aa15c2d4b56bac07a10a83cd7c34591e0712602b5b75b3853"
+    },
+    "bee_acute_contact_ld50/v1.0/curation_log.json": {
+      "size_bytes": 2232,
+      "sha256": "1dfaf0188d87bd9d470c45dcd8b6ca7abd535de485732fac8d35636e03a15a11"
+    },
+    "bee_acute_contact_ld50/v1.0/curation_stats.json": {
+      "size_bytes": 157,
+      "sha256": "31588bf89404f90606da215574339bf40104cfc1cb7973a1c0ec2a20e0e4cd27"
+    },
+    "bee_acute_contact_ld50/v1.0/data_card.yaml": {
+      "size_bytes": 2784,
+      "sha256": "47030dc49583466a2a2169f921c5f2f2a5894d9521081d8611e162a3a1a7e41b"
+    },
+    "bee_acute_contact_ld50/v1.0/splits/random/cal.parquet": {
+      "size_bytes": 27131,
+      "sha256": "b1cf334fd17dfaddfd78e8f19d360046d567b389562756ebd2657ebe2a81f3c8"
+    },
+    "bee_acute_contact_ld50/v1.0/splits/random/test.parquet": {
+      "size_bytes": 27342,
+      "sha256": "f9d02eef20e02800b0d7fe27fcb67c980b12a9e1b66b4e546575624166d8d652"
+    },
+    "bee_acute_contact_ld50/v1.0/splits/random/train.parquet": {
+      "size_bytes": 63274,
+      "sha256": "6f179d5d71ccdf11a5c1a3834d2f8d50ff0e4869349e0bed020525ca55dd21de"
+    },
+    "bee_acute_contact_ld50/v1.0/splits/scaffold/cal.parquet": {
+      "size_bytes": 27808,
+      "sha256": "06097139972fd669652795e0fd7018aa96a8beb953b0c98ad9c564320284ba81"
+    },
+    "bee_acute_contact_ld50/v1.0/splits/scaffold/test.parquet": {
+      "size_bytes": 26718,
+      "sha256": "ff615473cb4a4e217034f0b0c9a0394c67852ff26e6a1937a182353013fe7b29"
+    },
+    "bee_acute_contact_ld50/v1.0/splits/scaffold/train.parquet": {
+      "size_bytes": 59628,
+      "sha256": "697dbd58059e19ae4d814898585e888c9624da91a6959a54bf41902f3e7502a1"
+    },
+    "bee_acute_contact_ld50/v1.0/splits/time/cal.parquet": {
+      "size_bytes": 27220,
+      "sha256": "107429ce5c91e3a1a807f3a6f839e4ec96d901e3e4680c144426d4825a0003a9"
+    },
+    "bee_acute_contact_ld50/v1.0/splits/time/test.parquet": {
+      "size_bytes": 30813,
+      "sha256": "682ff08fef0cd6bd0140b2032b7393df8b1aa1a8df61c1ada02d27b98386678d"
+    },
+    "bee_acute_contact_ld50/v1.0/splits/time/train.parquet": {
+      "size_bytes": 57997,
+      "sha256": "270a8871c8deec9d2351e088f39cbd25834b6cc281382e8ad23ebf4aa0603365"
+    },
+    "bee_acute_contact_ld50/v1.0/splits_metadata.json": {
+      "size_bytes": 1216,
+      "sha256": "f0fdfac2b6dcc2e6f61bf6d40535ce3f65adee23fd91afed1aa002c793c28061"
+    },
+    "bee_acute_oral_ld50/v1.0/curated.csv": {
+      "size_bytes": 104329,
+      "sha256": "53fcc1103181d4450897d957e83d5dbfd208cec8dcb6912ef08aa7d6e56105ff"
+    },
+    "bee_acute_oral_ld50/v1.0/curated.parquet": {
+      "size_bytes": 48188,
+      "sha256": "f37547593bd8e6ce8d714f219ef8a440f9d3652eb11cd26677bad8a04aa7167d"
+    },
+    "bee_acute_oral_ld50/v1.0/curation_log.json": {
+      "size_bytes": 1054,
+      "sha256": "8c1d11ca1c6b66e50c21f057af7ac5f48dfeb673126f6835a262fc4f4a55f596"
+    },
+    "bee_acute_oral_ld50/v1.0/curation_stats.json": {
+      "size_bytes": 171,
+      "sha256": "4bd109a45ee96d384773c2687eb8bc4fe563c6772519842ee3e9a02afa31b2a1"
+    },
+    "bee_acute_oral_ld50/v1.0/data_card.yaml": {
+      "size_bytes": 2789,
+      "sha256": "8cb527caf5f022a9f9908ac62d16f079e96c57d8a69995b3f0ac4def5901fb75"
+    },
+    "bee_acute_oral_ld50/v1.0/splits/random/cal.parquet": {
+      "size_bytes": 21035,
+      "sha256": "47664de30a4ec9ad6ae3fe501e8e99312d3719001d2b8c38e48821530e660f5a"
+    },
+    "bee_acute_oral_ld50/v1.0/splits/random/test.parquet": {
+      "size_bytes": 21433,
+      "sha256": "b6897a74af51a0ae969a80bd6cbecde7ed7542c94830d4c11264ecaf1bf30153"
+    },
+    "bee_acute_oral_ld50/v1.0/splits/random/train.parquet": {
+      "size_bytes": 38599,
+      "sha256": "9e219592a583c58ede2ea7dd75ba1557ff832bb2f4f81694b573b5091b982db2"
+    },
+    "bee_acute_oral_ld50/v1.0/splits/scaffold/cal.parquet": {
+      "size_bytes": 21580,
+      "sha256": "8d8368c73b2bff64394e9e5b33ce72bb7f558bbbbfc42548e47e30e1fbfb4af9"
+    },
+    "bee_acute_oral_ld50/v1.0/splits/scaffold/test.parquet": {
+      "size_bytes": 20580,
+      "sha256": "8a795a4475302919e78c733fc0c152800217b3772221dac04f4a5b5307fa24d5"
+    },
+    "bee_acute_oral_ld50/v1.0/splits/scaffold/train.parquet": {
+      "size_bytes": 37727,
+      "sha256": "d82fad948e1a56ff2311c338a4815156526f4148fb29640228412552b4a900fc"
+    },
+    "bee_acute_oral_ld50/v1.0/splits/time/cal.parquet": {
+      "size_bytes": 21202,
+      "sha256": "837dfd12f4103203edaa0807081a7ef353ddc99490efa31f9b0af40db569e8e8"
+    },
+    "bee_acute_oral_ld50/v1.0/splits/time/test.parquet": {
+      "size_bytes": 24648,
+      "sha256": "893a530b208ddd0a8dcba0101420763a0b8032fd5f0a0d5e68c084ec3fc24d83"
+    },
+    "bee_acute_oral_ld50/v1.0/splits/time/train.parquet": {
+      "size_bytes": 34353,
+      "sha256": "330f5482e07fa5bf2c3c8df55eee67621c5a375f43e5a3f5157503e1c4e640b5"
+    },
+    "bee_acute_oral_ld50/v1.0/splits_metadata.json": {
+      "size_bytes": 1216,
+      "sha256": "84cac673b1695ac5bf779ff61426e943375748cdbb3ee82e20b63de0f429c3fe"
+    },
+    "bird_acute_oral_ld50/v1.0/curated.csv": {
+      "size_bytes": 187361,
+      "sha256": "1bf79161693dd5fa11ca8898eea5ae2df52ed5b4ac5f29a41094dde169daf8eb"
+    },
+    "bird_acute_oral_ld50/v1.0/curated.parquet": {
+      "size_bytes": 68783,
+      "sha256": "aa250412a0885326b321a2dff599497c5db3a82735e3ce5ef528b246b850b071"
+    },
+    "bird_acute_oral_ld50/v1.0/curation_log.json": {
+      "size_bytes": 7029,
+      "sha256": "9befd8f72f552da85b90b5af1e9d34831e7c86456f45eb11d7ef17b6fae48b36"
+    },
+    "bird_acute_oral_ld50/v1.0/curation_stats.json": {
+      "size_bytes": 174,
+      "sha256": "e3d7a0ec8d6d7acb987bb1545f9e8ea9596eb108e697e8f1bef488f0b2b7a967"
+    },
+    "bird_acute_oral_ld50/v1.0/data_card.yaml": {
+      "size_bytes": 3230,
+      "sha256": "8ab6ada85d35a4b6f29b5faf4fad6ba616f1de5ef661ffc8ff6f1fe2029a931b"
+    },
+    "bird_acute_oral_ld50/v1.0/splits/random/cal.parquet": {
+      "size_bytes": 25060,
+      "sha256": "4f35fe91c38c70f6ebb2e89b9e348810d93cbecce3003c1b40ff4ebcf18bef6b"
+    },
+    "bird_acute_oral_ld50/v1.0/splits/random/test.parquet": {
+      "size_bytes": 24718,
+      "sha256": "55f1a09f4aef9f536b5a2bd219b93bf0c933c902ecc253ac73f55818c4f10c9d"
+    },
+    "bird_acute_oral_ld50/v1.0/splits/random/train.parquet": {
+      "size_bytes": 54347,
+      "sha256": "2b3e21cae761ebe456c7efc5dd901ba9b386d6b5a442f65d8223061af09b3bc4"
+    },
+    "bird_acute_oral_ld50/v1.0/splits/scaffold/cal.parquet": {
+      "size_bytes": 25115,
+      "sha256": "fe3ab570ee7f34e1775ccaea5c96f8b0fc0da5521bd30717ced9f83a38307f37"
+    },
+    "bird_acute_oral_ld50/v1.0/splits/scaffold/test.parquet": {
+      "size_bytes": 25273,
+      "sha256": "7c163dea71ee9e6b6984de19c6b3960d2547d3e620b077a5a1df3f5c4bb40ea6"
+    },
+    "bird_acute_oral_ld50/v1.0/splits/scaffold/train.parquet": {
+      "size_bytes": 51230,
+      "sha256": "de62c786dbee5d8f2fff0d248a4d41282d300f724a6519d5dc9b7163a697745d"
+    },
+    "bird_acute_oral_ld50/v1.0/splits/time/cal.parquet": {
+      "size_bytes": 23874,
+      "sha256": "acad9e026fb989056887ded28b5d8ef9bbf66058a4de337fed69b3f713f32da9"
+    },
+    "bird_acute_oral_ld50/v1.0/splits/time/test.parquet": {
+      "size_bytes": 22640,
+      "sha256": "6ca87dc343ce09129f3946189c4e4f87694ce40450555bc96a96cace848f4d76"
+    },
+    "bird_acute_oral_ld50/v1.0/splits/time/train.parquet": {
+      "size_bytes": 54895,
+      "sha256": "a406605d327b88dbc316349f3d67d978292ec18261e72c8c7f830200d9d28b38"
+    },
+    "bird_acute_oral_ld50/v1.0/splits_metadata.json": {
+      "size_bytes": 1242,
+      "sha256": "6c6c050cc38f8df50ee17104da88cc252406a3bbff4fdbddc46c4208f2f624c1"
+    },
+    "daphnia_acute_ec50/v1.0/curated.csv": {
+      "size_bytes": 92464,
+      "sha256": "68b28b09f554dba1ba9229b09fefb6d2735b3756944fe7a3025bf175e45ea4e4"
+    },
+    "daphnia_acute_ec50/v1.0/curated.parquet": {
+      "size_bytes": 40232,
+      "sha256": "78423da8d788f2ebdb63c81bb8281a1ae1c5c4d11f201ae4a861f43cd0a0db87"
+    },
+    "daphnia_acute_ec50/v1.0/curation_log.json": {
+      "size_bytes": 379126,
+      "sha256": "db65de5c01aea6b4d22ed3cf517de8f6875ac6199d7311e017dde0f963d757d2"
+    },
+    "daphnia_acute_ec50/v1.0/curation_stats.json": {
+      "size_bytes": 170,
+      "sha256": "c259bfe8e39c20d6b4552b021c80b22b18c1f90cf33596484fc734e18b5893e7"
+    },
+    "daphnia_acute_ec50/v1.0/data_card.yaml": {
+      "size_bytes": 2968,
+      "sha256": "cb9b0f928cb032b3016770b701fc5f4bac9a9b1533f8fb080ce882a8e56586c8"
+    },
+    "daphnia_acute_ec50/v1.0/splits/random/cal.parquet": {
+      "size_bytes": 19223,
+      "sha256": "97f5fcdd4ad23e30e927f555b3211c456dbc556d7699ba1e685754c9713c8b3e"
+    },
+    "daphnia_acute_ec50/v1.0/splits/random/test.parquet": {
+      "size_bytes": 19417,
+      "sha256": "7ec5a48a301ec4feeea14f6c91f04967c550c03e6b4417770a8429fc9fdde1b2"
+    },
+    "daphnia_acute_ec50/v1.0/splits/random/train.parquet": {
+      "size_bytes": 32600,
+      "sha256": "6eacd8f21fe648df55994b8f6561d36b4bc7c8677c195052333d49cf5d1867cb"
+    },
+    "daphnia_acute_ec50/v1.0/splits/scaffold/cal.parquet": {
+      "size_bytes": 19698,
+      "sha256": "939e9ebe1479300f3560d94f95e9f52c6d02bd31b755e36f0f4b2b7716c5a2f4"
+    },
+    "daphnia_acute_ec50/v1.0/splits/scaffold/test.parquet": {
+      "size_bytes": 19464,
+      "sha256": "cf634b5366399c0f265af34fc752cd30253628419f66670e92d8fc4ff0b1fe47"
+    },
+    "daphnia_acute_ec50/v1.0/splits/scaffold/train.parquet": {
+      "size_bytes": 31481,
+      "sha256": "d600032aa03094862c740e9ed3f4fdb396a22b2083aa00c85103940b377ac5db"
+    },
+    "daphnia_acute_ec50/v1.0/splits/time/cal.parquet": {
+      "size_bytes": 18542,
+      "sha256": "e41dc73566e6d301c63486d29d56cc45ee7acee14b4726d64db5225a5332efff"
+    },
+    "daphnia_acute_ec50/v1.0/splits/time/test.parquet": {
+      "size_bytes": 17594,
+      "sha256": "7428f985929936b32dd85656440e2d7a898bdc305b6a50e25eeaa2c658cd6ae3"
+    },
+    "daphnia_acute_ec50/v1.0/splits/time/train.parquet": {
+      "size_bytes": 34236,
+      "sha256": "1e8d85f890d2dbd518543b62126ddb785333973cbcf4d21a6f6bd357f0b3ae65"
+    },
+    "daphnia_acute_ec50/v1.0/splits_metadata.json": {
+      "size_bytes": 1243,
+      "sha256": "3ea7ca3d58ae096a02328f17b13cc23952a471732c521ae18d0a4b33907357d8"
+    },
+    "earthworm_acute_lc50/v1.0/curated.csv": {
+      "size_bytes": 4228,
+      "sha256": "61be9cc4663b7106a74ff0e1867644ede6c90d83a3771424f2c5c893a6bf779e"
+    },
+    "earthworm_acute_lc50/v1.0/curated.parquet": {
+      "size_bytes": 16622,
+      "sha256": "5cf57429ea5ecdcf8a3f491886fd7475ac6e8b6b90ee6c8b346735757a448f29"
+    },
+    "earthworm_acute_lc50/v1.0/curation_log.json": {
+      "size_bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "earthworm_acute_lc50/v1.0/curation_stats.json": {
+      "size_bytes": 149,
+      "sha256": "e86d22a973f763e55558e5e396a8376eee9afc197b121690417129bbfee0ae0e"
+    },
+    "earthworm_acute_lc50/v1.0/data_card.yaml": {
+      "size_bytes": 3010,
+      "sha256": "bb2ed158ce4ef8b50bbcde0882618bdf8d6e8f8bbe04c9b94da9022c6ef33d0b"
+    },
+    "earthworm_acute_lc50/v1.0/splits/random/cal.parquet": {
+      "size_bytes": 15146,
+      "sha256": "0419b0adc41792493e700d215003632d10d02875031db9b9b3202838cde3dd52"
+    },
+    "earthworm_acute_lc50/v1.0/splits/random/test.parquet": {
+      "size_bytes": 15464,
+      "sha256": "d44226ab4724e8af0e2bb54b7b0c54871731bd596fcaa2b923785a9f4e85a6d0"
+    },
+    "earthworm_acute_lc50/v1.0/splits/random/train.parquet": {
+      "size_bytes": 16296,
+      "sha256": "f1bb61e1f2471dd31bf41c597382fc474655d5ea8afa61220f5eae180391b97d"
+    },
+    "earthworm_acute_lc50/v1.0/splits/scaffold/cal.parquet": {
+      "size_bytes": 15542,
+      "sha256": "f587bceeab31ea696c3926b06dbc8f4c41f8e347ce53ae53ca317c22089c3458"
+    },
+    "earthworm_acute_lc50/v1.0/splits/scaffold/test.parquet": {
+      "size_bytes": 15193,
+      "sha256": "d27a5fcc70f30a6014edd8ce305377551bc3f51c01812bcc17653bef0e674de5"
+    },
+    "earthworm_acute_lc50/v1.0/splits/scaffold/train.parquet": {
+      "size_bytes": 16259,
+      "sha256": "29b20101a87557da09469c49a09aa06cd21e01af09d35816bba5284166ace3b5"
+    },
+    "earthworm_acute_lc50/v1.0/splits/time/cal.parquet": {
+      "size_bytes": 11486,
+      "sha256": "d90387b3a8ce8248160c6c771306bd413a49bb2cd4c4ffbae9e320d7b1b15413"
+    },
+    "earthworm_acute_lc50/v1.0/splits/time/test.parquet": {
+      "size_bytes": 11486,
+      "sha256": "d90387b3a8ce8248160c6c771306bd413a49bb2cd4c4ffbae9e320d7b1b15413"
+    },
+    "earthworm_acute_lc50/v1.0/splits/time/train.parquet": {
+      "size_bytes": 16622,
+      "sha256": "5cf57429ea5ecdcf8a3f491886fd7475ac6e8b6b90ee6c8b346735757a448f29"
+    },
+    "earthworm_acute_lc50/v1.0/splits_metadata.json": {
+      "size_bytes": 1180,
+      "sha256": "8fc8aa9bd509d36e7ae937fd1fc579dd17d440768d107ae72a145a4f5f659cf8"
+    },
+    "fish_acute_lc50/v1.0/curated.csv": {
+      "size_bytes": 173006,
+      "sha256": "bbc913710fcde98f6f3e5588f53cd7fbce9a8d1bb79ee0ced34db0e2ed50383d"
+    },
+    "fish_acute_lc50/v1.0/curated.parquet": {
+      "size_bytes": 61513,
+      "sha256": "6f94986fd3cdce2a7d8cf66daad090c4a1b8c672b2167a6be8c66e09ae259c63"
+    },
+    "fish_acute_lc50/v1.0/curation_log.json": {
+      "size_bytes": 1263053,
+      "sha256": "b5d4f55b48a243d270aa4e1d2393ed19debcbdbd00a414cd26b0c8f8be53c09b"
+    },
+    "fish_acute_lc50/v1.0/curation_stats.json": {
+      "size_bytes": 176,
+      "sha256": "13698851558d3ce8de5258483a2e0e536c41569ce50bfa9997fe3224807cd6c3"
+    },
+    "fish_acute_lc50/v1.0/data_card.yaml": {
+      "size_bytes": 3301,
+      "sha256": "976139256893aa90cc965c4630de060ff24010d6bbf5a56073344666c7bbec9d"
+    },
+    "fish_acute_lc50/v1.0/splits/random/cal.parquet": {
+      "size_bytes": 22857,
+      "sha256": "46dcbc9944f137f06f1e5ccde82f52c89297a26c4a8e3b2c2507d570ace54b9c"
+    },
+    "fish_acute_lc50/v1.0/splits/random/test.parquet": {
+      "size_bytes": 23266,
+      "sha256": "6f09818187960aa2fcd48f00cce5234541373c279b08359c7048063dad166d3e"
+    },
+    "fish_acute_lc50/v1.0/splits/random/train.parquet": {
+      "size_bytes": 48052,
+      "sha256": "55b3b716a6d9f994f44b0b3e02b297409f677c9f6a63ec0e19794d1119ad78d8"
+    },
+    "fish_acute_lc50/v1.0/splits/scaffold/cal.parquet": {
+      "size_bytes": 24831,
+      "sha256": "7427eb889d3a591a54193ea5792b4591f6592c7992d573acde57bf76c6af20d2"
+    },
+    "fish_acute_lc50/v1.0/splits/scaffold/test.parquet": {
+      "size_bytes": 24356,
+      "sha256": "61e636fecabbeee10654e49f816b7a88076649d14f3b0df9ed53bb5272c54908"
+    },
+    "fish_acute_lc50/v1.0/splits/scaffold/train.parquet": {
+      "size_bytes": 44562,
+      "sha256": "ae913a161776947f23c5faa743d345fae2672d9fb9c3f34d741769cd2203e1e5"
+    },
+    "fish_acute_lc50/v1.0/splits/time/cal.parquet": {
+      "size_bytes": 23004,
+      "sha256": "56e6231eea40c03bccbb273806dcaae77140f48d620370d0472a27827f23a8e4"
+    },
+    "fish_acute_lc50/v1.0/splits/time/test.parquet": {
+      "size_bytes": 18322,
+      "sha256": "7f7c403dee81be510111ae94502651ca4d5a283b95a013cc9ee455e399f1d1ed"
+    },
+    "fish_acute_lc50/v1.0/splits/time/train.parquet": {
+      "size_bytes": 50917,
+      "sha256": "f8bb167362247377408a23ea4a8cfcdcd6f4292d12a22005d8bbe6b4d843e9d3"
+    },
+    "fish_acute_lc50/v1.0/splits_metadata.json": {
+      "size_bytes": 1242,
+      "sha256": "3964b52dea5847585eb7d001c77f9f50247d6c7b91461d581303d5e45d776129"
+    },
+    "rat_acute_oral_ld50/v1.0/curated.csv": {
+      "size_bytes": 2286069,
+      "sha256": "77f345a6a450c01deb8f27418826e7c2366a228c27a4e14a3c3b8028d23b4eb8"
+    },
+    "rat_acute_oral_ld50/v1.0/curated.parquet": {
+      "size_bytes": 685040,
+      "sha256": "1a13a64f01483036fb8ded6f98c0e795910884bc854e04e49bf7066423210a00"
+    },
+    "rat_acute_oral_ld50/v1.0/curation_log.json": {
+      "size_bytes": 257466,
+      "sha256": "9d451305df06363f1f9a8260eab3ac572cbf31bc582759b45b7b983962f40801"
+    },
+    "rat_acute_oral_ld50/v1.0/curation_stats.json": {
+      "size_bytes": 175,
+      "sha256": "c25654b141d3585f5b2edf8d89e009f1552bffaf2bc1f7bc88897e9625ad0e82"
+    },
+    "rat_acute_oral_ld50/v1.0/data_card.yaml": {
+      "size_bytes": 2528,
+      "sha256": "f827c00feec70a11c39c3c6aff8fde1bb2d6f4e30ec828dbaa2502b1681b51af"
+    },
+    "rat_acute_oral_ld50/v1.0/splits/random/cal.parquet": {
+      "size_bytes": 117840,
+      "sha256": "0a6286c35e60d29fa8dd0cbeb98e9ce6003842fc8ee3360ae21b9149b96d8a9a"
+    },
+    "rat_acute_oral_ld50/v1.0/splits/random/test.parquet": {
+      "size_bytes": 116272,
+      "sha256": "43c015beea7aa4f8f3a8b64b57c32a88cb4d6fc5ddbaff4a50d88af058ad2687"
+    },
+    "rat_acute_oral_ld50/v1.0/splits/random/train.parquet": {
+      "size_bytes": 489477,
+      "sha256": "2c1f2c514c738f2ed20c6e75ca2c90865cfa0aadbcc3e55d1715da054f6c47ae"
+    },
+    "rat_acute_oral_ld50/v1.0/splits/scaffold/cal.parquet": {
+      "size_bytes": 123835,
+      "sha256": "7556c0147519fcd39068bfdf8bb208fd9a02bcd3b4c0ccb9db6cb481848c43ba"
+    },
+    "rat_acute_oral_ld50/v1.0/splits/scaffold/test.parquet": {
+      "size_bytes": 127432,
+      "sha256": "ca100a636d48b2737ed105ffa5a80529492f000b1fc5a674c48f2ecdf83175b7"
+    },
+    "rat_acute_oral_ld50/v1.0/splits/scaffold/train.parquet": {
+      "size_bytes": 432150,
+      "sha256": "197c1ae35e0b71d311cac0de4d4861e02405931513d9ff44a2dc338d8ee1b28b"
+    },
+    "rat_acute_oral_ld50/v1.0/splits_metadata.json": {
+      "size_bytes": 856,
+      "sha256": "af2f9d46cb6ee281604ce00dadcd632d6f525fd0ebf48e3f6b9de1ff02df1cda"
+    },
+    "skin_sensitization/v1.0/curated.csv": {
+      "size_bytes": 35551,
+      "sha256": "0d49669d2515bbb998e9f9df11e829b0cf322c2143228462a05403d3cb3b1923"
+    },
+    "skin_sensitization/v1.0/curated.parquet": {
+      "size_bytes": 24621,
+      "sha256": "8971f90140f643e1a630b3d4c5c5334d791537711cc60e3607dc2bc78d257ab8"
+    },
+    "skin_sensitization/v1.0/curation_log.json": {
+      "size_bytes": 674,
+      "sha256": "091d90bb7161550ecf4d6e5cf12a9488acad31668fe12e024b2fe8ab2579a1f7"
+    },
+    "skin_sensitization/v1.0/curation_stats.json": {
+      "size_bytes": 171,
+      "sha256": "a925b4cd362a0f42087f4cb5116dca0f3271c6ae630ecbd99f6db469d44dd01d"
+    },
+    "skin_sensitization/v1.0/data_card.yaml": {
+      "size_bytes": 2896,
+      "sha256": "613c0de69af0c4dd2bc084913e4fb28a7bfdfe29235cd13583f405069e24d1aa"
+    },
+    "skin_sensitization/v1.0/splits/random/cal.parquet": {
+      "size_bytes": 18372,
+      "sha256": "d66da005d19eb759fc684d88d3d010579683ddd0d4343bcaa271c83a0efd0a39"
+    },
+    "skin_sensitization/v1.0/splits/random/test.parquet": {
+      "size_bytes": 18289,
+      "sha256": "67519c550c305676ea6b0b38f6f98256c2a5745d26dcc4ddd540b7c472384f4e"
+    },
+    "skin_sensitization/v1.0/splits/random/train.parquet": {
+      "size_bytes": 22445,
+      "sha256": "1a31f583a978b3453a849595aaccd28fcb5c90153a7463f2671299b5f2b53dc2"
+    },
+    "skin_sensitization/v1.0/splits/scaffold/cal.parquet": {
+      "size_bytes": 18032,
+      "sha256": "c2965157045a9ce24ba8e992851e7a90a0dfca273630018427d143d0397abacf"
+    },
+    "skin_sensitization/v1.0/splits/scaffold/test.parquet": {
+      "size_bytes": 18360,
+      "sha256": "e02f5c83db8dbcae6f97425537d2ed250a98fb29e4fae60156b93654a03c9c64"
+    },
+    "skin_sensitization/v1.0/splits/scaffold/train.parquet": {
+      "size_bytes": 21847,
+      "sha256": "cfe38477d166ae058ee5659a3bd96bcfe3252a9d1936ac97c29db8268d90c502"
+    },
+    "skin_sensitization/v1.0/splits_metadata.json": {
+      "size_bytes": 848,
+      "sha256": "51640a87222bba4022729445d05c223eb8e16a21da855cef4505a7bdcef91c4c"
+    },
+    "soil_dt50/v1.0/curated.csv": {
+      "size_bytes": 85776,
+      "sha256": "6d970e1ad1233501fb7693bb4e05b6af9e4c3379db0884ee4c472d81696a4dd4"
+    },
+    "soil_dt50/v1.0/curated.parquet": {
+      "size_bytes": 31458,
+      "sha256": "cadca652c6235e2d5b4469c7746d9110400b681cb90f5bc449e2a15cb7078516"
+    },
+    "soil_dt50/v1.0/curation_log.json": {
+      "size_bytes": 898,
+      "sha256": "7e74baa83e9a7453e362d702c9bcd76035be5ae09616c03177381da5582c5d39"
+    },
+    "soil_dt50/v1.0/curation_stats.json": {
+      "size_bytes": 171,
+      "sha256": "1b182848f1fd108006cb19cc83a7f95f8f4808c35d5f14418a346cdc037dcb28"
+    },
+    "soil_dt50/v1.0/data_card.yaml": {
+      "size_bytes": 3286,
+      "sha256": "96ad48cdfd19849ed6181f55c74e0cfe64943fa7e0ffdd51a096004c68cf6d14"
+    },
+    "soil_dt50/v1.0/splits/random/cal.parquet": {
+      "size_bytes": 18329,
+      "sha256": "a7ce8d6a1b41214b05c0e147e4248235c289db0fe79c9289864c2fa207f6d364"
+    },
+    "soil_dt50/v1.0/splits/random/test.parquet": {
+      "size_bytes": 18041,
+      "sha256": "be67425ca625e7d5631235d4e932022c881639153538bd44a8b5b43964498915"
+    },
+    "soil_dt50/v1.0/splits/random/train.parquet": {
+      "size_bytes": 26806,
+      "sha256": "df84ad076aff12d04f3c26df957ab8222ce640599fe643740d664d66c34cc328"
+    },
+    "soil_dt50/v1.0/splits/scaffold/cal.parquet": {
+      "size_bytes": 17857,
+      "sha256": "d0e5baf909c34fba606cc6e0850229e69e42770cff161bed2c9946ce657fb177"
+    },
+    "soil_dt50/v1.0/splits/scaffold/test.parquet": {
+      "size_bytes": 17743,
+      "sha256": "6889e6538f8aac4f97dffa67945c0b736d6309b70911201dab7993648d4b67ee"
+    },
+    "soil_dt50/v1.0/splits/scaffold/train.parquet": {
+      "size_bytes": 26411,
+      "sha256": "fc902a2993356b773e459971e75cffa294e3c3f681be57d672c195c580c17ed8"
+    },
+    "soil_dt50/v1.0/splits/time/cal.parquet": {
+      "size_bytes": 17418,
+      "sha256": "3bd46a95d700da032be916244fcc3b0a6a8c028c5e59b41bfc71ede28deca0b6"
+    },
+    "soil_dt50/v1.0/splits/time/test.parquet": {
+      "size_bytes": 17851,
+      "sha256": "f9efe02526a74c6905e6749a9e2c1101848977cc468825d457d269767dbd7193"
+    },
+    "soil_dt50/v1.0/splits/time/train.parquet": {
+      "size_bytes": 27263,
+      "sha256": "d125685e807e4b772b3e096f6557c748a2ebe4da2a88eace646a16d019aa5a65"
+    },
+    "soil_dt50/v1.0/splits_metadata.json": {
+      "size_bytes": 1242,
+      "sha256": "cbf65e0a3a02aa590c0d3e648fc29e1419587ea0522572352c4aab051d89b73f"
+    },
+    "soil_koc/v1.0/curated.csv": {
+      "size_bytes": 185362,
+      "sha256": "b2fcdef46f2189310d646c8be4ccd7949a00ee6613fe344403063cbf51dbc65e"
+    },
+    "soil_koc/v1.0/curated.parquet": {
+      "size_bytes": 76601,
+      "sha256": "5ac4c5793e1281d54c469e220fedb758cdb892a8f2c50d4575a6b5a043b1be64"
+    },
+    "soil_koc/v1.0/curation_log.json": {
+      "size_bytes": 1168,
+      "sha256": "6a62743511a9825d4e895dfea1e21e5175efcc0e3be310e3337b8e0596bc1d6c"
+    },
+    "soil_koc/v1.0/curation_stats.json": {
+      "size_bytes": 171,
+      "sha256": "187052c428f7cd914095baac7839fe14b00d7d4ab65535d34d5dc64e4cb5222b"
+    },
+    "soil_koc/v1.0/data_card.yaml": {
+      "size_bytes": 2496,
+      "sha256": "3bb277b076a32526863562b460998e5e054a03e4508d159f563d6aa031fdb041"
+    },
+    "soil_koc/v1.0/splits/random/cal.parquet": {
+      "size_bytes": 25345,
+      "sha256": "60144fe521e91329b64a11352ce63cd2c354ea1e8df550324a6deed339813c01"
+    },
+    "soil_koc/v1.0/splits/random/test.parquet": {
+      "size_bytes": 25525,
+      "sha256": "a4c44c14019504ed0ff7e86dab045f57ca94c1ef53509952011f1e4f1c0a453f"
+    },
+    "soil_koc/v1.0/splits/random/train.parquet": {
+      "size_bytes": 59586,
+      "sha256": "1d787fc2c50c38d79cdcf94d1390639f518a3e9dd41e5d1df15637772d02a3c3"
+    },
+    "soil_koc/v1.0/splits/scaffold/cal.parquet": {
+      "size_bytes": 25932,
+      "sha256": "9686ce36e5498baff8ad02adcc34be34584ff57820de7bd1d7144bf6f85ab018"
+    },
+    "soil_koc/v1.0/splits/scaffold/test.parquet": {
+      "size_bytes": 25732,
+      "sha256": "43a31f2bb706d9eb481788aac399aac5248f05c7b37864b0b5f60fbf96233d2d"
+    },
+    "soil_koc/v1.0/splits/scaffold/train.parquet": {
+      "size_bytes": 55295,
+      "sha256": "4414f1382425bf24d2e2dd71b287b85023493db1d63ac23cc6e5af9e7c436aa7"
+    },
+    "soil_koc/v1.0/splits_metadata.json": {
+      "size_bytes": 855,
+      "sha256": "f5604b4cd4ab94921c9016e516a704856cfd654af688f9bfbdb883c0e6787332"
+    },
+    "_cross_endpoint_overlap.csv": {
+      "size_bytes": 134038,
+      "sha256": "2a3c928ed2bf8b26dd5ded531c1255b2417741397028f058c7ce4c4c6166baa4"
+    }
+  }
+}

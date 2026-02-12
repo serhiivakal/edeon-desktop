@@ -1,0 +1,142 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+  backdrop-filter: blur(4px);
+}
+
+.modal {
+  background-color: var(--color-surface-base);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-overlay);
+  width: 90%;
+  max-width: 650px;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: var(--space-6);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-sans);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.closeButton {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  background: transparent;
+  border: none;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+  padding: var(--space-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+}
+
+.closeButton:hover {
+  background-color: var(--color-action-secondary-hover);
+  color: var(--color-text-primary);
+}
+
+.header {
+  text-align: center;
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding-bottom: var(--space-4);
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding-bottom: var(--space-1);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+  margin-top: var(--space-2);
+}
+
+.table th, .table td {
+  padding: var(--space-2);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.table th {
+  font-weight: 600;
+  color: var(--color-text-tertiary);
+}
+
+.citationBlock {
+  background-color: var(--color-surface-raised);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+}
+
+.citationActions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.btn {
+  background-color: var(--color-action-secondary);
+  border: 1px solid var(--color-border-subtle);
+  color: var(--color-text-primary);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn:hover {
+  background-color: var(--color-action-secondary-hover);
+}
+
+.btnPrimary {
+  background-color: var(--color-action-primary);
+  border: 1px solid var(--color-action-primary);
+  color: var(--color-text-inverse);
+}
+
+.btnPrimary:hover {
+  background-color: var(--color-action-primary-hover);
+}

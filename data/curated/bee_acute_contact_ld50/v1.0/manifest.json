@@ -1,0 +1,65 @@
+{
+  "generator": "edeon-data-pipeline",
+  "files": {
+    "curated.csv": {
+      "size_bytes": 227463,
+      "sha256": "f3b0f52b30ae9e25e8311aa1a66a0a47bd56f40fc1e62c69d85df5d14d1375b8"
+    },
+    "curated.parquet": {
+      "size_bytes": 82443,
+      "sha256": "c4b3816df536980aa15c2d4b56bac07a10a83cd7c34591e0712602b5b75b3853"
+    },
+    "curation_log.json": {
+      "size_bytes": 2232,
+      "sha256": "1dfaf0188d87bd9d470c45dcd8b6ca7abd535de485732fac8d35636e03a15a11"
+    },
+    "curation_stats.json": {
+      "size_bytes": 157,
+      "sha256": "31588bf89404f90606da215574339bf40104cfc1cb7973a1c0ec2a20e0e4cd27"
+    },
+    "data_card.yaml": {
+      "size_bytes": 2784,
+      "sha256": "47030dc49583466a2a2169f921c5f2f2a5894d9521081d8611e162a3a1a7e41b"
+    },
+    "splits/random/cal.parquet": {
+      "size_bytes": 27131,
+      "sha256": "b1cf334fd17dfaddfd78e8f19d360046d567b389562756ebd2657ebe2a81f3c8"
+    },
+    "splits/random/test.parquet": {
+      "size_bytes": 27342,
+      "sha256": "f9d02eef20e02800b0d7fe27fcb67c980b12a9e1b66b4e546575624166d8d652"
+    },
+    "splits/random/train.parquet": {
+      "size_bytes": 63274,
+      "sha256": "6f179d5d71ccdf11a5c1a3834d2f8d50ff0e4869349e0bed020525ca55dd21de"
+    },
+    "splits/scaffold/cal.parquet": {
+      "size_bytes": 27808,
+      "sha256": "06097139972fd669652795e0fd7018aa96a8beb953b0c98ad9c564320284ba81"
+    },
+    "splits/scaffold/test.parquet": {
+      "size_bytes": 26718,
+      "sha256": "ff615473cb4a4e217034f0b0c9a0394c67852ff26e6a1937a182353013fe7b29"
+    },
+    "splits/scaffold/train.parquet": {
+      "size_bytes": 59628,
+      "sha256": "697dbd58059e19ae4d814898585e888c9624da91a6959a54bf41902f3e7502a1"
+    },
+    "splits/time/cal.parquet": {
+      "size_bytes": 27220,
+      "sha256": "107429ce5c91e3a1a807f3a6f839e4ec96d901e3e4680c144426d4825a0003a9"
+    },
+    "splits/time/test.parquet": {
+      "size_bytes": 30813,
+      "sha256": "682ff08fef0cd6bd0140b2032b7393df8b1aa1a8df61c1ada02d27b98386678d"
+    },
+    "splits/time/train.parquet": {
+      "size_bytes": 57997,
+      "sha256": "270a8871c8deec9d2351e088f39cbd25834b6cc281382e8ad23ebf4aa0603365"
+    },
+    "splits_metadata.json": {
+      "size_bytes": 1216,
+      "sha256": "f0fdfac2b6dcc2e6f61bf6d40535ce3f65adee23fd91afed1aa002c793c28061"
+    }
+  }
+}

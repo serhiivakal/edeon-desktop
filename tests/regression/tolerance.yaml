@@ -1,0 +1,47 @@
+# Per-endpoint tolerance for numeric predictions.
+# A prediction is considered drifted if |new - expected| > tolerance.
+bee_acute_oral_ld50:
+  rel_tol: 0.05      # 5% relative tolerance
+  abs_tol: 0.001     # absolute floor
+bee_acute_contact_ld50:
+  rel_tol: 0.05
+  abs_tol: 0.001
+fish_acute_lc50:
+  rel_tol: 0.05
+  abs_tol: 0.001
+daphnia_acute_ec50:
+  rel_tol: 0.05
+  abs_tol: 0.001
+algae_growth_ec50:
+  rel_tol: 0.05
+  abs_tol: 0.001
+earthworm_acute_lc50:
+  rel_tol: 0.05
+  abs_tol: 0.001
+bird_acute_oral_ld50:
+  rel_tol: 0.05
+  abs_tol: 0.001
+rat_acute_oral_ld50:
+  rel_tol: 0.05
+  abs_tol: 0.001
+soil_koc:
+  rel_tol: 0.05
+  abs_tol: 0.001
+soil_dt50:
+  rel_tol: 0.05
+  abs_tol: 0.001
+gus_index:
+  rel_tol: 0.05
+  abs_tol: 0.001
+bcf:
+  rel_tol: 0.05
+  abs_tol: 0.001
+pesticide_likeness_tice:
+  rel_tol: 0.05
+  abs_tol: 0.001
+
+categorical_endpoints:
+  - skin_sensitization
+  - eye_irritation
+  - photostability_class
+# Categorical endpoints must match exactly.

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edeon Tier-1 Classification Validation Report - algae_growth_ec50</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: rgba(22, 29, 49, 0.7);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --accent-glow: #3b82f6;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            --header-font: 'Outfit', sans-serif;
+            --body-font: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: var(--bg-color);
+            background-image:
+                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(139, 92, 246, 0.1) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            font-family: var(--body-font);
+            padding: 2rem 4rem;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem; margin-bottom: 2.5rem;
+        }
+
+        .title-area h1 {
+            font-family: var(--header-font); font-size: 2.2rem; font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .title-area p { color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.3rem; }
+
+        .badge {
+            display: inline-block; padding: 0.35rem 1rem; border-radius: 2rem;
+            font-weight: 600; font-size: 0.8rem; letter-spacing: 0.05em;
+        }
+        .badge-cls { background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%); color: #fff; }
+
+        .grid { display: grid; gap: 1.5rem; margin-bottom: 2rem; }
+        .grid-4 { grid-template-columns: repeat(4, 1fr); }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        .grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+        .card {
+            background: var(--card-bg); border: 1px solid var(--border-color);
+            border-radius: 1rem; padding: 1.5rem;
+            backdrop-filter: blur(16px);
+        }
+        .card h3 {
+            font-family: var(--header-font); font-size: 0.85rem;
+            color: var(--text-secondary); text-transform: uppercase;
+            letter-spacing: 0.1em; margin-bottom: 0.5rem;
+        }
+        .card .metric {
+            font-size: 2rem; font-weight: 700; font-family: var(--header-font);
+        }
+        .card .sub { font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.25rem; }
+
+        .section-title {
+            font-family: var(--header-font); font-size: 1.4rem; font-weight: 600;
+            margin: 2.5rem 0 1rem 0;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        .chart-container { position: relative; height: 350px; }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td {
+            padding: 0.75rem 1rem; text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        th {
+            font-family: var(--header-font); font-size: 0.8rem;
+            color: var(--text-secondary); text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        td { font-size: 0.9rem; }
+
+        /* Confusion Matrix */
+        .cm-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 4px;
+            max-width: 300px; margin: 1rem auto;
+        }
+        .cm-cell {
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            padding: 1.2rem; border-radius: 0.5rem; font-weight: 700; font-size: 1.6rem;
+            font-family: var(--header-font);
+        }
+        .cm-cell .label { font-size: 0.65rem; font-weight: 400; opacity: 0.7; margin-top: 0.3rem; }
+        .cm-tn { background: rgba(16, 185, 129, 0.2); color: var(--success); }
+        .cm-fp { background: rgba(245, 158, 11, 0.2); color: var(--warning); }
+        .cm-fn { background: rgba(239, 68, 68, 0.2); color: var(--error); }
+        .cm-tp { background: rgba(59, 130, 246, 0.2); color: var(--accent-glow); }
+
+        .cm-labels {
+            display: grid; grid-template-columns: 80px 1fr 1fr; gap: 4px;
+            max-width: 380px; margin: 0 auto;
+        }
+        .cm-labels .corner { }
+        .cm-labels .axis-label {
+            text-align: center; font-size: 0.75rem; color: var(--text-secondary);
+            font-family: var(--header-font); text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .cm-labels .row-label {
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.75rem; color: var(--text-secondary);
+            font-family: var(--header-font); writing-mode: horizontal-tb;
+        }
+
+        @media (max-width: 900px) {
+            body { padding: 1rem; }
+            .grid-4, .grid-3 { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="title-area">
+        <h1>Algae Growth Ec50 — Classification Report</h1>
+        <p>Generated 2026-06-18T19:00:39.992393Z · Tier-1 Reference Binary Classification Model</p>
+    </div>
+    <span class="badge badge-cls">CLASSIFICATION</span>
+</header>
+
+<!-- KPI Cards -->
+<div class="grid grid-4">
+    <div class="card">
+        <h3>Balanced Accuracy</h3>
+        <div class="metric" style="color: var(--error)">
+            0.500
+        </div>
+        <div class="sub">Test set (n=15)</div>
+    </div>
+    <div class="card">
+        <h3>AUC-ROC</h3>
+        <div class="metric" style="color: var(--error)">
+            0.280
+        </div>
+        <div class="sub">Area Under ROC Curve</div>
+    </div>
+    <div class="card">
+        <h3>F1 Score</h3>
+        <div class="metric">0.471</div>
+        <div class="sub">Prec=0.33 · Rec=0.80</div>
+    </div>
+    <div class="card">
+        <h3>ECE</h3>
+        <div class="metric" style="color: var(--error)">
+            0.353
+        </div>
+        <div class="sub">Expected Calibration Error</div>
+    </div>
+</div>
+
+<div class="grid grid-3">
+    <div class="card">
+        <h3>Conformal Coverage</h3>
+        <div class="metric" style="color: var(--success)">
+            93.3%
+        </div>
+        <div class="sub">95% target · Set Size=1.93</div>
+    </div>
+    <div class="card">
+        <h3>Training Data</h3>
+        <div class="metric">76</div>
+        <div class="sub">compounds · Cal=17</div>
+    </div>
+    <div class="card">
+        <h3>Cal Balanced Accuracy</h3>
+        <div class="metric">0.679</div>
+        <div class="sub">CV Train BA=0.503</div>
+    </div>
+</div>
+
+<!-- Confusion Matrix -->
+<h2 class="section-title">Confusion Matrix</h2>
+<div class="card">
+    <div class="cm-labels">
+        <div class="corner"></div>
+        <div class="axis-label">Pred Nontoxic</div>
+        <div class="axis-label">Pred Toxic</div>
+    </div>
+    <div class="cm-labels">
+        <div class="row-label">True Nontoxic</div>
+        <div class="cm-grid" style="grid-template-columns: 1fr 1fr; max-width: none;">
+            <div class="cm-cell cm-tn" id="cm-tn"><span class="label">TN</span></div>
+            <div class="cm-cell cm-fp" id="cm-fp"><span class="label">FP</span></div>
+        </div>
+    </div>
+    <div class="cm-labels">
+        <div class="row-label">True Toxic</div>
+        <div class="cm-grid" style="grid-template-columns: 1fr 1fr; max-width: none;">
+            <div class="cm-cell cm-fn" id="cm-fn"><span class="label">FN</span></div>
+            <div class="cm-cell cm-tp" id="cm-tp"><span class="label">TP</span></div>
+        </div>
+    </div>
+</div>
+
+<!-- ROC Curve -->
+<h2 class="section-title">ROC Curve</h2>
+<div class="card">
+    <div class="chart-container">
+        <canvas id="rocChart"></canvas>
+    </div>
+</div>
+
+<!-- Calibration Reliability Diagram -->
+<h2 class="section-title">Calibration Reliability Diagram</h2>
+<div class="card">
+    <div class="chart-container">
+        <canvas id="calibrationChart"></canvas>
+    </div>
+</div>
+
+<!-- Probability Distribution -->
+<h2 class="section-title">Probability Distribution</h2>
+<div class="card">
+    <div class="chart-container">
+        <canvas id="probaChart"></canvas>
+    </div>
+</div>
+
+<!-- AD Breakdown -->
+<h2 class="section-title">Applicability Domain Breakdown</h2>
+<div class="card">
+    <table>
+        <thead>
+            <tr><th>AD Region</th><th>Count</th><th>Balanced Accuracy</th><th>Accuracy</th></tr>
+        </thead>
+        <tbody>
+            
+            
+            <tr>
+                <td>In Domain</td>
+                <td>0</td>
+                <td>—</td>
+                <td>—</td>
+            </tr>
+            
+            
+            <tr>
+                <td>Borderline</td>
+                <td>0</td>
+                <td>—</td>
+                <td>—</td>
+            </tr>
+            
+            
+            <tr>
+                <td>Out Of Domain</td>
+                <td>0</td>
+                <td>—</td>
+                <td>—</td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+
+<script>
+// Confusion Matrix
+const cm = [[2, 8], [1, 4]];
+document.getElementById('cm-tn').innerHTML = cm[0][0] + '<span class="label">TN</span>';
+document.getElementById('cm-fp').innerHTML = cm[0][1] + '<span class="label">FP</span>';
+document.getElementById('cm-fn').innerHTML = cm[1][0] + '<span class="label">FN</span>';
+document.getElementById('cm-tp').innerHTML = cm[1][1] + '<span class="label">TP</span>';
+
+// ROC Curve
+const rocData = {"fpr": [0.0, 0.1, 0.6, 0.6, 0.8, 0.8, 1.0], "tpr": [0.0, 0.0, 0.0, 0.4, 0.4, 1.0, 1.0], "thresholds": [Infinity, 0.7733151890109549, 0.6892949856873918, 0.6309472752421005, 0.6258591840019146, 0.4917620768982323, 0.40430522333532903], "auc": 0.27999999999999997};
+new Chart(document.getElementById('rocChart'), {
+    type: 'line',
+    data: {
+        datasets: [{
+            label: 'ROC (AUC=' + (rocData.auc ? rocData.auc.toFixed(3) : 'N/A') + ')',
+            data: rocData.fpr.map((fpr, i) => ({x: fpr, y: rocData.tpr[i]})),
+            borderColor: '#3b82f6', backgroundColor: 'rgba(59, 130, 246, 0.1)',
+            fill: true, pointRadius: 0, borderWidth: 2, tension: 0.1
+        }, {
+            label: 'Random',
+            data: [{x: 0, y: 0}, {x: 1, y: 1}],
+            borderColor: 'rgba(255,255,255,0.2)', borderDash: [5, 5],
+            pointRadius: 0, borderWidth: 1, fill: false
+        }]
+    },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        scales: {
+            x: { type: 'linear', title: { display: true, text: 'False Positive Rate', color: '#9ca3af' },
+                 ticks: { color: '#9ca3af' }, grid: { color: 'rgba(255,255,255,0.05)' }, min: 0, max: 1 },
+            y: { title: { display: true, text: 'True Positive Rate', color: '#9ca3af' },
+                 ticks: { color: '#9ca3af' }, grid: { color: 'rgba(255,255,255,0.05)' }, min: 0, max: 1 }
+        },
+        plugins: { legend: { labels: { color: '#f3f4f6' } } }
+    }
+});
+
+// Calibration Reliability Diagram
+const calBins = [{"bin_start": 0.0, "bin_end": 0.1, "count": 0, "avg_predicted": 0.05, "avg_actual": 0.0}, {"bin_start": 0.1, "bin_end": 0.2, "count": 0, "avg_predicted": 0.15000000000000002, "avg_actual": 0.0}, {"bin_start": 0.2, "bin_end": 0.30000000000000004, "count": 0, "avg_predicted": 0.25, "avg_actual": 0.0}, {"bin_start": 0.30000000000000004, "bin_end": 0.4, "count": 0, "avg_predicted": 0.35000000000000003, "avg_actual": 0.0}, {"bin_start": 0.4, "bin_end": 0.5, "count": 3, "avg_predicted": 0.44061799999156476, "avg_actual": 0.3333333333333333}, {"bin_start": 0.5, "bin_end": 0.6000000000000001, "count": 1, "avg_predicted": 0.5267293734305514, "avg_actual": 1.0}, {"bin_start": 0.6000000000000001, "bin_end": 0.7000000000000001, "count": 6, "avg_predicted": 0.6442015865493517, "avg_actual": 0.5}, {"bin_start": 0.7000000000000001, "bin_end": 0.8, "count": 5, "avg_predicted": 0.7268773974666508, "avg_actual": 0.0}, {"bin_start": 0.8, "bin_end": 0.9, "count": 0, "avg_predicted": 0.8500000000000001, "avg_actual": 0.0}, {"bin_start": 0.9, "bin_end": 1.0, "count": 0, "avg_predicted": 0.95, "avg_actual": 0.0}];
+const calPredicted = calBins.map(b => b.avg_predicted);
+const calActual = calBins.map(b => b.avg_actual);
+const calCounts = calBins.map(b => b.count);
+
+new Chart(document.getElementById('calibrationChart'), {
+    type: 'bar',
+    data: {
+        labels: calBins.map(b => b.avg_predicted.toFixed(2)),
+        datasets: [{
+            type: 'bar', label: 'Fraction Positive',
+            data: calActual,
+            backgroundColor: 'rgba(59, 130, 246, 0.5)', borderColor: '#3b82f6', borderWidth: 1,
+            yAxisID: 'y'
+        }, {
+            type: 'line', label: 'Perfect Calibration',
+            data: calPredicted,
+            borderColor: 'rgba(255,255,255,0.3)', borderDash: [5, 5],
+            pointRadius: 0, borderWidth: 1, fill: false, yAxisID: 'y'
+        }]
+    },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        scales: {
+            x: { title: { display: true, text: 'Mean Predicted Probability', color: '#9ca3af' },
+                 ticks: { color: '#9ca3af' }, grid: { color: 'rgba(255,255,255,0.05)' } },
+            y: { title: { display: true, text: 'Fraction of Positives', color: '#9ca3af' },
+                 ticks: { color: '#9ca3af' }, grid: { color: 'rgba(255,255,255,0.05)' }, min: 0, max: 1 }
+        },
+        plugins: { legend: { labels: { color: '#f3f4f6' } } }
+    }
+});
+
+// Probability Distribution Histogram
+const proba = [0.6295413120772719, 0.6258591840019146, 0.4917620768982323, 0.6655327262627757, 0.4257866997411329, 0.7102758069949721, 0.6892949856873918, 0.709055291679433, 0.6309472752421005, 0.6240340360246557, 0.40430522333532903, 0.7733151890109549, 0.724355321662242, 0.7173853779856523, 0.5267293734305514];
+const labels = [0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1];
+const toxicProba = proba.filter((_, i) => labels[i] === 1);
+const nontoxicProba = proba.filter((_, i) => labels[i] === 0);
+
+function histBins(data, nBins) {
+    const counts = new Array(nBins).fill(0);
+    for (const v of data) {
+        const bin = Math.min(Math.floor(v * nBins), nBins - 1);
+        counts[bin]++;
+    }
+    return counts;
+}
+
+const nBins = 20;
+const binLabels = Array.from({length: nBins}, (_, i) => ((i + 0.5) / nBins).toFixed(2));
+
+new Chart(document.getElementById('probaChart'), {
+    type: 'bar',
+    data: {
+        labels: binLabels,
+        datasets: [{
+            label: 'Toxic (class=1)',
+            data: histBins(toxicProba, nBins),
+            backgroundColor: 'rgba(239, 68, 68, 0.6)', borderColor: '#ef4444', borderWidth: 1
+        }, {
+            label: 'Nontoxic (class=0)',
+            data: histBins(nontoxicProba, nBins),
+            backgroundColor: 'rgba(16, 185, 129, 0.6)', borderColor: '#10b981', borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true, maintainAspectRatio: false,
+        scales: {
+            x: { title: { display: true, text: 'Predicted Probability (Toxic)', color: '#9ca3af' },
+                 ticks: { color: '#9ca3af' }, grid: { color: 'rgba(255,255,255,0.05)' } },
+            y: { title: { display: true, text: 'Count', color: '#9ca3af' },
+                 ticks: { color: '#9ca3af' }, grid: { color: 'rgba(255,255,255,0.05)' } }
+        },
+        plugins: { legend: { labels: { color: '#f3f4f6' } } }
+    }
+});
+</script>
+
+</body>
+</html>

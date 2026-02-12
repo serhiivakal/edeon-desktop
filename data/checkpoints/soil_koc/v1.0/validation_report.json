@@ -1,0 +1,116 @@
+{
+  "endpoint_id": "soil_koc",
+  "timestamp": "2026-06-20T07:13:02.676208Z",
+  "train_samples": 503,
+  "cal_samples": 108,
+  "test_samples": 103,
+  "cv_train_rmse": 0.6466108616851205,
+  "cal_rmse": 0.6714721011345793,
+  "cal_r2": 0.6851375563811722,
+  "overall": {
+    "rmse": 0.7389868663840385,
+    "mae": 0.5858693657976141,
+    "r2": 0.6982040786351571,
+    "pearson": 0.8577340305582555,
+    "spearman": 0.8518270386506238,
+    "count": 103
+  },
+  "conformal": {
+    "overall_coverage": 0.8737864077669902,
+    "mean_width": 2.306912795589794,
+    "regions": {
+      "in": {
+        "count": 60,
+        "rmse": 0.8354258838299351,
+        "coverage": 0.8166666666666667,
+        "mean_width": 2.3069127955897937
+      },
+      "borderline": {
+        "count": 36,
+        "rmse": 0.6018086778611488,
+        "coverage": 0.9444444444444444,
+        "mean_width": 2.3069127955897937
+      },
+      "out": {
+        "count": 7,
+        "rmse": 0.4365492185521218,
+        "coverage": 1.0,
+        "mean_width": 2.3069127955897932
+      }
+    }
+  },
+  "classes": {
+    "pyrethroid": {
+      "count": 1,
+      "rmse": 1.0815170410101516,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    },
+    "unclassified": {
+      "count": 81,
+      "rmse": 0.7798136902411951,
+      "coverage": 0.8395061728395061,
+      "ad_coverage": 0.9382716049382716
+    },
+    "sdhi": {
+      "count": 6,
+      "rmse": 0.3792277213759965,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    },
+    "imidazolinone": {
+      "count": 2,
+      "rmse": 0.6018856151832527,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    },
+    "carbamate": {
+      "count": 2,
+      "rmse": 0.20868361400343668,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    },
+    "organophosphate": {
+      "count": 4,
+      "rmse": 0.4785598187178402,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    },
+    "triazole": {
+      "count": 5,
+      "rmse": 0.7355343900708743,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    },
+    "triazine": {
+      "count": 3,
+      "rmse": 0.27416801681249636,
+      "coverage": 1.0,
+      "ad_coverage": 0.3333333333333333
+    },
+    "phenoxyacid": {
+      "count": 2,
+      "rmse": 0.7193923630995726,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    }
+  },
+  "subset_metrics": {
+    "ionizable": {
+      "rmse": 0.6553620934546734,
+      "r2": 0.5811500722476408,
+      "mae": 0.4862302055974189,
+      "coverage": 0.896551724137931,
+      "mean_width": 2.3069127955897937,
+      "count": 29
+    },
+    "non_ionizable": {
+      "rmse": 0.7692834407376435,
+      "r2": 0.6770218265905124,
+      "mae": 0.6249171447949879,
+      "coverage": 0.8648648648648649,
+      "mean_width": 2.306912795589794,
+      "count": 74
+    }
+  }
+}

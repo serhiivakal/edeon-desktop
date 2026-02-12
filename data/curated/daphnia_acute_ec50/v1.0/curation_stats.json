@@ -1,0 +1,8 @@
+{
+  "raw_records": 4181,
+  "after_parse": 720,
+  "after_standardisation": 720,
+  "after_filter": 720,
+  "after_aggregation": 259,
+  "rejection_rate": 0.8277923941640756
+}

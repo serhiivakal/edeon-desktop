@@ -1,0 +1,152 @@
+{
+  "endpoint_id": "algae_growth_ec50",
+  "task_kind": "classification",
+  "timestamp": "2026-06-18T19:00:39.992393Z",
+  "train_samples": 76,
+  "cal_samples": 17,
+  "test_samples": 15,
+  "cv_train_balanced_accuracy": 0.503171992481203,
+  "cal_balanced_accuracy": 0.6785714285714286,
+  "conformal_coverage": 0.9333333333333333,
+  "mean_set_size": 1.9333333333333333,
+  "overall": {
+    "balanced_accuracy": 0.5,
+    "auc_roc": 0.27999999999999997,
+    "f1": 0.47058823529411764,
+    "precision": 0.3333333333333333,
+    "recall": 0.8,
+    "confusion_matrix": [
+      [
+        2,
+        8
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    "ece": 0.3529814088782338,
+    "count": 15
+  },
+  "ad": {
+    "regions": {
+      "in": {
+        "count": 15,
+        "balanced_accuracy": 0.5,
+        "accuracy": 0.4
+      },
+      "borderline": {
+        "count": 0,
+        "balanced_accuracy": NaN,
+        "accuracy": NaN
+      },
+      "out": {
+        "count": 0,
+        "balanced_accuracy": NaN,
+        "accuracy": NaN
+      }
+    }
+  },
+  "calibration_bins": [
+    {
+      "bin_start": 0.0,
+      "bin_end": 0.1,
+      "count": 0,
+      "avg_predicted": 0.05,
+      "avg_actual": 0.0
+    },
+    {
+      "bin_start": 0.1,
+      "bin_end": 0.2,
+      "count": 0,
+      "avg_predicted": 0.15000000000000002,
+      "avg_actual": 0.0
+    },
+    {
+      "bin_start": 0.2,
+      "bin_end": 0.30000000000000004,
+      "count": 0,
+      "avg_predicted": 0.25,
+      "avg_actual": 0.0
+    },
+    {
+      "bin_start": 0.30000000000000004,
+      "bin_end": 0.4,
+      "count": 0,
+      "avg_predicted": 0.35000000000000003,
+      "avg_actual": 0.0
+    },
+    {
+      "bin_start": 0.4,
+      "bin_end": 0.5,
+      "count": 3,
+      "avg_predicted": 0.44061799999156476,
+      "avg_actual": 0.3333333333333333
+    },
+    {
+      "bin_start": 0.5,
+      "bin_end": 0.6000000000000001,
+      "count": 1,
+      "avg_predicted": 0.5267293734305514,
+      "avg_actual": 1.0
+    },
+    {
+      "bin_start": 0.6000000000000001,
+      "bin_end": 0.7000000000000001,
+      "count": 6,
+      "avg_predicted": 0.6442015865493517,
+      "avg_actual": 0.5
+    },
+    {
+      "bin_start": 0.7000000000000001,
+      "bin_end": 0.8,
+      "count": 5,
+      "avg_predicted": 0.7268773974666508,
+      "avg_actual": 0.0
+    },
+    {
+      "bin_start": 0.8,
+      "bin_end": 0.9,
+      "count": 0,
+      "avg_predicted": 0.8500000000000001,
+      "avg_actual": 0.0
+    },
+    {
+      "bin_start": 0.9,
+      "bin_end": 1.0,
+      "count": 0,
+      "avg_predicted": 0.95,
+      "avg_actual": 0.0
+    }
+  ],
+  "roc": {
+    "fpr": [
+      0.0,
+      0.1,
+      0.6,
+      0.6,
+      0.8,
+      0.8,
+      1.0
+    ],
+    "tpr": [
+      0.0,
+      0.0,
+      0.0,
+      0.4,
+      0.4,
+      1.0,
+      1.0
+    ],
+    "thresholds": [
+      Infinity,
+      0.7733151890109549,
+      0.6892949856873918,
+      0.6309472752421005,
+      0.6258591840019146,
+      0.4917620768982323,
+      0.40430522333532903
+    ],
+    "auc": 0.27999999999999997
+  }
+}

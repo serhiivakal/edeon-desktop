@@ -5,10 +5,14 @@ import { mockRecentWorkflows } from '../../data/mockData';
 import type { ViewId } from '../../types';
 
 const views: { id: ViewId; label: string; badge?: number }[] = [
+  { id: 'viewer3d', label: '3D Viewer' },
   { id: 'library', label: 'Library' },
   { id: 'workflows', label: 'Workflows', badge: 1 },
+  { id: 'generation', label: 'De Novo Design' },
+  { id: 'fate', label: 'Env Fate' },
   { id: 'knowledge', label: 'Knowledge' },
   { id: 'models', label: 'Models' },
+  { id: 'journal', label: 'Decision Journal' },
   { id: 'reports', label: 'Reports' },
 ];
 
@@ -184,18 +188,26 @@ export function Sidebar() {
       {/* Views */}
       <div className="sidebar-section">
         <div className="sidebar-section-label">VIEWS</div>
-        {views.map((view) => (
-          <div
-            key={view.id}
-            className={`sidebar-item${activeView === view.id ? ' active' : ''}`}
-            onClick={() => setActiveView(view.id)}
-          >
-            <span>{view.label}</span>
-            {view.badge && (
-              <span className="sidebar-badge">{view.badge}</span>
-            )}
-          </div>
-        ))}
+        {views.map((view) => {
+          let elementId = `${view.id}-nav`;
+          if (view.id === 'viewer3d') elementId = 'docking-workbench-nav';
+          if (view.id === 'generation') elementId = 'generation-workbench-nav';
+          if (view.id === 'knowledge') elementId = 'knowledge-hub-nav';
+
+          return (
+            <div
+              key={view.id}
+              id={elementId}
+              className={`sidebar-item${activeView === view.id ? ' active' : ''}`}
+              onClick={() => setActiveView(view.id)}
+            >
+              <span>{view.label}</span>
+              {view.badge && (
+                <span className="sidebar-badge">{view.badge}</span>
+              )}
+            </div>
+          );
+        })}
       </div>
 
       {/* Recent Workflows — still mock data until Phase 3 */}
@@ -211,7 +223,12 @@ export function Sidebar() {
 
       {/* Footer */}
       <div className="sidebar-footer">
-        <div className="sidebar-footer-item">Settings</div>
+        <div
+          className={`sidebar-footer-item${activeView === 'settings' ? ' active' : ''}`}
+          onClick={() => setActiveView('settings')}
+        >
+          ⚙ Settings
+        </div>
         <div className="sidebar-footer-item">Help</div>
       </div>
 

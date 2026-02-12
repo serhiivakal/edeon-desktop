@@ -4,9 +4,194 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edeon Desktop</title>
+    <style>
+      /* Splash Screen Styles */
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #09090b;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        overflow: hidden;
+      }
+
+      #splash-screen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(circle at center, #0e160a 0%, #09090b 100%);
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+      }
+
+      .splash-container {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: fadeIn 0.8s ease-out forwards;
+      }
+
+      .logo-wrapper {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Glowing backdrop behind the logo */
+      .logo-wrapper::before {
+        content: '';
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        background: radial-gradient(circle, rgba(22, 163, 74, 0.15) 0%, rgba(22, 163, 74, 0) 70%);
+        border-radius: 50%;
+        animation: pulseGlow 3s infinite ease-in-out;
+      }
+
+      .splash-logo {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        z-index: 2;
+        filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+        animation: floatLogo 4s infinite ease-in-out;
+      }
+
+      .splash-title {
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        margin: 0 0 8px 0;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .splash-subtitle {
+        color: #a1a1aa;
+        font-size: 13px;
+        font-weight: 400;
+        margin: 0 0 32px 0;
+        letter-spacing: 0.02em;
+      }
+
+      .splash-loader {
+        width: 180px;
+        height: 3px;
+        background-color: rgba(255, 255, 255, 0.08);
+        border-radius: 9999px;
+        overflow: hidden;
+        margin-bottom: 16px;
+      }
+
+      .loader-bar {
+        width: 40%;
+        height: 100%;
+        background: linear-gradient(90deg, #22c55e, #16a34a);
+        border-radius: 9999px;
+        animation: loadingSlide 1.5s infinite ease-in-out;
+      }
+
+      .splash-status {
+        color: #71717a;
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        margin: 0;
+        animation: breatheText 2s infinite ease-in-out;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.97);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes floatLogo {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-6px);
+        }
+      }
+
+      @keyframes pulseGlow {
+        0%, 100% {
+          transform: scale(1);
+          opacity: 0.8;
+        }
+        50% {
+          transform: scale(1.15);
+          opacity: 1;
+        }
+      }
+
+      @keyframes loadingSlide {
+        0% {
+          transform: translateX(-150%);
+        }
+        50% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(250%);
+        }
+      }
+
+      @keyframes breatheText {
+        0%, 100% {
+          opacity: 0.5;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      .splash-credentials {
+        color: #52525b;
+        font-size: 11px;
+        font-weight: 400;
+        margin: 32px 0 0 0;
+        letter-spacing: 0.01em;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Instant Startup Splash Screen -->
+      <div id="splash-screen">
+        <div class="splash-container">
+          <div class="logo-wrapper">
+            <img src="/src/Edeon_logo_small.png" alt="Edeon Logo" class="splash-logo" />
+          </div>
+          <h1 class="splash-title">Edeon Desktop</h1>
+          <p class="splash-subtitle">Agrochemical Lead Optimization Platform</p>
+          <div class="splash-loader">
+            <div class="loader-bar"></div>
+          </div>
+          <p class="splash-status">Initializing Computational Engine...</p>
+          <p class="splash-credentials">Developed by Dr. Serhii Vakal, 2026, all rights reserved.</p>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -1,0 +1,80 @@
+{
+  "endpoint_id": "fish_acute_lc50",
+  "timestamp": "2026-06-01T15:31:00.647056Z",
+  "train_samples": 319,
+  "cal_samples": 69,
+  "test_samples": 66,
+  "cv_train_rmse": 1.2167652351032843,
+  "cal_rmse": 1.3376529569214022,
+  "cal_r2": 0.4808222122895074,
+  "overall": {
+    "rmse": 0.9540774827814891,
+    "mae": 0.7345500374327835,
+    "r2": 0.3566709338781595,
+    "pearson": 0.6050173480810118,
+    "spearman": 0.5633441185679993,
+    "count": 66
+  },
+  "conformal": {
+    "overall_coverage": 0.9393939393939394,
+    "mean_width": 6.3588755184953865,
+    "regions": {
+      "in": {
+        "count": 57,
+        "rmse": 0.9569958207701444,
+        "coverage": 0.9298245614035088,
+        "mean_width": 5.837445692012184
+      },
+      "borderline": {
+        "count": 8,
+        "rmse": 0.9758347394714383,
+        "coverage": 1.0,
+        "mean_width": 8.924239873886108
+      },
+      "out": {
+        "count": 1,
+        "rmse": 0.5064080197751917,
+        "coverage": 1.0,
+        "mean_width": 15.55746078491211
+      }
+    }
+  },
+  "classes": {
+    "organophosphate": {
+      "count": 3,
+      "rmse": 0.5708620382525897,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    },
+    "triazole": {
+      "count": 8,
+      "rmse": 0.2900038967444566,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    },
+    "unclassified": {
+      "count": 46,
+      "rmse": 1.0507612642152648,
+      "coverage": 0.9130434782608695,
+      "ad_coverage": 0.9782608695652174
+    },
+    "triazine": {
+      "count": 2,
+      "rmse": 1.1535377596563068,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    },
+    "phenoxyacid": {
+      "count": 4,
+      "rmse": 0.5915284329033589,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    },
+    "carbamate": {
+      "count": 3,
+      "rmse": 1.09201009028825,
+      "coverage": 1.0,
+      "ad_coverage": 1.0
+    }
+  }
+}

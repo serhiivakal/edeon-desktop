@@ -1,0 +1,33 @@
+{
+  "model_type": "xgb",
+  "task_kind": "classification",
+  "best_cv_score": 0.5523768656085797,
+  "best_cv_rmse": null,
+  "best_cv_balanced_accuracy": 0.4846090778335196,
+  "best_params": {
+    "n_estimators": 225,
+    "max_depth": 11,
+    "learning_rate": 0.15503069067189207,
+    "reg_alpha": 0.013483937147188567,
+    "reg_lambda": 0.9007650970149721,
+    "subsample": 0.935448116853627,
+    "colsample_bytree": 0.8721255920806188
+  },
+  "n_trials": 1,
+  "cv_folds": 2,
+  "trials_history": [
+    {
+      "trial_num": 0,
+      "value": 0.4846090778335196,
+      "params": {
+        "n_estimators": 206,
+        "max_depth": 3,
+        "learning_rate": 0.01424066491475928,
+        "reg_alpha": 2.306669025990856,
+        "reg_lambda": 1.3729027652533137e-07,
+        "subsample": 0.9488432164864763,
+        "colsample_bytree": 0.943066061392076
+      }
+    }
+  ]
+}

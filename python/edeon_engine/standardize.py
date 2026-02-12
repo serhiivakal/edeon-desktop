@@ -60,6 +60,11 @@ def standardize_single(smiles: str) -> dict:
         }
 
 
-def standardize_batch(smiles_list: list[str]) -> list[dict]:
+def standardize_batch(smiles_list: list[str], num_workers: int = 1) -> list[dict]:
     """Standardize a batch of SMILES strings."""
-    return [standardize_single(s) for s in smiles_list]
+    if num_workers <= 1 or len(smiles_list) < 5:
+        return [standardize_single(s) for s in smiles_list]
+    from joblib import Parallel, delayed
+    return Parallel(n_jobs=num_workers, prefer="threads")(
+        delayed(standardize_single)(s) for s in smiles_list
+    )

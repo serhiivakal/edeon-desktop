@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Imidacloprid — Model Predictions vs. Measured Values</title>
+        <style>
+            body { font-family: 'Segoe UI', Arial, sans-serif; margin: 30px; background-color: #FAFAFA; color: #333; }
+            h2 { color: #1B5E20; border-bottom: 2px solid #2E7D32; padding-bottom: 10px; }
+            table { width: 100%; border-collapse: collapse; margin-top: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); background-color: white; }
+            th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #E0E0E0; }
+            th { background-color: #2E7D32; color: white; text-transform: uppercase; font-size: 13px; letter-spacing: 0.5px; }
+            tr:hover { background-color: #F5F5F5; }
+            .disclaimer { margin-top: 30px; font-style: italic; font-size: 11px; color: #757575; }
+        </style>
+    </head>
+    <body>
+        <h2>Imidacloprid — QSAR Validation Table</h2>
+        <p><b>CAS:</b> 138261-41-3 | <b>Chemical Class:</b> neonicotinoid (insecticide)</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Endpoint</th>
+                    <th>Predicted (Tier-1 + Conformal CI)</th>
+                    <th>Authoritative Measured</th>
+                    <th>Match Status</th>
+                    <th>Reference Source</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr>
+            <td><b>Bee Acute Oral</b></td>
+            <td>Toxic (P:0.74)</td>
+            <td>0.0037 ug/bee</td>
+            <td style="color: #2E7D32; font-weight: bold;">MATCH</td>
+            <td><font size="2">PPDB (PPDB Database 2026)</font></td>
+        </tr>
+        
+        <tr>
+            <td><b>Bee Acute Contact</b></td>
+            <td>Non-toxic (P:0.11)</td>
+            <td>0.0081 ug/bee</td>
+            <td style="color: #C62828; font-weight: bold;">MISMATCH</td>
+            <td><font size="2">PPDB (PPDB Database 2026)</font></td>
+        </tr>
+        
+        <tr>
+            <td><b>Rat Acute Oral</b></td>
+            <td>N/A</td>
+            <td>450.0 mg/kg bw</td>
+            <td style="color: #C62828; font-weight: bold;">MISMATCH</td>
+            <td><font size="2">PPDB (PPDB Database 2026)</font></td>
+        </tr>
+        
+        <tr>
+            <td><b>Soil DT50</b></td>
+            <td>168.02 [22.7, 1245.5]</td>
+            <td>174.0 days</td>
+            <td style="color: #2E7D32; font-weight: bold;">MATCH</td>
+            <td><font size="2">EFSA DAR (EFSA DAR (2018))</font></td>
+        </tr>
+        
+        <tr>
+            <td><b>Soil organic carbon Koc</b></td>
+            <td>127.86 [9.0, 1820.4]</td>
+            <td>247.0 L/kg</td>
+            <td style="color: #2E7D32; font-weight: bold;">MATCH</td>
+            <td><font size="2">PPDB (PPDB Database 2026)</font></td>
+        </tr>
+        
+        <tr>
+            <td><b>Daphnia EC50</b></td>
+            <td>0.00 [0.0, 0.1]</td>
+            <td>0.085 mg/L</td>
+            <td style="color: #C62828; font-weight: bold;">MISMATCH</td>
+            <td><font size="2">PPDB (PPDB Database 2026)</font></td>
+        </tr>
+        
+            </tbody>
+        </table>
+        <p class="disclaimer">IN-SILICO SCREENING ONLY — These results are computational triage signals. They are NOT regulatory determinations and cannot replace experimental studies.</p>
+    </body>
+    </html>
+    

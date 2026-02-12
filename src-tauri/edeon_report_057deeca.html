@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edeon Dossier — W1 Dossier</title>
+<style>
+  /* ── Page setup ─────────────────────────────────────────── */
+  @page {
+    size: A4;
+    margin: 18mm 15mm 22mm 15mm;
+    @bottom-center {
+      content: "Edeon Desktop · Confidential · Page " counter(page) " of " counter(pages);
+      font-size: 7pt; color: #888; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 9pt; line-height: 1.45; color: #1a1a1a;
+    background: #fff;
+  }
+
+  /* ── Brand header ───────────────────────────────────────── */
+  .dossier-header {
+    background: linear-gradient(135deg, #173404 0%, #1f4a08 100%);
+    color: #fff; padding: 14px 20px; margin-bottom: 0;
+    border-radius: 3px 3px 0 0;
+    page-break-inside: avoid;
+  }
+  .dossier-header h1 { font-size: 15pt; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 2px; }
+  .dossier-header .subtitle { font-size: 9pt; opacity: 0.85; }
+  .meta-bar {
+    background: #f5f7f3; padding: 8px 20px; font-size: 8pt; color: #555;
+    border: 1px solid #dde5d8; border-top: none;
+    margin-bottom: 16px; border-radius: 0 0 3px 3px;
+  }
+  .meta-bar span { margin-right: 24px; }
+
+  /* ── Verdict banner ─────────────────────────────────────── */
+  .verdict-banner {
+    padding: 10px 16px; border-radius: 4px; margin-bottom: 14px;
+    page-break-inside: avoid;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .verdict-banner .band-label {
+    font-size: 11pt; font-weight: 700; letter-spacing: 1px;
+    padding: 4px 14px; border-radius: 3px; color: #fff; min-width: 90px; text-align: center;
+  }
+  .verdict-banner .rationale { font-size: 8.5pt; flex: 1; }
+  .verdict-banner .confidence-badge {
+    font-size: 7pt; font-weight: 600; padding: 2px 8px;
+    border-radius: 10px; text-transform: uppercase;
+  }
+
+  /* Band colours */
+  .band-go .band-label, .band-low .band-label { background: #1a7a2e; }
+  .band-go, .band-low { background: #e8f5e9; border: 1px solid #a5d6a7; }
+  .band-conditional .band-label, .band-med .band-label { background: #e8a317; }
+  .band-conditional, .band-med { background: #fff8e1; border: 1px solid #ffe082; }
+  .band-nogo .band-label, .band-high .band-label { background: #c62828; }
+  .band-nogo, .band-high { background: #ffebee; border: 1px solid #ef9a9a; }
+
+  /* Confidence colours */
+  .conf-high { background: #1a7a2e; color: #fff; }
+  .conf-moderate { background: #e8a317; color: #fff; }
+  .conf-low { background: #c62828; color: #fff; }
+
+  /* ── Tables ─────────────────────────────────────────────── */
+  table { width: 100%; border-collapse: collapse; margin-bottom: 12px; font-size: 8pt; }
+  th {
+    background: #173404; color: #fff; padding: 5px 8px;
+    text-align: left; font-weight: 600; font-size: 7.5pt;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  td { padding: 4px 8px; border-bottom: 1px solid #e8e8e5; vertical-align: top; }
+  tr:nth-child(even) td { background: #f8faf6; }
+  tr.flagged td { background: #fff3e0; }
+
+  /* ── Sections ───────────────────────────────────────────── */
+  .section { margin-bottom: 16px; page-break-inside: avoid; }
+  .section h2 {
+    font-size: 10pt; color: #173404; border-bottom: 2px solid #173404;
+    padding-bottom: 3px; margin-bottom: 8px;
+  }
+  .section h3 { font-size: 9pt; color: #2e5a12; margin: 8px 0 4px; }
+
+  /* ── Disclaimer / warnings ──────────────────────────────── */
+  .disclaimer {
+    background: #fff3e0; border: 1px solid #ffe0b2; border-radius: 3px;
+    padding: 8px 14px; font-size: 7.5pt; color: #6d4c00; margin-top: 16px;
+    page-break-inside: avoid;
+  }
+  .disclaimer strong { color: #e65100; }
+  .warnings-box {
+    background: #fce4ec; border: 1px solid #f48fb1; border-radius: 3px;
+    padding: 6px 12px; margin-bottom: 12px; font-size: 7.5pt; color: #880e4f;
+  }
+  .warnings-box ul { margin-left: 14px; }
+
+  /* ── Provenance ─────────────────────────────────────────── */
+  .provenance {
+    font-size: 7pt; color: #888; border-top: 1px solid #ddd;
+    padding-top: 6px; margin-top: 20px;
+  }
+
+  /* ── Utility ────────────────────────────────────────────── */
+  .pill {
+    display: inline-block; font-size: 7pt; padding: 1px 6px;
+    border-radius: 8px; font-weight: 600;
+  }
+  .pill-green  { background: #c8e6c9; color: #1b5e20; }
+  .pill-amber  { background: #fff9c4; color: #f57f17; }
+  .pill-red    { background: #ffcdd2; color: #b71c1c; }
+  .pill-grey   { background: #e0e0e0; color: #424242; }
+  .text-muted  { color: #888; }
+  .mono        { font-family: 'Courier New', monospace; font-size: 7.5pt; }
+  .nowrap      { white-space: nowrap; }
+  .right       { text-align: right; }
+</style>
+</head>
+<body>
+
+<div class="dossier-header">
+  <h1>REGISTRATION READINESS PRE-SCREEN</h1>
+  <div class="subtitle">EU 1107/2009 & CLP Regulatory Screening Dossier</div>
+</div>
+<div class="meta-bar">
+  <span><strong>Generated:</strong> 2026-06-28 12:25</span>
+  <span><strong>Workflow:</strong> registration_readiness</span>
+<span><strong>Compounds:</strong> 1</span></div>
+
+<div class="verdict-banner band-nogo">
+  <div class="band-label">NO_GO</div>
+  <div class="rationale">
+    <strong>Showstopper triggered: Groundwater concern (EU DWD 0.1 µg/L trigger)</strong><br>
+    GUS = 3.07 > 2.8 (leacher), GUS classification: leacher
+  </div>
+  <div class="confidence-badge conf-moderate">
+    moderate
+  </div>
+</div>
+
+
+<div class="section">
+  <h2>Compound 1 <span class="mono text-muted">(O=[N+]([O-])N=C1NCCN1Cc1ccc(Cl)cn1)</span></h2>
+  
+  <div class="verdict-banner band-nogo" style="margin-bottom:10px;">
+    <div class="band-label">NO_GO</div>
+    <div class="rationale">
+      <strong>Showstopper triggered: Groundwater concern (EU DWD 0.1 µg/L trigger)</strong><br>
+      GUS = 3.07 > 2.8 (leacher), GUS classification: leacher
+    </div>
+    <div class="confidence-badge conf-moderate">moderate</div>
+  </div>
+  
+  <h3>Regulatory Criteria Scorecard</h3>
+  <table>
+    <thead>
+      <tr><th>Criterion</th><th>Status</th><th>Evidence</th></tr>
+    </thead>
+    <tbody>
+      <tr class="">
+        <td>Genotoxicity / Mutagenicity alerts (Benigni-Bossa)</td>
+        <td>
+            <span class="pill pill-amber">WATCH</span>
+        </td>
+        <td>Nitroamine (N-nitro) (medium): Metabolic reduction to reactive intermediates</td>
+      </tr>
+      <tr class="">
+        <td>Endocrine disruption screening (structural)</td>
+        <td>
+            <span class="pill pill-green">PASS</span>
+        </td>
+        <td>No endocrine disruption structural alerts detected</td>
+      </tr>
+      <tr class="">
+        <td>Skin sensitization alerts (protein reactivity)</td>
+        <td>
+            <span class="pill pill-green">PASS</span>
+        </td>
+        <td>No skin sensitization alerts detected</td>
+      </tr>
+      <tr class="">
+        <td>PBT/vPvB (REACH Annex XIII)</td>
+        <td>
+            <span class="pill pill-green">PASS</span>
+        </td>
+        <td>—</td>
+      </tr>
+      <tr class="flagged">
+        <td>Groundwater concern (EU DWD 0.1 µg/L trigger)</td>
+        <td>
+            <span class="pill pill-red">SHOWSTOPPER</span>
+        </td>
+        <td>GUS = 3.07 > 2.8 (leacher), GUS classification: leacher</td>
+      </tr>
+      <tr class="">
+        <td>Aquatic hazard (CLP H400/H410/H411/H412)</td>
+        <td>
+            <span class="pill pill-amber">WATCH</span>
+        </td>
+        <td>Most sensitive endpoint: Daphnia EC50 = 64.5654 mg/L, Not rapidly degradable (default assumption)</td>
+      </tr>
+      <tr class="">
+        <td>Acute mammalian toxicity (CLP oral)</td>
+        <td>
+            <span class="pill pill-green">PASS</span>
+        </td>
+        <td>Predicted rat oral LD50 = 10399 mg/kg</td>
+      </tr>
+      <tr class="">
+        <td>Soil persistence (EU 1107/2009)</td>
+        <td>
+            <span class="pill pill-green">PASS</span>
+        </td>
+        <td>Predicted soil DT50 = 15 days, DT50 ≤ 90 d — below persistence trigger</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h3>Metabolite Risk Assessment</h3>
+  <table>
+    <thead>
+      <tr><th>Metric</th><th>Value</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Transformation Products Evaluated</td><td>14</td></tr>
+      <tr><td>Worst Metabolite Risk Level</td>
+        <td>
+<span class="pill pill-green">LOW</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="disclaimer">
+  <strong>⚠ IN-SILICO SCREENING ONLY</strong> — 
+  IN-SILICO SCREENING ONLY — These results are computational triage signals based on predicted endpoints and structural pattern matching. They are NOT regulatory determinations and cannot replace experimental studies or expert regulatory assessment.
+</div>
+
+<div class="provenance">
+  <span>data_versions: {'ecotox': '2026-03', 'opera': '2.9', 'pains_catalog': 'RDKit-2023.09', 'systemicity_rules': 'Briggs/Kleier'}</span> · 
+  <span>edeon_version: 0.1.0</span> · 
+  <span>input_hash: sha256:256835dd74275b9236ac9bd9a2d675fdf0ee9c75873d2b718e30e4daa27dfbe6</span> · 
+  <span>model_ids: {'environmental_fate': 'v1.0', 'mpo_score': 'v1.0', 'pains_filter': 'v1.0', 'resistance': 'v1.0', 'selectivity': 'v1.0', 'standardize': 'v1.0', 'systemicity': 'v1.0', 'toxicity': 'v1.0'}</span> · 
+  <span>params: {'tp_depth': 2, 'tp_probability_cutoff': 0.1, 'tp_routes': ['abiotic', 'metabolic'], 'use_predicted_fate': True}</span> · 
+  <span>run_utc: 2026-06-28T09:24:58.764485Z</span> · 
+  <span>workflow_id: registration_readiness</span> · 
+  <span>workflow_version: 1.0</span> · 
+</div>
+
+</body>
+</html>

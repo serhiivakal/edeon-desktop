@@ -1,0 +1,26 @@
+{
+  "Navigation": [
+    { "keys": "Ctrl+1 / Cmd+1", "description": "Open 3D Viewer & Docking Workbench" },
+    { "keys": "Ctrl+2 / Cmd+2", "description": "Open Chemical Library View" },
+    { "keys": "Ctrl+3 / Cmd+3", "description": "Open Workflow Gallery" },
+    { "keys": "Ctrl+4 / Cmd+4", "description": "Open De Novo Design Workbench" },
+    { "keys": "Ctrl+5 / Cmd+5", "description": "Open Environmental Fate Gauges" },
+    { "keys": "Ctrl+6 / Cmd+6", "description": "Open AI Knowledge Hub" },
+    { "keys": "Ctrl+7 / Cmd+7", "description": "Open Model Predictability Cards" },
+    { "keys": "Ctrl+8 / Cmd+8", "description": "Open Reports & Verdicts" },
+    { "keys": "Ctrl+, / Cmd+,", "description": "Open Settings & API Config" }
+  ],
+  "Grid Navigation": [
+    { "keys": "j", "description": "Navigate down to next row / card" },
+    { "keys": "k", "description": "Navigate up to previous row / card" },
+    { "keys": "Enter", "description": "Dossier selection & detail inspection focus" },
+    { "keys": "/", "description": "Deselect inputs and focus view search bar" },
+    { "keys": "Escape", "description": "Close modals, slide panels, and clear selections" }
+  ],
+  "Overlays & Commands": [
+    { "keys": "Ctrl+K / Cmd+K", "description": "Open global fuzzy search command palette" },
+    { "keys": "Ctrl+/ / Cmd+/", "description": "Deselect inputs and focus global search bar" },
+    { "keys": "Ctrl+Shift+L / Cmd+Shift+L", "description": "Toggle application theme (Light / Dark mode)" },
+    { "keys": "?", "description": "Open global keyboard shortcuts cheat-sheet" }
+  ]
+}

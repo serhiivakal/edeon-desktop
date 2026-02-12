@@ -1,0 +1,87 @@
+[
+  {
+    "smiles_original": "O.[Cu].[Cu]",
+    "stage": "size_filter",
+    "reason": "mw_out_of_range:18.0"
+  },
+  {
+    "smiles_original": "[Cu+2].[OH-].[OH-]",
+    "stage": "size_filter",
+    "reason": "mw_out_of_range:18.0"
+  },
+  {
+    "smiles_original": "O=N[O-].[Na+]",
+    "stage": "size_filter",
+    "reason": "mw_out_of_range:47.0"
+  },
+  {
+    "smiles_original": "C[As](C)(=O)O",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:As"
+  },
+  {
+    "smiles_original": "C[As](=O)([O-])O.[Na+]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:As"
+  },
+  {
+    "smiles_original": "Nc1ccc([As](=O)(O)O)cc1",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:As"
+  },
+  {
+    "smiles_original": "CCCC[Sn](CCCC)(CCCC)O[Sn](CCCC)(CCCC)CCCC",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Sn"
+  },
+  {
+    "smiles_original": "O.c1ccc([Sn](c2ccccc2)c2ccccc2)cc1",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Sn"
+  },
+  {
+    "smiles_original": "F[Al-3](F)(F)(F)(F)F.[Na+].[Na+].[Na+]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Al"
+  },
+  {
+    "smiles_original": "[S]",
+    "stage": "size_filter",
+    "reason": "mw_out_of_range:32.0"
+  },
+  {
+    "smiles_original": "Cl[Sn](c1ccccc1)(c1ccccc1)c1ccccc1",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Sn"
+  },
+  {
+    "smiles_original": "CC(=O)O[Sn](c1ccccc1)(c1ccccc1)c1ccccc1",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Sn"
+  },
+  {
+    "smiles_original": "CC(C)(C[Sn](CC(C)(C)c1ccccc1)(CC(C)(C)c1ccccc1)O[Sn](CC(C)(C)c1ccccc1)(CC(C)(C)c1ccccc1)CC(C)(C)c1ccccc1)c1ccccc1",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Sn"
+  },
+  {
+    "smiles_original": "C[As](=O)([O-])[O-].[Na+].[Na+]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:As"
+  },
+  {
+    "smiles_original": "C[As](=O)(O)O",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:As"
+  },
+  {
+    "smiles_original": "C1CCC([Sn](C2CCCCC2)C2CCCCC2)CC1.O",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Sn"
+  },
+  {
+    "smiles_original": "C[As](=O)([O-])[O-].C[As](=O)([O-])[O-].[Ca+2]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:As"
+  }
+]

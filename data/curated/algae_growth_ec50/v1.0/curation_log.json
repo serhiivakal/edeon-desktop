@@ -1,0 +1,5277 @@
+[
+  {
+    "smiles_original": "85-68-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "206-44-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "132-27-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "70887-94-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "98-54-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "62-74-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "51384-51-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1912-24-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7733-02-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7631-86-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "82419-36-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-50-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "96-45-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "79-34-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1912-24-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-50-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "5915-41-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "591-35-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "15307-86-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "330-54-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2058-46-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "85-01-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "62-53-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "53826-12-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-43-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7446-70-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1336-36-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "154362-43-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "119937-21-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-50-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "79622-59-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1689-84-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "70887-88-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-66-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1344-67-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "63449-41-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "25812-30-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "87392-12-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "95-50-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "591-35-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "154-21-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7439-92-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "591-35-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2039-46-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "950782-86-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "99-76-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1344-67-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "51218-49-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "90-43-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "58-08-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1912-24-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-50-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "114-07-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "330-54-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "738-70-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-66-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "243973-20-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7733-02-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7733-02-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7439-92-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "87-86-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "28159-98-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "76-03-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "95737-68-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "103-69-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "154362-43-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-66-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "16752-77-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "70887-88-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "Oc1ccc(Cl)cc1Cl",
+    "stage": "activity_filter",
+    "reason": "unsupported_concentration_unit:mol/l"
+  },
+  {
+    "smiles_original": "95-77-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7439-92-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "34123-59-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7733-02-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "22204-53-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "95-76-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "935-95-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "98079-51-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "60168-88-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "21564-17-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "28249-77-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "88-06-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "51218-49-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "C=O",
+    "stage": "size_filter",
+    "reason": "mw_out_of_range:30.0"
+  },
+  {
+    "smiles_original": "142-28-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2528-16-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "738-70-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "95-77-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "95-77-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7631-86-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "709-98-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "21145-77-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "61711-25-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "314-40-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "9004-95-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "64902-72-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7487-94-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "141-43-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "78-99-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "105-60-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "914637-49-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "Oc1ccc(Cl)cc1Cl",
+    "stage": "activity_filter",
+    "reason": "unsupported_concentration_unit:mol/l"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "68439-70-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "51218-49-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "3380-34-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1912-24-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "3380-34-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "67564-91-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "21145-77-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2923-18-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "591-35-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "37764-25-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7681-49-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "66330-88-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-66-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "28249-77-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "37191-38-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "3653-48-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-50-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2795-39-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7782-49-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1929-82-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "91-22-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "Oc1ccc(Cl)cc1Cl",
+    "stage": "activity_filter",
+    "reason": "unsupported_concentration_unit:mol/l"
+  },
+  {
+    "smiles_original": "62037-80-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "28159-98-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "60-51-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "335-67-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "298-46-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "330-54-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7757-82-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "886-50-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "34123-59-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7487-94-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7773-01-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "373-02-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "84-74-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "64-75-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "88-89-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1912-24-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "151-50-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7733-02-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "17606-31-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "141-43-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "91-23-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1912-24-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-43-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "Oc1ccc(Cl)cc1Cl",
+    "stage": "activity_filter",
+    "reason": "unsupported_concentration_unit:mol/l"
+  },
+  {
+    "smiles_original": "1912-24-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "70887-84-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "591-35-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-40-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "330-54-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7733-02-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "591-35-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "634-90-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "96-13-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "C=O",
+    "stage": "size_filter",
+    "reason": "mw_out_of_range:30.0"
+  },
+  {
+    "smiles_original": "98-54-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "23184-66-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "84-66-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "34256-82-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "154362-43-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "68-35-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "203313-25-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "375-85-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "62-74-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7439-92-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1912-24-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "21564-17-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "98-82-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2923-18-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "61116-07-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2764-72-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7439-92-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "66330-88-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "3825-26-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "272451-65-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1317-38-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "C=O",
+    "stage": "size_filter",
+    "reason": "mw_out_of_range:30.0"
+  },
+  {
+    "smiles_original": "2923-18-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7446-70-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "27619-97-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1912-24-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "93334-15-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "95-77-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "3184-65-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "119937-21-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "21087-64-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "914637-49-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "1309-64-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2923-18-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "84087-01-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "79-57-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7631-86-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "87-86-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "540-54-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "5915-41-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "21087-64-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "624-92-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "15972-60-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7773-01-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2610-61-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "85-68-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1912-24-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "114-07-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "62-74-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-50-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "51384-51-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "76-03-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "137-26-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "C=O",
+    "stage": "size_filter",
+    "reason": "mw_out_of_range:30.0"
+  },
+  {
+    "smiles_original": "7440-50-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "882-09-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2795-39-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "5915-41-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "335-67-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "57-63-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "220899-03-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "119937-21-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "858956-08-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "400852-66-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "3380-34-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "76703-62-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1912-24-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1344-67-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7446-70-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2310-17-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "134098-61-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "591-35-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-40-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "26159-34-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1912-24-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2923-18-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7733-02-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "Cc1c(C(=O)NCCO)[n+]([O-])c2ccccc2[n+]1[O-]",
+    "stage": "activity_filter",
+    "reason": "unsupported_concentration_unit:ml/l"
+  },
+  {
+    "smiles_original": "2058-46-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1912-24-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "34123-59-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2795-39-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7733-02-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "994-05-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "245367-77-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "94-74-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-66-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "15972-60-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "93106-60-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "34256-82-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "67-72-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "57960-19-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "C=O",
+    "stage": "size_filter",
+    "reason": "mw_out_of_range:30.0"
+  },
+  {
+    "smiles_original": "26952-21-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "7446-70-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "950782-86-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2795-39-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "79617-96-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7487-94-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7446-70-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7647-15-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "12071-83-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "21087-64-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "67564-91-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "28249-77-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "606-20-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "591-35-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7439-92-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "335-67-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "37191-38-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "688-73-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "70288-86-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "19666-30-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "2923-18-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2492-26-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "3194-55-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "213464-77-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1219922-30-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "34123-59-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7722-64-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "99-76-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "42835-25-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1912-24-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "84852-15-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-50-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "591-35-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2893-78-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "79622-59-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "119937-21-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-43-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7733-02-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "5915-41-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "24539-60-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "78-87-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "26787-78-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "330-54-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7287-19-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "9002-92-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "114-07-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1413933-05-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "34123-59-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7733-02-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7439-92-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "95-49-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7446-70-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-40-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "85-68-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "91-23-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-43-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "302-01-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "84-74-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1912-24-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "15972-60-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "449177-99-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "25637-99-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2923-18-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "28159-98-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7733-02-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "87-86-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7487-94-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "76-03-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "28249-77-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "38641-94-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "131-17-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "141-43-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "154362-43-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "134098-61-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "298-00-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "639-58-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "96-13-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7446-08-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "626-43-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "5915-41-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "5915-41-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "68439-70-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7773-01-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "812-70-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "158062-67-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "70887-84-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "75-34-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "9002-92-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "83055-99-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "500008-45-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "82419-36-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "84852-15-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "C=O",
+    "stage": "size_filter",
+    "reason": "mw_out_of_range:30.0"
+  },
+  {
+    "smiles_original": "1912-24-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2058-46-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "34256-82-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "131-52-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "23184-66-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "85-01-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2310-17-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "122674-95-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "C=O",
+    "stage": "size_filter",
+    "reason": "mw_out_of_range:30.0"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "7631-86-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7631-86-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "21145-77-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "630-20-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "141-43-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7733-02-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "27619-97-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "59-50-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7727-21-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2706-90-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "29420-49-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "79-08-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "38641-94-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "21087-64-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "51218-49-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "21564-17-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "16752-77-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "5915-41-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2923-18-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7757-82-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "31121-93-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "131-11-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "994-05-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "28249-77-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "53826-13-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "70887-84-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "657-24-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-43-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "3194-55-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "114-07-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "95-51-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "84-66-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "636-30-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "99-30-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Na+].[O-]C(=O)C(F)F",
+    "stage": "activity_filter",
+    "reason": "invalid_concentration_value:NR"
+  },
+  {
+    "smiles_original": "74223-64-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7439-92-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "96-31-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "14433-76-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "37191-38-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "76-03-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "119937-21-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7733-02-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "70887-94-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1912-24-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7439-92-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "375-95-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "15972-60-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "71-55-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2923-18-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1897-45-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "64359-81-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7733-02-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "26952-21-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "3926-62-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "120-47-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7733-02-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "3194-55-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-50-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "30125-65-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-66-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "15972-60-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "5274-61-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2306-33-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "121776-33-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "64-72-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1344-67-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7631-86-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "70458-96-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "9002-92-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "76-03-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "608-93-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "3194-55-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "636-30-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7733-02-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "79-94-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "15687-27-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7446-70-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "59-50-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "591-35-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "95-95-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "69004-03-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7631-86-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "591-35-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "85-00-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7733-02-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "28159-98-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "950782-86-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "70288-86-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "71526-07-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2923-18-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-43-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "591-35-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "62571-86-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "28249-77-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "72490-01-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-40-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "5915-41-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1563-66-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "114-07-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "183675-82-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-50-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "335104-84-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7439-92-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "65-85-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2923-18-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "95-51-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "373-02-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-66-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "330-54-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7487-94-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "60-51-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cl-].[Ce+3]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Ce"
+  },
+  {
+    "smiles_original": "79622-59-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "64902-72-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "95-76-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "154362-43-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7773-01-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "203313-25-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1327-53-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "624-92-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "70458-96-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "64359-81-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "13463-67-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "25812-30-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "15972-60-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "81103-11-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "23950-58-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2923-18-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "525-66-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "591-35-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "87392-12-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "37191-38-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7631-86-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7647-15-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1563-66-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "183675-82-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "154362-43-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2923-18-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "591-35-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "3380-34-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "60207-90-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "886-50-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "79622-59-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "53826-12-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "28159-98-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "57837-19-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "67564-91-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1582-09-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1344-67-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1317-38-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "602-01-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "35367-38-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "83055-99-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "62-74-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "335-67-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "33693-04-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "62571-86-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-50-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1912-24-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "335-67-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "C=O",
+    "stage": "size_filter",
+    "reason": "mw_out_of_range:30.0"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "79-08-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "66330-88-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "591-35-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7647-14-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7757-82-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "74223-64-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "122674-96-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7631-86-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "8050-84-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "86393-32-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "555-60-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1912-24-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "37191-38-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "79622-59-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "127-52-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "119937-21-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "3194-55-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1912-24-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1897-45-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "131-17-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "85-01-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[NH4+].[Br-]",
+    "stage": "size_filter",
+    "reason": "mw_out_of_range:17.0"
+  },
+  {
+    "smiles_original": "2795-39-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "13463-67-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "74610-55-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "591-35-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-66-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "335-67-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "28159-98-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "900-95-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cl-].[Ce+3]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Ce"
+  },
+  {
+    "smiles_original": "84852-15-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "26543-97-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "57960-19-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "34123-59-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "723-46-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "3380-34-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "13463-67-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "13463-67-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "C=O",
+    "stage": "size_filter",
+    "reason": "mw_out_of_range:30.0"
+  },
+  {
+    "smiles_original": "637-07-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "5274-61-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "C=O",
+    "stage": "size_filter",
+    "reason": "mw_out_of_range:30.0"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1763-23-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "723-46-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "307-24-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "9002-92-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "53826-13-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "154362-43-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "15307-79-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "95-76-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "591-35-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "330-54-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "3926-62-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "61-82-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "131-70-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "577-11-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1344-67-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1836-77-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7733-02-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "3194-55-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "77182-82-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cl-].[Ce+3]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Ce"
+  },
+  {
+    "smiles_original": "2795-39-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "82097-50-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "27854-31-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "135158-54-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "70458-96-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "59587-38-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "525-66-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1344-67-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "79-00-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "302-01-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "114247-09-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "84852-15-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "886-50-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "98-86-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "84-66-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "9004-95-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1085-98-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "38641-94-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7733-02-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7446-70-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7681-49-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "79-57-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "90-02-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "375-73-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "907204-31-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1317-38-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7722-64-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "298-46-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1344-67-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1327-53-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2706-90-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "95-49-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "67-66-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "75-29-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "125590-73-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "34123-59-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "81335-77-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "98730-04-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7446-70-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7439-92-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1912-24-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2439-10-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "72490-01-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "3825-26-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-54-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "709-98-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "76-03-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "335-76-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "28159-98-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "812-70-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "73334-07-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "82097-50-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "70887-88-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2764-72-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "49562-28-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-40-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2234-13-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "898-84-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "90-43-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7681-49-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "80-05-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7722-84-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "71751-41-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "7631-86-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "34123-59-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "35554-44-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "34123-59-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "30125-65-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "76-03-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "34123-59-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "4376-20-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "79622-59-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "91-22-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "15972-60-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "53826-12-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "61-82-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "53826-12-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "3194-55-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "79-57-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "657-24-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "330-54-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-47-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "29420-49-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7773-01-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7439-92-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "141-43-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "88-99-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7733-02-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7733-02-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7439-92-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-50-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-50-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "95-47-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "31366-95-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "882-09-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "74610-55-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2923-18-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "79622-59-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "591-35-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "21145-77-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "62-74-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1317-38-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1897-45-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "33693-04-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1332-40-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7439-92-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-43-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "606-20-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1317-38-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "60207-90-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-43-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "80844-07-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "154362-43-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "163269-30-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "3825-26-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "634-67-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1344-67-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2923-18-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "90-02-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1085-98-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "101043-37-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "591-35-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "76-03-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "88-89-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "166812-75-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "330-54-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "35367-38-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1317-38-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "27854-31-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "70887-88-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1314-13-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7681-49-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2923-18-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7439-92-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "88-89-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-66-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "85-68-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1563-66-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "13463-67-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "62037-80-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "58-89-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7446-70-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "85-68-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "34256-82-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "591-35-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "28159-98-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "330-54-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "77732-09-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "34123-59-6",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7758-98-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "95-94-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "[Cl-].[Cl-].[Cd++]",
+    "stage": "atom_filter",
+    "reason": "disallowed_atoms:Cd"
+  },
+  {
+    "smiles_original": "7718-54-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "28159-98-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7778-50-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "58-14-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "71-43-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "149-30-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "87-86-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "37191-38-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "29420-49-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1912-24-9",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7440-50-8",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "131-52-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "62037-80-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "25606-41-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "3810-74-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "2923-18-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "302-01-2",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "27854-31-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7646-85-7",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "7447-39-4",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "28300-74-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "28159-98-0",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "87-86-5",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "60207-90-1",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "1306-38-3",
+    "stage": "parse",
+    "reason": "missing_smiles_mapping"
+  },
+  {
+    "smiles_original": "Cc1ncc(n1CCO)[N+]([O-])=O",
+    "stage": "schema_validation",
+    "reason": "1 validation error for CuratedRecord\nyear_reported\n  Input should be a finite number [type=finite_number, input_value=nan, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.12/v/finite_number"
+  },
+  {
+    "smiles_original": "CCNc1nc(NCC)nc(SC)n1",
+    "stage": "schema_validation",
+    "reason": "1 validation error for CuratedRecord\nyear_reported\n  Input should be a finite number [type=finite_number, input_value=nan, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.12/v/finite_number"
+  },
+  {
+    "smiles_original": "CN(C(=O)COc1sc2ccccc2n1)c3ccccc3",
+    "stage": "schema_validation",
+    "reason": "1 validation error for CuratedRecord\nyear_reported\n  Input should be a finite number [type=finite_number, input_value=nan, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.12/v/finite_number"
+  },
+  {
+    "smiles_original": "Cc1ccc(C)cc1",
+    "stage": "schema_validation",
+    "reason": "1 validation error for CuratedRecord\nyear_reported\n  Input should be a finite number [type=finite_number, input_value=nan, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.12/v/finite_number"
+  },
+  {
+    "smiles_original": "Cc1cccc(C)c1",
+    "stage": "schema_validation",
+    "reason": "1 validation error for CuratedRecord\nyear_reported\n  Input should be a finite number [type=finite_number, input_value=nan, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.12/v/finite_number"
+  },
+  {
+    "smiles_original": "[Cd++].O[N+]([O-])=O.O[N+]([O-])=O",
+    "stage": "schema_validation",
+    "reason": "1 validation error for CuratedRecord\nyear_reported\n  Input should be a finite number [type=finite_number, input_value=nan, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.12/v/finite_number"
+  },
+  {
+    "smiles_original": "c1ccc2c(c1)cc3ccc4cccc5ccc2c3c45",
+    "stage": "schema_validation",
+    "reason": "1 validation error for CuratedRecord\nyear_reported\n  Input should be a finite number [type=finite_number, input_value=nan, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.12/v/finite_number"
+  },
+  {
+    "smiles_original": "Cc1ccccc1",
+    "stage": "schema_validation",
+    "reason": "1 validation error for CuratedRecord\nyear_reported\n  Input should be a finite number [type=finite_number, input_value=nan, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.12/v/finite_number"
+  },
+  {
+    "smiles_original": "CCCc1ccccc1",
+    "stage": "schema_validation",
+    "reason": "1 validation error for CuratedRecord\nyear_reported\n  Input should be a finite number [type=finite_number, input_value=nan, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.12/v/finite_number"
+  },
+  {
+    "smiles_original": "CCc1ccccc1",
+    "stage": "schema_validation",
+    "reason": "1 validation error for CuratedRecord\nyear_reported\n  Input should be a finite number [type=finite_number, input_value=nan, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.12/v/finite_number"
+  }
+]

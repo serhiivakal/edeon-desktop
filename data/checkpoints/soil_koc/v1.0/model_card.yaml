@@ -1,0 +1,60 @@
+model_id: t1_soil_koc_v1.0
+name: Edeon Tier-1 Reference Soil Koc
+version: v1.0
+tier: 1
+endpoint: soil_koc
+description: High-fidelity reference QSAR model combining Random Forest, XGBoost,
+  and a 5-seed Chemprop D-MPNN ensemble. Features split conformal prediction intervals
+  (95%) and a Tanimoto k-NN applicability domain auditor.
+intended_use: Tier-1 high-precision prediction of ecotoxicological hazard for regulatory
+  screening.
+not_intended_for: []
+training_data:
+  n_compounds: 503
+  sources:
+  - Phase 1 Curated Agrochemical Dataset
+  sha256: null
+  split_strategy: scaffold
+  license: null
+performance:
+  metrics:
+    rmse: 0.7389868663840385
+    r2: 0.6982040786351571
+    mae: 0.5858693657976141
+  test_set_n: 103
+  cv_folds: 5
+  calibration_coverage_95: 0.8737864077669902
+  subset_metrics:
+    ionizable:
+      rmse: 0.6553620934546734
+      r2: 0.5811500722476408
+      mae: 0.4862302055974189
+      coverage: 0.896551724137931
+      mean_width: 2.3069127955897937
+      count: 29
+    non_ionizable:
+      rmse: 0.7692834407376435
+      r2: 0.6770218265905124
+      mae: 0.6249171447949879
+      coverage: 0.8648648648648649
+      mean_width: 2.306912795589794
+      count: 74
+applicability_domain:
+  method: tanimoto_knn
+  threshold: 0.7455778489694996
+  k: 5
+  training_set_size: 503
+  notes: null
+uncertainty_method: split_conformal
+known_failure_modes:
+- Compounds containing heavy atoms outside H, C, N, O, P, S, F, Cl, Br, I
+- Extremely macrocyclic compounds or highly fragmented mixtures
+references:
+- Bemis, G. W., & Murcko, M. A. (1996). The properties of known drugs. 1. Molecular
+  frameworks. J. Med. Chem.
+- Vovk, V., Gammerman, A., & Shafer, G. (2005). Algorithmic learning in a random world.
+  Springer Science & Business Media.
+license: Proprietary
+created: '2026-06-20T07:13:02.690548'
+authors:
+- Edeon AI Team

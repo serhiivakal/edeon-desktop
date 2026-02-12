@@ -1,0 +1,40 @@
+{
+  "scaffold": {
+    "train": 76,
+    "cal": 17,
+    "test": 15,
+    "test_to_train_nn_tanimoto_mean": 0.22335696843987873
+  },
+  "random": {
+    "train": 75,
+    "cal": 16,
+    "test": 17,
+    "seed": 42
+  },
+  "time": {
+    "train": 90,
+    "cal": 9,
+    "test": 9,
+    "train_year_max": 2019,
+    "cal_year_range": [
+      2020,
+      2021
+    ],
+    "test_year_range": [
+      2022,
+      2025
+    ],
+    "status": "available"
+  },
+  "hashes": {
+    "scaffold_train": "2c8caf0abb0d91f4b89b7dce9f186510333aaf5d9393b184e1ef5d5dab6a451c",
+    "scaffold_cal": "3453df5bc5e70ae9f1fb00b7a881ed3e70dac7f90c20e8a7c748639f2d546e48",
+    "scaffold_test": "33fddebeb5233b635c76a662bdad53d6367a1dc80c67171ccdce66d51060e47a",
+    "random_train": "94837cd21524ceb5036582d1b7d289f79e5914eb31e21668999209787fca0142",
+    "random_cal": "89e5bf5fda5564b2e4b3d87b2d74306d8188e066c7045d7b3852908e03aafc7f",
+    "random_test": "bd802b647f6746bec023297dac101aead80832d4ec81648ff77677dad45de7e7",
+    "time_train": "80f9513423da04213a019c5f63eb8ad188001c4c6e5dcaad69f3bfc5c368bcbb",
+    "time_cal": "49c1a5ad6b1b85826b00bea6d92961672408a47a44c175e706dd08c5b16e0b08",
+    "time_test": "98e4d825189e013853b8d9b8be0390caad61c1610f69adeeb8c81d4c5dec5acf"
+  }
+}

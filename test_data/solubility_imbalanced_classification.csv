@@ -1,0 +1,102 @@
+name,smiles,activity
+Glycerol,OCC(O)CO,1
+Ethylene glycol,OCCO,1
+Urea,NC(N)=O,1
+Piperazine,C1CNCCN1,1
+Thiourea,NC(N)=S,1
+Propylene glycol,CC(O)CO,1
+Methylamine,CN,1
+Morpholine,C1COCCN1,1
+Methanol,CO,1
+Dimethylformamide,CN(C)C=O,1
+Piperidin-4-ol,OC1CCNCC1,0
+Ethylamine,CCN,0
+Dimethyl sulfoxide,CS(=O)C,0
+Ethanol,CCO,0
+1,4-Dioxane,C1COCCO1,0
+Acetic acid,CC(=O)O,0
+Cyclopropanol,OC1CC1,0
+Methyl acetate,COC(=O)C,0
+Sulfolane,O=S1(=O)CCCC1,0
+p-Quinone,O=C1C=CC(=O)C=C1,0
+Thiomorpholine,C1CSCCN1,0
+Propylamine,CCCN,0
+Pyrrolidine,C1CCNC1,0
+Isopropanol,CC(C)O,0
+Propan-1-ol,CCCO,0
+Imidazole,C1=CN=CN1,0
+Pyrazole,C1=CNN=C1,0
+Pyrimidine,C1=NC=NC=C1,0
+Pyrazine,C1=CN=CC=N1,0
+Pyridazine,C1=CC=NN=C1,0
+Propionic acid,CCC(=O)O,0
+Acetonitrile,CC#N,0
+Cyclobutanol,OC1CCC1,0
+Ethyl acetate,CCOC(=O)C,0
+Acetone,CC(=O)C,0
+Diethylamine,CCNCC,0
+Oxazole,C1=CN=CO1,0
+Butylamine,CCCCN,0
+Piperidine,C1CCNCC1,0
+tert-Butanol,CC(C)(C)O,0
+Butan-1-ol,CCCCO,0
+Benzamide,NC(=O)C1=CC=CC=C1,0
+Tetrahydrofuran,C1CCOC1,0
+Butyric acid,CCCC(=O)O,0
+Cyclopentanol,OC1CCCC1,0
+Propyl acetate,CCCOC(=O)C,0
+Butanone,CCC(=O)C,0
+Pyrrole,C1=CNC=C1,0
+Diethyl ether,CCOCC,0
+Pyridine,C1=CC=NC=C1,0
+Cyclopentanone,O=C1CCCC1,0
+Thiazole,C1=CN=CS1,0
+Pentan-1-ol,CCCCCO,0
+Benzyl alcohol,OCC1=CC=CC=C1,0
+Tetrahydropyran,C1CCOCC1,0
+Valeric acid,CCCCC(=O)O,0
+Aniline,NC1=CC=CC=C1,0
+Furan,C1=COC=C1,0
+Cyclohexanol,OC1CCCCC1,0
+Triethylamine,CCN(CC)CC,0
+Butyl acetate,CCCCOC(=O)C,0
+Pentan-2-one,CCCC(=O)C,0
+Benzoic acid,OC(=O)C1=CC=CC=C1,0
+Phenol,OC1=CC=CC=C1,0
+Dichloromethane,ClCCl,0
+1,2-Dichloroethane,ClCCCl,0
+Cyclohexanone,O=C1CCCCC1,0
+Benzonitrile,N#CC1=CC=CC=C1,0
+Nitrobenzene,[O-][N+](=O)C1=CC=CC=C1,0
+Hexanoic acid,CCCCCC(=O)O,0
+Benzene,C1=CC=CC=C1,0
+Anisole,COC1=CC=CC=C1,0
+Thiophene,C1=CSC=C1,0
+Hexan-2-one,CCCCC(=O)C,0
+Dipropyl ether,CCCOCCC,0
+Fluorobenzene,FC1=CC=CC=C1,0
+Acetophenone,CC(=O)C1=CC=CC=C1,0
+Hexan-1-ol,CCCCCCCO,0
+Heptan-1-ol,CCCCCCCO,0
+Chloroform,ClC(Cl)Cl,0
+Toluene,CC1=CC=CC=C1,0
+Indole,C1=CC=C2C(=C1)C=CN2,0
+Quinoline,C1=CC=C2C(=C1)C=CC=N2,0
+Isoquinoline,C1=CC=C2C(=C1)C=NC=C2,0
+Ethylbenzene,CCC1=CC=CC=C1,0
+Fluorocyclohexane,FC1CCCCC1,0
+Iodobenzene,IC1=CC=CC=C1,0
+o-Xylene,CC1=CC=CC=C(C)1,0
+m-Xylene,CC1=CC=CC(C)=C1,0
+p-Xylene,CC1=CC=C(C)C=C1,0
+Chlorobenzene,ClC1=CC=CC=C1,0
+1,1,1-Trichloroethane,CC(Cl)(Cl)Cl,0
+Benzofuran,C1=CC=C2C(=C1)C=CO2,0
+Bromobenzene,BrC1=CC=CC=C1,0
+Carbon tetrachloride,ClC(Cl)(Cl)Cl,0
+Chlorocyclohexane,ClC1CCCCC1,0
+Dibutyl ether,CCCCOCCCC,0
+Bromocyclohexane,BrC1CCCCC1,0
+Naphthalene,C1=CC=C2C=CC=CC2=C1,0
+Benzothiophene,C1=CC=C2C(=C1)C=CS2,0
+Biphenyl,C1=CC=CC=C1C2=CC=CC=C2,0

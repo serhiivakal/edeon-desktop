@@ -1,0 +1,68 @@
+{% extends "base.html.j2" %}
+
+{% block title %}SCAFFOLD-HOP EXPLORER{% endblock %}
+{% block subtitle %}Structural Novelty & Profile Match Analysis{% endblock %}
+
+{% block content %}
+{% for comp in per_compound %}
+<div class="section">
+  <h2>{{ comp.name }}</h2>
+  
+  <div class="verdict-banner {{ comp.verdict.band | band_class }}" style="margin-bottom:10px;">
+    <div class="band-label">{{ comp.verdict.band }}</div>
+    <div class="rationale">
+      <strong>{{ comp.verdict.driver }}</strong><br>
+      {{ comp.verdict.rationale }}
+    </div>
+    <div class="confidence-badge {{ comp.verdict.confidence | confidence_class }}">{{ comp.verdict.confidence }}</div>
+  </div>
+  
+  {% if comp.ranked_hops %}
+  <h3>Ranked Scaffold Hops ({{ comp.ranked_hops | length }})</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Analog</th>
+        <th>Transformation</th>
+        <th>Novelty</th>
+        <th>Profile Match</th>
+        <th>Composite</th>
+        <th>AD</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for h in comp.ranked_hops %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td class="mono">{{ h.smiles[:30] }}{% if h.smiles|length > 30 %}…{% endif %}</td>
+        <td>{{ h.transformation | default('—') }}</td>
+        <td class="right">
+          {% if h.novelty_distance is defined %}
+            {% if h.novelty_distance >= 0.5 %}<span class="pill pill-green">{{ h.novelty_distance | fmt_float(2) }}</span>
+            {% elif h.novelty_distance >= 0.2 %}<span class="pill pill-amber">{{ h.novelty_distance | fmt_float(2) }}</span>
+            {% else %}<span class="pill pill-red">{{ h.novelty_distance | fmt_float(2) }}</span>{% endif %}
+          {% else %}—{% endif %}
+        </td>
+        <td class="right">{{ h.profile_match | fmt_float(2) if h.profile_match is defined else '—' }}</td>
+        <td class="right"><strong>{{ h.composite_score | fmt_float(2) if h.composite_score is defined else '—' }}</strong></td>
+        <td>
+          {% if h.ad_status is defined and h.ad_status in ['in', 'in_domain'] %}<span class="pill pill-green">IN</span>
+          {% else %}<span class="pill pill-red">OOD</span>{% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="text-muted">No scaffold hops generated for this compound.</p>
+  {% endif %}
+</div>
+{% endfor %}
+
+{% if sections.legal_disclaimer is defined %}
+<div class="disclaimer" style="background:#e3f2fd; border-color:#90caf9; color:#0d47a1;">
+  <strong>🔒 FTO Notice</strong> — {{ sections.legal_disclaimer }}
+</div>
+{% endif %}
+{% endblock %}
