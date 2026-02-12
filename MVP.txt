@@ -1,0 +1,214 @@
+**The Minimum to Not Get Laughed Away**
+
+Let me be honest first, then specific. Commercial agchem buyers are sophisticated — they've evaluated Schrödinger, OpenEye, StarDrop, sometimes Cresset. They won't be impressed by a property calculator with a nice UI. The MVP needs to deliver something they genuinely can't get easily elsewhere, with enough polish that they trust it's real software.
+
+### **The Two Hard Truths About Your First Commercial Pitch**
+
+**Truth 1: One killer feature beats ten mediocre ones.** A commercial buyer remembers "the tool that does cross-species selectivity properly" — not "the tool that has 20 modules but each is okay." Your MVP needs one feature that's genuinely better than what they have today, plus enough surrounding functionality to make it usable in real workflows.
+
+**Truth 2: Demo quality is a feature.** Working software with rough edges loses to slightly less capable software that demos flawlessly. Commercial buyers extrapolate from your demo to "what running this for three months looks like." Polish isn't optional.
+
+### **The MVP Feature Matrix**
+
+I'm going to split features into three tiers based on what they're for:
+
+**Tier 1: Must Have**. Without these, the demo embarrasses you. These features either deliver the core value or signal "this is real software."
+
+**Tier 2: Should Have**. These transform "interesting demo" into "I could actually use this." Buyers will ask about them.
+
+**Tier 3: Nice to Have**. Pre-positioned for next quarter's release. Mentioning these as "coming soon" signals you have a roadmap.
+
+### **Tier 1: Must Have for First Commercial Pitch**
+
+#### **1. Workflow execution that actually works**
+
+You need at least one end-to-end workflow that processes 100-500 compounds in under 5 minutes, produces a meaningful ranked output, and doesn't crash. The candidate workflow:
+
+**"Lead Optimization Pre-Screen"** takes a compound library, runs pesticide-likeness assessment using Tice rules, applies cross-species selectivity scoring against a user-selected target, and outputs a ranked table with composite scores. This is achievable from Phase 1+2 work.
+
+The workflow must demonstrate three things in the demo: (1) it processes batches, not just single compounds, (2) results appear progressively as stages complete, (3) the final ranking is defensible — buyers can ask "why is GLY-247 ranked higher than GLY-203?" and you can show the reasoning.
+
+#### **2. Cross-species selectivity analysis as your anchor feature**
+
+This is the must-have differentiator. Specifically:
+
+- Target sequence input (UniProt ID or FASTA paste)
+- Automatic ortholog retrieval across pest, crop, pollinator, mammalian groups (pre-bundled, no internet required)
+- Binding site conservation analysis with hot/cold spot visualization
+- Per-compound selectivity score (target activity / non-target activity ratios)
+- Visual output: phylogenetic tree with conservation overlay, plus per-compound selectivity radar
+
+If this works well, you have a story. If this is half-built, your platform looks like another property calculator.
+
+#### **3. Pesticide-likeness with Tice rules**
+
+Real implementation, not a toy. Specifically:
+
+- Separate Tice rule sets for herbicides, insecticides, fungicides
+- Pass/fail verdict with violation breakdown
+- Comparison view: how does this compound score vs. successful pesticides in PPDB?
+- Clear differentiation from Lipinski drug-likeness — the demo should explicitly show "this passes Lipinski but fails Tice" examples to drive the point home
+
+This is your conceptual differentiator. "We don't use drug-likeness for pesticide design" is the soundbite.
+
+#### **4. Unified knowledge browser across major databases**
+
+A search interface that queries PPDB, ECOTOX, OpenFoodTox, EU Pesticides Database, ChEMBL crop protection subset simultaneously. Returns unified compound dashboards.
+
+Why this matters for commercial buyers: it solves an immediate pain point (constant manual database queries) without requiring them to change anything about their existing workflows. It's a "use this every day from week one" capability that builds platform habit.
+
+The demo trick: ask buyers what compound they want to look up, search it live, show them everything from regulatory status to ecotoxicity to resistance reports in one view. Their reaction will be "wait, this would save me 30 minutes a day."
+
+#### **5. Toxicity prediction suite (bee, fish, bird, mammal)**
+
+ML-driven predictions for the four organism groups regulators care about. Specifically:
+
+- Pre-trained classifiers (Low/Medium/High risk bins)
+- Applicability domain checking with honest uncertainty reporting
+- Comparison against regulatory thresholds (EPA acute oral, EFSA bee, etc.)
+- Visual output: risk profile dashboard per compound
+
+Critical detail: implement applicability domain checking. When buyers ask "how do I know if I can trust this prediction?", showing "this compound is outside our training set distribution — predictions less reliable" is what separates serious science from snake oil. Pharma platforms often hide this; you should highlight it.
+
+#### **6. Local-only operation for the demo**
+
+The demo must work without internet. Pull the network cable out during the demo if you want to make a point. This single capability addresses the IP concern that kills most commercial deals before they start. Bundle everything: databases, models, calculations. Cloud features can be available but optional.
+
+#### **7. Polished single-compound deep view**
+
+When buyers click on any compound from the ranked results, they get a comprehensive view: structure, properties, all database cross-references, predicted toxicities, selectivity profile, regulatory status. This is the "look at this beautiful data" moment that justifies the platform.
+
+The schematic you saw earlier shows what this looks like. Implementing it properly takes serious frontend work but it's what makes the platform feel valuable beyond just calculations.
+
+#### **8. Professional PDF export**
+
+Every analysis must produce an export-ready PDF with branding, compound structures, all properties, references to databases used, methodology notes, and footnotes about applicability domain. Researchers will judge your platform partly on how their results look in reports.
+
+Commercial buyers care about this more than you'd think — they need to show platform output to colleagues, regulators, customers. If the PDF looks unprofessional, the platform looks unprofessional.
+
+#### **9. Project organization with saved state**
+
+Buyers must be able to: create a project, add compounds, run workflows, save state, close the application, reopen it, find their work exactly where they left it. Sounds obvious; many MVPs fail here.
+
+Specifically: SQLite-backed project files, recent projects list, autosave throughout, ability to export projects as files for sharing with colleagues.
+
+#### **10. License management that doesn't feel like an afterthought**
+
+License key entry, online activation (with offline fallback), expiry warnings, license info viewable in settings, ability to deactivate and move to another machine. Without this, the buyer can't actually buy. This is non-negotiable for commercial software.
+
+### **Tier 2: Should Have to Avoid Awkward Conversations**
+
+#### **11. Custom compound library import**
+
+CSV upload, SDF/MOL files, drag-and-drop multiple files. Automatic SMILES standardization. Duplicate detection. Without this, buyers ask "how do I get my compounds in?" and the answer is awkward.
+
+#### **12. Mode of action classification**
+
+HRAC/IRAC/FRAC class prediction with confidence scoring. Cross-resistance suggestions based on predicted MoA. This is asked about in nearly every commercial conversation given resistance management pressure.
+
+#### **13. Basic environmental fate predictions**
+
+Soil DT50 prediction, water/sediment persistence, bioaccumulation factor. Doesn't need to be the world's best implementation, but needs to exist. Regulatory teams ask about this.
+
+#### **14. Compound comparison view**
+
+Side-by-side analysis of 2-4 compounds. Shows differences in properties, predictions, selectivity. Buyers always want this — "show me how compound A compares to compound B."
+
+#### **15. Workflow templates with descriptions**
+
+At least three pre-built workflows the user can select from a gallery: Pre-Screen, Toxicity Profile, Regulatory Check. Each with clear description of what it does and what it outputs.
+
+#### **16. Help system and tutorials**
+
+In-app tooltips on every metric. Tutorial videos accessible from help menu. Sample projects pre-loaded for users to explore. Documentation site online. Commercial buyers' first question after "what does it do" is "how do my people learn it."
+
+#### **17. Performance benchmarks visible to user**
+
+A small banner showing "Processed 247 compounds in 4 min 32 sec" after each workflow run. This builds trust that the platform is real software, not vaporware.
+
+### **Tier 3: Nice to Have, Mention as "Coming Q2"**
+
+These don't need to be in MVP. But your roadmap should explicitly include them, and you should be ready to talk about them when buyers ask:
+
+- Custom model training on user data (this attracts FMC-tier interest)
+- Transformation product fate analysis (big differentiator long-term)
+- Plant uptake modeling (cuticle, phloem, stomatal)
+- 3D structure visualization
+- API access for power users
+- Multi-user collaboration
+- Patent landscape analysis
+- Synthesis route prediction integration
+- Custom database integration (their internal compound database)
+
+When asked "do you have X?", the right answer is: "Not in v1.0, but it's on the Q2 roadmap. Here's a one-pager that explains how we approach it." Then you give them a printed sheet. This signals you're a serious company with a plan, not a side project.
+
+### **The Demo That Wins**
+
+If you build the Tier 1 features well, you can run a demo that proceeds like this:
+
+**Setup** (30 seconds): Open Edeon. Show the project list. Open "Glyphosate Analogs" project with 1000 compounds already loaded. _Subtle signal: this is real software with real data._
+
+**The pain point** (1 minute): Mention briefly that the buyer's current tools optimize for drug-likeness, not pesticide-likeness. Show a compound that passes Lipinski but fails Tice. _Establishes intellectual differentiation._
+
+**The workflow** (3 minutes): Launch the Lead Optimization Pre-Screen workflow. Watch the pipeline progress through stages live. Pesticide-likeness filter narrows 1000 to 247. Cross-species selectivity scores all 247. Final ranking appears in the table. _Demonstrates batch capability, real-time feedback, actual work._
+
+**The differentiator** (3 minutes): Click on top-ranked compound. Inspector panel reveals comprehensive view including the selectivity profile across pest/crop/bee/mammal. Explain how this analysis worked: ortholog retrieval, conservation scoring, selectivity ratio calculation. _This is the "wait, that's actually useful" moment._
+
+**The trust check** (2 minutes): Show applicability domain on one of the predictions. Click "why this prediction might be wrong." Show honest uncertainty reporting. Mention you're not the tool that promises miracles. _Builds credibility against snake-oil competitors._
+
+**The data check** (1 minute): Use the knowledge browser to look up an established pesticide. Show unified results across PPDB, ECOTOX, EU Pesticides DB. Mention this is bundled, works offline. _Addresses IP concern subtly._
+
+**The export** (30 seconds): Generate PDF report. Show it. Mention regulatory dossier templates are on roadmap. _Closes the loop from input to deliverable._
+
+**Questions**: Now buyers ask questions, and you have answers ready for Tier 2 features as "yes we have that" and Tier 3 features as "Q2 roadmap, here's the one-pager."
+
+Total demo time: 12-15 minutes. Buyers' attention budget for first demos. If you can deliver this demo flawlessly, you'll get serious follow-up conversations.
+
+### **What Makes This Realistic vs Fantasy**
+
+Your current trajectory:
+
+- **Phase 1 of web platform** delivers: pesticide-likeness, structure viewer, knowledge browser, basic toxicity, single-compound deep view, PDF export. **That's 6 of 10 Tier 1 features.**
+- **Phase 2** adds: cross-species selectivity, mode of action, comparison view. **That's 3 more Tier 1 + 2 features.**
+- **Phase 3 desktop packaging** delivers: workflow execution, project organization, license management, local-only operation, workflow templates. **That's the remaining Tier 1.**
+
+Realistically, your **first commercial-ready MVP is end of Month 18** (or thereabouts). That aligns with your roadmap. **Don't try to ship commercial earlier** — half-built demos burn customer relationships you can't easily rebuild.
+
+### **What You Can Skip Without Embarrassment**
+
+A few things commercial buyers do _not_ expect in v1.0 of a niche scientific platform:
+
+- Multi-user collaboration (everyone uses single-seat first)
+- Real-time co-editing (not a fit for the workflow)
+- Mobile apps (chemistry on phones is rare)
+- Visual workflow builder (advanced feature, fine to delay)
+- Custom theming or white-labeling (enterprise feature)
+- Single sign-on / enterprise auth (enterprise feature, comes later)
+- Integration with KNIME, Pipeline Pilot (planned but not v1.0)
+- Built-in ChemDraw equivalent (use JSME or Ketcher, fine)
+
+These can wait. Don't build them just because "real software has them" — most enterprise buyers will use Edeon for 6+ months before they care about any of these.
+
+### **The Question That Will Determine Your Success**
+
+When buyers see your demo, the deciding question they ask themselves isn't "is this software polished" or "are these features comprehensive." It's:
+
+> _"Does this tool solve a specific problem I have, well enough that I'd pay €3000/year per seat to use it?"_
+
+Your MVP must answer YES to that question. Everything else is decoration.
+
+The clearest YES comes from cross-species selectivity working well — because that's a real problem they have today with no good solution. If that one feature delivers, you have a business. If it's half-built, even five other excellent features won't save the deal.
+
+### **Concrete Recommendation**
+
+For your first commercial conversation (likely Month 15-18 of your roadmap, after the web platform proves itself):
+
+**Don't approach buyers until cross-species selectivity is excellent.** That's the deal-maker. If it's still in beta, wait. Better to delay than to demo a half-built differentiator and lose the buyer's confidence forever.
+
+**Build cross-species selectivity to 90% quality** before pursuing 80% quality across 10 features. Depth beats breadth in your first sale.
+
+**Have the Tier 1 list ready as a checklist** you can self-assess against. Honestly score yourself on each item. If you can't say "yes, this works well in demo" for at least 9 of 10 Tier 1 features, you're not ready for commercial pitches yet.
+
+**Plan a 30-minute demo script** when you think you're ready. Practice it 10 times. Record yourself. Watch for awkward moments. Fix them. Polish like a sales presentation — because that's what it is.
+
+This isn't fantasy. Your roadmap and skill set make this achievable by Month 18. Focus on the right features, build them well, demo them flawlessly. That's the MVP that earns commercial respect.

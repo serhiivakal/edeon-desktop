@@ -1,0 +1,119 @@
+### **Design Philosophy: Three Layered Principles**
+
+**1. Workflows are first-class citizens.** The UI's primary unit isn't "compound" or "feature" — it's "workflow." Users don't open Edeon to look at a single molecule; they open it to run a pesticide-likeness assessment on 500 candidates, or trigger resistance analysis on a target. The interface must make running workflows feel as natural as clicking a button.
+
+**2. Projects organize everything.** Every workflow runs within a project context (a compound library, a research question). Projects persist between sessions. Multiple workflows can be run on the same project. Results accumulate. The interface treats the project as the home base — like how Photoshop has documents, Edeon has projects.
+
+**3. The pipeline is visible.** Unlike web apps where computation happens invisibly behind a spinner, desktop scientific apps benefit from showing the pipeline. Users see where their data is in the analysis, what's done, what's running, what's queued. This builds trust and helps them learn the platform.
+
+### **Five Primary Views**
+
+The desktop app navigates between five views via the left sidebar:
+
+**Library View** — Browse and manage compounds within projects. Spreadsheet-like with filtering, tagging, batch operations. Where you organize your chemical space.
+
+**Workflow View** — Run analytical workflows on selected compounds. The main work area. Pipeline visualization plus live results. _This is what the SVG shows below._
+
+**Knowledge View** — Search and browse the bundled databases (PPDB, ECOTOX, OpenFoodTox, EU Pesticides, ChEMBL, Resistance DB). Like a desktop search engine for agrochemistry data.
+
+**Models View** — Train custom ML models on proprietary data. Upload CSV → configure features → train → validate → apply. The local-model-training capability that makes Edeon Desktop different from cloud platforms.
+
+**Reports View** — Generate exports, PDFs, regulatory dossiers. Where workflow results turn into deliverables for stakeholders.
+
+The header maintains project context across all five views. You can switch views without losing your place — your selected compounds, running workflows, and viewing state persist.
+
+### **The Workflow View in Detail**
+
+The Workflow View is where Edeon spends most of its time, so its design matters most. It has four functional zones:
+
+The **workflow header** sits at the top, showing the workflow's name, its current state (running/paused/complete), overall progress percentage, and primary controls (configure, run, stop, save). One glance tells the user where they are.
+
+The **pipeline visualization** shows the workflow's stages as connected boxes flowing left-to-right. Each stage shows its name, status icon, and the count of compounds at that stage. Done stages are green with checkmarks. Running stages have an animated indicator. Waiting stages are gray. This makes the analysis legible — researchers can see exactly what's happening to their compounds.
+
+The **results table** dominates the lower half. It shows compounds with their accumulated results so far. Sortable columns. Color-coded risk indicators. Multi-select for bulk operations. As stages complete, new columns appear. This is the spreadsheet researchers expect, but smarter.
+
+The **inspector panel** on the right shows details for whatever compound is selected in the table. Structure thumbnail, key properties, selectivity profile, action buttons. When nothing is selected, the inspector shows workflow-level statistics (distribution plots, summary numbers).
+
+Here's the schematic:
+
+S
+
+Show widget
+
+Let me create this as a standalone SVG file you can view directly.
+
+Created a file, read a file
+
+Created a file, read a file
+
+### **Reading the Schematic**
+
+The schematic shows a single moment in time: a user has launched the **Resistance-Aware Lead Optimization** workflow on their **Glyphosate Analogs Q1** project. The workflow processed 1000 input compounds, filtered to 247 that pass pesticide-likeness, scored them all for cross-species selectivity, and is now 42% through the resistance hotspot analysis. The user clicked on GLY-247 in the results table; the inspector panel shows everything about that compound.
+
+Several design choices worth highlighting:
+
+**The header carries critical context without dominating.** Project breadcrumb on the left tells you where you are. Running status with progress percentage in the middle tells you what's happening. Save/configure controls on the right tell you what you can do. The 50px header height means roughly 5% of vertical space is "chrome" — the rest is work.
+
+**The sidebar shows the workspace switcher prominently.** Five views (Library, Workflows, Knowledge, Models, Reports) are the primary navigation. The active blue dot next to "Workflows" indicates there's one workflow currently running — a small but valuable indicator. Recent workflows appear below for quick re-launch.
+
+**Pipeline stages tell the analysis story visually.** Green checkmarks for done. Blue running indicator with progress bar. Gray hollow circles for waiting. The flow is left-to-right, the most natural reading order. Each stage shows compound count, so you can see attrition (1000 → 247 after pesticide-likeness filter) without clicking anywhere.
+
+**The results table is the workspace's center of gravity.** Sortable by composite score. Risk badges color-coded (green=Low, amber=Medium, red=High) so eyes can scan for patterns. The selected row highlights in soft green, mirroring the active state convention from the sidebar. A user could spend hours just here, exploring, sorting, filtering, comparing.
+
+**The inspector panel rewards focus.** When you click a compound, you don't navigate away — the right panel reveals everything in context. Structure, properties, selectivity profile across four organisms, resistance metrics. The actions at the bottom let you do something with what you've found — open detail view, compare with others, add to your shortlist of final candidates.
+
+**The status bar is professional reassurance.** Active jobs, memory usage, license validity. These details matter to commercial users who need to know the tool is working and licensed properly.
+
+### **Why This Layout Wins for Edeon Desktop**
+
+This design solves the specific problems that pharma-derived platforms struggle with in agchem contexts:
+
+**It makes workflows visible.** Unlike Maestro or StarDrop where you "open the docking tool" or "launch the property prediction," here you "run a workflow." The workflow is the unit of work. Scientists understand workflows — they run them in their heads all day.
+
+**It scales from few to many compounds.** Whether you analyze 5 compounds or 5,000, the layout works identically. The results table handles pagination, the pipeline shows aggregate progress, the inspector focuses on whichever one you select. This matters for batch operations that pharma single-compound interfaces can't handle elegantly.
+
+**It surfaces cross-species selectivity prominently.** The inspector shows four organism cards by default — this is your differentiator made visible. Schrödinger would bury this behind tabs. Edeon leads with it.
+
+**It honors the desktop convention.** Three panels, persistent navigation, status bar. Researchers who use Maestro, KNIME, PyMOL will feel at home immediately. The interface gets out of the way and lets them work.
+
+**It accommodates power users.** Every operation is one or two clicks. Keyboard shortcuts (not shown in schematic but planned) will speed everything up. Tables support multi-select. Workflows can be saved as templates. The interface scales with user expertise.
+
+### **How Other Views Differ**
+
+Briefly, what changes when users switch from Workflow view to other views:
+
+**Library view** replaces the pipeline + results layout with a single rich spreadsheet of all compounds in the project. Filtering, tagging, bulk operations. The inspector still works the same way on the right.
+
+**Knowledge view** replaces the pipeline with a search bar + result cards from the bundled databases. Each card shows a known pesticide with all data sources cross-referenced. Click for full details. This is the desktop equivalent of Google Scholar for agrochemistry.
+
+**Models view** replaces everything with a model training interface: upload CSV, configure features, select algorithm, train, evaluate, deploy. Inspector shows the trained model's properties and performance.
+
+**Reports view** is essentially a publishing interface: select results from any workflow, choose template, generate PDF or regulatory dossier. Inspector previews the current page of the report.
+
+The same project context, sidebar, header, and status bar persist across all five views — the user always knows where they are.
+
+### **What This Implies for Phase 1 Web Development**
+
+Even though you're building the web platform first, knowing the desktop endpoint shapes architecture decisions today:
+
+The five-view structure should map cleanly between web and desktop. Build them as separate routes in the web app now (`/library`, `/workflows`, `/knowledge`, `/models`, `/reports`). The desktop later wraps these as tab-switching views in a single window.
+
+The inspector panel pattern (persistent right sidebar showing selected item details) should be implemented in the web version too. Same code, same UX, deploys to both.
+
+Workflow templates as a concept should appear in your web platform's database design from the start — even if Phase 1 only ships one or two workflows, the data model should support many.
+
+The status bar concept maps to the web platform as well — show job queue status, model availability, account info. Users see consistency across the two products.
+
+When desktop launches in Phase 3, the transition feels natural to users who started on web. Same metaphors, same layouts, same workflows — just running locally with their proprietary compounds instead of in the cloud with literature ones.
+
+### **A Note on Density**
+
+This is a dense interface. Power tools earn density by being used daily. Maestro looks overwhelming to a new user; after two weeks it feels efficient. Edeon's interface should follow the same principle: surface everything important, trust users to learn, optimize for the 20th interaction not the first.
+
+The web version (which targets newcomers and academic users) can be slightly more spacious. The desktop version (which targets daily commercial users) earns this density. Different products, different audiences, different optimal designs.
+
+The schematic represents what Edeon Desktop should feel like at full development. Months 13-18 of your roadmap is when this gets built. Until then, the web platform validates the workflows, the value proposition, and the audience. Then you wrap proven workflows in Tauri and ship the product that actually pays the bills.
+
+Take the SVG file, study it, react to it. What feels right? What feels off? Better to iterate on the schematic now than after months of code commits in the wrong direction.
+
+**SVG file with UI scheme is available locally in D/My projects/Edeon/**

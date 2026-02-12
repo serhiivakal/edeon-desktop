@@ -1,0 +1,10 @@
+{
+  "identifier": "com.edeon.desktop",
+  "description": "Edeon Desktop application capabilities",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "shell:allow-open",
+    "dialog:allow-open"
+  ]
+}

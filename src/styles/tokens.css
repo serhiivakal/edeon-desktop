@@ -1,0 +1,73 @@
+/* ==========================================================
+   Edeon Desktop — Design Tokens
+   Extracted from edeon_desktop_workflow_view.svg
+   ========================================================== */
+
+:root {
+  /* ── Brand Greens (primary palette) ────────────────────── */
+  --color-brand-900: #173404;
+  --color-brand-700: #2d5016;
+  --color-brand-600: #3b6d11;
+  --color-brand-100: #eaf3de;
+  --color-brand-50:  #c0dd97;
+
+  /* ── Blues (running / active state) ─────────────────────── */
+  --color-blue-700: #0c447c;
+  --color-blue-500: #378add;
+  --color-blue-100: #e6f1fb;
+  --color-blue-50:  #cce0f5;
+
+  /* ── Amber (medium risk / warnings) ────────────────────── */
+  --color-amber-700: #854f0b;
+  --color-amber-100: #faeeda;
+  --color-amber-50:  #fac775;
+
+  /* ── Red (high risk / danger) ──────────────────────────── */
+  --color-red-700: #993c1d;
+  --color-red-500: #791f1f;
+  --color-red-100: #fceae5;
+  --color-red-50:  #f7c1c1;
+
+  /* ── Neutrals ──────────────────────────────────────────── */
+  --color-bg:       #fafaf7;
+  --color-surface:  #ffffff;
+  --color-sidebar:  #f5f5f0;
+  --color-border:   #e5e5e0;
+  --color-border-subtle: #d3d1c7;
+  --color-text-900: #1a1a1a;
+  --color-text-600: #5a5a5a;
+  --color-text-400: #888888;
+
+  /* ── Layout Dimensions ─────────────────────────────────── */
+  --sidebar-width:    220px;
+  --inspector-width:  280px;
+  --header-height:    50px;
+  --statusbar-height: 30px;
+
+  /* ── Typography ────────────────────────────────────────── */
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono:   'Courier New', Consolas, monospace;
+
+  /* ── Spacing scale ─────────────────────────────────────── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+
+  /* ── Border radius ─────────────────────────────────────── */
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+
+  /* ── Shadows ───────────────────────────────────────────── */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+  /* ── Transitions ───────────────────────────────────────── */
+  --transition-fast:   120ms ease;
+  --transition-normal: 200ms ease;
+}

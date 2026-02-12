@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 880" width="1280" height="880" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Edeon Desktop workflow view</title>
+  <desc>Workflow-centered UI mockup for the Edeon desktop application showing the Resistance-Aware Lead Optimization workflow running on a Glyphosate analogs project. The interface includes: top header with logo, project breadcrumb, run controls, and account; left sidebar with Projects, Views (Library, Workflows active, Knowledge, Models, Reports), and Recent workflows; main area with workflow header, six-stage pipeline visualization showing three complete stages and one running stage, and a results table with sortable columns and color-coded risk badges; right inspector panel showing the selected compound's structure, key properties, selectivity profile across four organisms, resistance metrics, and action buttons; bottom status bar showing active jobs, memory usage, and license status.</desc>
+
+  <rect width="1280" height="880" fill="#fafaf7"/>
+
+  <!-- HEADER -->
+  <rect x="0" y="0" width="1280" height="50" fill="#ffffff"/>
+  <line x1="0" y1="50" x2="1280" y2="50" stroke="#e5e5e0" stroke-width="0.5"/>
+  <text x="20" y="32" fill="#2d5016" font-size="17" font-weight="500">Edeon</text>
+  <text x="80" y="32" fill="#888888" font-size="11">Desktop</text>
+  
+  <line x1="115" y1="14" x2="115" y2="36" stroke="#e5e5e0" stroke-width="0.5"/>
+  <text x="135" y="32" fill="#5a5a5a" font-size="12">Glyphosate analogs Q1</text>
+  <text x="280" y="32" fill="#888888" font-size="11">›</text>
+  <text x="298" y="32" fill="#1a1a1a" font-size="12" font-weight="500">Resistance-Aware Lead Optimization</text>
+  
+  <rect x="620" y="14" width="80" height="22" fill="#e6f1fb" rx="4"/>
+  <circle cx="632" cy="25" r="3" fill="#378add"/>
+  <text x="643" y="29" fill="#0c447c" font-size="11" font-weight="500">Running</text>
+  
+  <text x="710" y="29" fill="#5a5a5a" font-size="11">42%</text>
+  <rect x="735" y="22" width="120" height="6" fill="#e5e5e0" rx="3"/>
+  <rect x="735" y="22" width="50" height="6" fill="#378add" rx="3"/>
+  
+  <rect x="900" y="14" width="32" height="22" fill="#fafaf7" stroke="#e5e5e0" stroke-width="0.5" rx="4"/>
+  <text x="916" y="29" fill="#5a5a5a" font-size="11" text-anchor="middle">||</text>
+  <rect x="938" y="14" width="32" height="22" fill="#fafaf7" stroke="#e5e5e0" stroke-width="0.5" rx="4"/>
+  <text x="954" y="29" fill="#5a5a5a" font-size="11" text-anchor="middle">⌕</text>
+  <rect x="976" y="14" width="60" height="22" fill="#2d5016" rx="4"/>
+  <text x="1006" y="29" fill="#ffffff" font-size="11" text-anchor="middle" font-weight="500">Save</text>
+  
+  <line x1="1175" y1="14" x2="1175" y2="36" stroke="#e5e5e0" stroke-width="0.5"/>
+  <circle cx="1198" cy="25" r="10" fill="#eaf3de"/>
+  <text x="1198" y="29" fill="#173404" font-size="9" text-anchor="middle" font-weight="500">SV</text>
+  <text x="1218" y="29" fill="#5a5a5a" font-size="11">Sergio</text>
+
+  <!-- LEFT SIDEBAR -->
+  <rect x="0" y="50" width="220" height="800" fill="#f5f5f0"/>
+  <line x1="220" y1="50" x2="220" y2="850" stroke="#e5e5e0" stroke-width="0.5"/>
+  
+  <text x="16" y="84" fill="#888888" font-size="10" letter-spacing="0.5">PROJECTS</text>
+  <rect x="10" y="92" width="200" height="28" fill="#eaf3de" rx="4"/>
+  <text x="22" y="110" fill="#173404" font-size="12" font-weight="500">▶ Glyphosate analogs Q1</text>
+  <text x="186" y="110" fill="#173404" font-size="10">12</text>
+  
+  <text x="22" y="138" fill="#5a5a5a" font-size="12">▸ Bee-safe insecticides</text>
+  <text x="186" y="138" fill="#888888" font-size="10">8</text>
+  <text x="22" y="160" fill="#5a5a5a" font-size="12">▸ Fungicide library 2026</text>
+  <text x="186" y="160" fill="#888888" font-size="10">31</text>
+  <text x="22" y="182" fill="#5a5a5a" font-size="12">▸ DEL hits batch 14</text>
+  <text x="186" y="182" fill="#888888" font-size="10">1242</text>
+  <text x="22" y="204" fill="#0c447c" font-size="11">+ New project</text>
+  
+  <text x="16" y="244" fill="#888888" font-size="10" letter-spacing="0.5">VIEWS</text>
+  <text x="22" y="270" fill="#5a5a5a" font-size="12">Library</text>
+  <rect x="10" y="280" width="200" height="28" fill="#eaf3de" rx="4"/>
+  <text x="22" y="298" fill="#173404" font-size="12" font-weight="500">Workflows</text>
+  <circle cx="186" cy="294" r="6" fill="#378add"/>
+  <text x="186" y="298" fill="#ffffff" font-size="9" text-anchor="middle">1</text>
+  <text x="22" y="326" fill="#5a5a5a" font-size="12">Knowledge</text>
+  <text x="22" y="350" fill="#5a5a5a" font-size="12">Models</text>
+  <text x="22" y="374" fill="#5a5a5a" font-size="12">Reports</text>
+  
+  <text x="16" y="414" fill="#888888" font-size="10" letter-spacing="0.5">RECENT WORKFLOWS</text>
+  <text x="22" y="438" fill="#5a5a5a" font-size="11">DEL hit triage</text>
+  <text x="22" y="454" fill="#888888" font-size="10">2h ago · 1000 cmpds</text>
+  <text x="22" y="478" fill="#5a5a5a" font-size="11">Regulatory check</text>
+  <text x="22" y="494" fill="#888888" font-size="10">Yesterday · 247 cmpds</text>
+  <text x="22" y="518" fill="#5a5a5a" font-size="11">Bee toxicity panel</text>
+  <text x="22" y="534" fill="#888888" font-size="10">3d ago · 48 cmpds</text>
+  
+  <text x="22" y="800" fill="#888888" font-size="12">Settings</text>
+  <text x="22" y="824" fill="#888888" font-size="12">Help</text>
+
+  <!-- MAIN AREA: Workflow Header -->
+  <rect x="240" y="68" width="740" height="56" fill="#ffffff" stroke="#e5e5e0" stroke-width="0.5" rx="8"/>
+  <text x="256" y="90" fill="#1a1a1a" font-size="14" font-weight="500">Resistance-Aware Lead Optimization</text>
+  <text x="256" y="108" fill="#5a5a5a" font-size="11">3 of 6 stages complete · 247 compounds active · started 8 min ago</text>
+  <rect x="820" y="84" width="70" height="24" fill="#fafaf7" stroke="#e5e5e0" stroke-width="0.5" rx="4"/>
+  <text x="855" y="100" fill="#5a5a5a" font-size="11" text-anchor="middle">Configure</text>
+  <rect x="898" y="84" width="60" height="24" fill="#fafaf7" stroke="#e5e5e0" stroke-width="0.5" rx="4"/>
+  <text x="928" y="100" fill="#993c1d" font-size="11" text-anchor="middle">Stop</text>
+
+  <!-- PIPELINE -->
+  <text x="240" y="156" fill="#888888" font-size="10" letter-spacing="0.5">PIPELINE</text>
+  
+  <line x1="304" y1="220" x2="368" y2="220" stroke="#3b6d11" stroke-width="2"/>
+  <line x1="432" y1="220" x2="496" y2="220" stroke="#3b6d11" stroke-width="2"/>
+  <line x1="560" y1="220" x2="624" y2="220" stroke="#3b6d11" stroke-width="2"/>
+  <line x1="688" y1="220" x2="752" y2="220" stroke="#888888" stroke-width="2" stroke-dasharray="3,3"/>
+  <line x1="816" y1="220" x2="880" y2="220" stroke="#888888" stroke-width="2" stroke-dasharray="3,3"/>
+
+  <!-- Stage 1 -->
+  <rect x="240" y="170" width="124" height="100" fill="#eaf3de" stroke="#3b6d11" stroke-width="0.5" rx="6"/>
+  <circle cx="260" cy="190" r="9" fill="#3b6d11"/>
+  <text x="260" y="194" fill="#ffffff" font-size="11" text-anchor="middle" font-weight="500">✓</text>
+  <text x="278" y="194" fill="#173404" font-size="11" font-weight="500">1</text>
+  <text x="252" y="220" fill="#173404" font-size="11" font-weight="500">Standardize</text>
+  <text x="252" y="236" fill="#173404" font-size="10">Salts, tautomers</text>
+  <text x="252" y="256" fill="#173404" font-size="14" font-weight="500">1000</text>
+  <text x="296" y="256" fill="#173404" font-size="10">compounds</text>
+  
+  <!-- Stage 2 -->
+  <rect x="368" y="170" width="124" height="100" fill="#eaf3de" stroke="#3b6d11" stroke-width="0.5" rx="6"/>
+  <circle cx="388" cy="190" r="9" fill="#3b6d11"/>
+  <text x="388" y="194" fill="#ffffff" font-size="11" text-anchor="middle" font-weight="500">✓</text>
+  <text x="406" y="194" fill="#173404" font-size="11" font-weight="500">2</text>
+  <text x="380" y="220" fill="#173404" font-size="11" font-weight="500">Pesticide-likeness</text>
+  <text x="380" y="236" fill="#173404" font-size="10">Tice rules filter</text>
+  <text x="380" y="256" fill="#173404" font-size="14" font-weight="500">247</text>
+  <text x="412" y="256" fill="#173404" font-size="10">passed</text>
+  
+  <!-- Stage 3 -->
+  <rect x="496" y="170" width="124" height="100" fill="#eaf3de" stroke="#3b6d11" stroke-width="0.5" rx="6"/>
+  <circle cx="516" cy="190" r="9" fill="#3b6d11"/>
+  <text x="516" y="194" fill="#ffffff" font-size="11" text-anchor="middle" font-weight="500">✓</text>
+  <text x="534" y="194" fill="#173404" font-size="11" font-weight="500">3</text>
+  <text x="508" y="220" fill="#173404" font-size="11" font-weight="500">Cross-species</text>
+  <text x="508" y="236" fill="#173404" font-size="10">Selectivity scoring</text>
+  <text x="508" y="256" fill="#173404" font-size="14" font-weight="500">247</text>
+  <text x="540" y="256" fill="#173404" font-size="10">scored</text>
+  
+  <!-- Stage 4 (running) -->
+  <rect x="624" y="170" width="124" height="100" fill="#e6f1fb" stroke="#378add" stroke-width="0.5" rx="6"/>
+  <circle cx="644" cy="190" r="9" fill="#378add"/>
+  <text x="644" y="194" fill="#ffffff" font-size="11" text-anchor="middle" font-weight="500">●</text>
+  <text x="662" y="194" fill="#0c447c" font-size="11" font-weight="500">4</text>
+  <text x="636" y="220" fill="#0c447c" font-size="11" font-weight="500">Resistance</text>
+  <text x="636" y="236" fill="#0c447c" font-size="10">Hotspot analysis</text>
+  <rect x="636" y="248" width="100" height="6" fill="#cce0f5" rx="3"/>
+  <rect x="636" y="248" width="42" height="6" fill="#378add" rx="3"/>
+  <text x="636" y="266" fill="#0c447c" font-size="10">42% · 104/247</text>
+  
+  <!-- Stage 5 (waiting) -->
+  <rect x="752" y="170" width="124" height="100" fill="#ffffff" stroke="#e5e5e0" stroke-width="0.5" rx="6"/>
+  <circle cx="772" cy="190" r="9" fill="#ffffff" stroke="#d3d1c7" stroke-width="0.5"/>
+  <text x="772" y="194" fill="#888888" font-size="9" text-anchor="middle">○</text>
+  <text x="790" y="194" fill="#5a5a5a" font-size="11">5</text>
+  <text x="764" y="220" fill="#5a5a5a" font-size="11">MPO scoring</text>
+  <text x="764" y="236" fill="#888888" font-size="10">Multi-parameter</text>
+  <text x="764" y="256" fill="#888888" font-size="11">Waiting</text>
+  
+  <!-- Stage 6 (waiting) -->
+  <rect x="880" y="170" width="100" height="100" fill="#ffffff" stroke="#e5e5e0" stroke-width="0.5" rx="6"/>
+  <circle cx="900" cy="190" r="9" fill="#ffffff" stroke="#d3d1c7" stroke-width="0.5"/>
+  <text x="900" y="194" fill="#888888" font-size="9" text-anchor="middle">○</text>
+  <text x="918" y="194" fill="#5a5a5a" font-size="11">6</text>
+  <text x="892" y="220" fill="#5a5a5a" font-size="11">Final ranking</text>
+  <text x="892" y="236" fill="#888888" font-size="10">Top candidates</text>
+  <text x="892" y="256" fill="#888888" font-size="11">Waiting</text>
+
+  <!-- RESULTS TABLE -->
+  <text x="240" y="304" fill="#888888" font-size="10" letter-spacing="0.5">RESULTS · 247 OF 1000 COMPOUNDS</text>
+  <text x="900" y="304" fill="#888888" font-size="10" text-anchor="end">⌕ Filter</text>
+  <text x="956" y="304" fill="#888888" font-size="10" text-anchor="end">↓ Export</text>
+
+  <rect x="240" y="316" width="740" height="500" fill="#ffffff" stroke="#e5e5e0" stroke-width="0.5" rx="8"/>
+  
+  <rect x="240" y="316" width="740" height="32" fill="#fafaf7" rx="8"/>
+  <rect x="240" y="340" width="740" height="8" fill="#fafaf7"/>
+  <text x="256" y="336" fill="#888888" font-size="10" letter-spacing="0.3">NAME</text>
+  <text x="356" y="336" fill="#888888" font-size="10" letter-spacing="0.3">SMILES</text>
+  <text x="588" y="336" fill="#888888" font-size="10" letter-spacing="0.3" text-anchor="middle">PEST-LIKE</text>
+  <text x="688" y="336" fill="#888888" font-size="10" letter-spacing="0.3" text-anchor="middle">SELECTIVITY</text>
+  <text x="790" y="336" fill="#888888" font-size="10" letter-spacing="0.3" text-anchor="middle">RESISTANCE</text>
+  <text x="892" y="336" fill="#888888" font-size="10" letter-spacing="0.3" text-anchor="middle">SCORE ▾</text>
+  <line x1="240" y1="348" x2="980" y2="348" stroke="#e5e5e0" stroke-width="0.5"/>
+
+  <!-- Row 1 (selected) -->
+  <rect x="240" y="348" width="740" height="38" fill="#eaf3de"/>
+  <text x="256" y="364" fill="#173404" font-size="12" font-weight="500">GLY-247</text>
+  <text x="256" y="378" fill="#5a5a5a" font-size="10">Selected</text>
+  <text x="356" y="372" fill="#5a5a5a" font-size="11" font-family="'Courier New', monospace">OC(=O)CN(F)CP(=O)(O)O</text>
+  <rect x="568" y="358" width="40" height="20" fill="#c0dd97" rx="3"/>
+  <text x="588" y="372" fill="#173404" font-size="10" text-anchor="middle" font-weight="500">High</text>
+  <text x="688" y="372" fill="#173404" font-size="12" text-anchor="middle" font-weight="500">12.4×</text>
+  <rect x="772" y="358" width="36" height="20" fill="#c0dd97" rx="3"/>
+  <text x="790" y="372" fill="#173404" font-size="10" text-anchor="middle" font-weight="500">Low</text>
+  <text x="892" y="372" fill="#173404" font-size="13" text-anchor="middle" font-weight="500">8.9</text>
+  
+  <!-- Row 2 -->
+  <line x1="240" y1="386" x2="980" y2="386" stroke="#e5e5e0" stroke-width="0.5"/>
+  <text x="256" y="402" fill="#1a1a1a" font-size="12">GLY-189</text>
+  <text x="256" y="416" fill="#888888" font-size="10">Glyphosate F-3 analog</text>
+  <text x="356" y="410" fill="#5a5a5a" font-size="11" font-family="'Courier New', monospace">OC(=O)CNCP(F)(=O)O</text>
+  <rect x="568" y="396" width="40" height="20" fill="#c0dd97" rx="3"/>
+  <text x="588" y="410" fill="#173404" font-size="10" text-anchor="middle" font-weight="500">High</text>
+  <text x="688" y="410" fill="#5a5a5a" font-size="12" text-anchor="middle">9.7×</text>
+  <rect x="772" y="396" width="36" height="20" fill="#fac775" rx="3"/>
+  <text x="790" y="410" fill="#854f0b" font-size="10" text-anchor="middle" font-weight="500">Med</text>
+  <text x="892" y="410" fill="#5a5a5a" font-size="13" text-anchor="middle" font-weight="500">8.2</text>
+  
+  <!-- Row 3 -->
+  <line x1="240" y1="424" x2="980" y2="424" stroke="#e5e5e0" stroke-width="0.5"/>
+  <text x="256" y="440" fill="#1a1a1a" font-size="12">GLY-203</text>
+  <text x="256" y="454" fill="#888888" font-size="10">Cl substitution</text>
+  <text x="356" y="448" fill="#5a5a5a" font-size="11" font-family="'Courier New', monospace">OC(=O)CNCP(=O)(Cl)O</text>
+  <rect x="568" y="434" width="40" height="20" fill="#c0dd97" rx="3"/>
+  <text x="588" y="448" fill="#173404" font-size="10" text-anchor="middle" font-weight="500">High</text>
+  <text x="688" y="448" fill="#5a5a5a" font-size="12" text-anchor="middle">8.1×</text>
+  <rect x="772" y="434" width="36" height="20" fill="#c0dd97" rx="3"/>
+  <text x="790" y="448" fill="#173404" font-size="10" text-anchor="middle" font-weight="500">Low</text>
+  <text x="892" y="448" fill="#5a5a5a" font-size="13" text-anchor="middle" font-weight="500">7.8</text>
+  
+  <!-- Row 4 -->
+  <line x1="240" y1="462" x2="980" y2="462" stroke="#e5e5e0" stroke-width="0.5"/>
+  <text x="256" y="478" fill="#1a1a1a" font-size="12">GLY-142</text>
+  <text x="256" y="492" fill="#888888" font-size="10">Methylated derivative</text>
+  <text x="356" y="486" fill="#5a5a5a" font-size="11" font-family="'Courier New', monospace">OC(=O)CN(C)CP(=O)(O)O</text>
+  <rect x="568" y="472" width="40" height="20" fill="#fac775" rx="3"/>
+  <text x="588" y="486" fill="#854f0b" font-size="10" text-anchor="middle" font-weight="500">Med</text>
+  <text x="688" y="486" fill="#5a5a5a" font-size="12" text-anchor="middle">7.3×</text>
+  <rect x="772" y="472" width="36" height="20" fill="#c0dd97" rx="3"/>
+  <text x="790" y="486" fill="#173404" font-size="10" text-anchor="middle" font-weight="500">Low</text>
+  <text x="892" y="486" fill="#5a5a5a" font-size="13" text-anchor="middle" font-weight="500">7.5</text>
+  
+  <!-- Row 5 -->
+  <line x1="240" y1="500" x2="980" y2="500" stroke="#e5e5e0" stroke-width="0.5"/>
+  <text x="256" y="516" fill="#1a1a1a" font-size="12">GLY-077</text>
+  <text x="256" y="530" fill="#888888" font-size="10">Phosphate ester</text>
+  <text x="356" y="524" fill="#5a5a5a" font-size="11" font-family="'Courier New', monospace">OC(=O)CNCP(=O)(OC)OC</text>
+  <rect x="568" y="510" width="40" height="20" fill="#c0dd97" rx="3"/>
+  <text x="588" y="524" fill="#173404" font-size="10" text-anchor="middle" font-weight="500">High</text>
+  <text x="688" y="524" fill="#5a5a5a" font-size="12" text-anchor="middle">6.8×</text>
+  <rect x="772" y="510" width="36" height="20" fill="#fac775" rx="3"/>
+  <text x="790" y="524" fill="#854f0b" font-size="10" text-anchor="middle" font-weight="500">Med</text>
+  <text x="892" y="524" fill="#5a5a5a" font-size="13" text-anchor="middle" font-weight="500">6.9</text>
+  
+  <!-- Row 6 -->
+  <line x1="240" y1="538" x2="980" y2="538" stroke="#e5e5e0" stroke-width="0.5"/>
+  <text x="256" y="554" fill="#1a1a1a" font-size="12">GLY-118</text>
+  <text x="256" y="568" fill="#888888" font-size="10">N-ethyl variant</text>
+  <text x="356" y="562" fill="#5a5a5a" font-size="11" font-family="'Courier New', monospace">OC(=O)CN(CC)CP(=O)(O)O</text>
+  <rect x="568" y="548" width="40" height="20" fill="#fac775" rx="3"/>
+  <text x="588" y="562" fill="#854f0b" font-size="10" text-anchor="middle" font-weight="500">Med</text>
+  <text x="688" y="562" fill="#5a5a5a" font-size="12" text-anchor="middle">6.2×</text>
+  <rect x="772" y="548" width="36" height="20" fill="#f7c1c1" rx="3"/>
+  <text x="790" y="562" fill="#791f1f" font-size="10" text-anchor="middle" font-weight="500">High</text>
+  <text x="892" y="562" fill="#5a5a5a" font-size="13" text-anchor="middle" font-weight="500">5.4</text>
+  
+  <!-- More rows indicator -->
+  <line x1="240" y1="576" x2="980" y2="576" stroke="#e5e5e0" stroke-width="0.5"/>
+  <text x="256" y="592" fill="#888888" font-size="11">GLY-056</text>
+  <text x="356" y="600" fill="#888888" font-size="11" font-family="'Courier New', monospace">...</text>
+  <text x="588" y="600" fill="#888888" font-size="11" text-anchor="middle">...</text>
+  <text x="688" y="600" fill="#888888" font-size="11" text-anchor="middle">...</text>
+  <text x="790" y="600" fill="#888888" font-size="11" text-anchor="middle">...</text>
+  <text x="892" y="600" fill="#888888" font-size="11" text-anchor="middle">...</text>
+
+  <!-- Table footer -->
+  <line x1="240" y1="784" x2="980" y2="784" stroke="#e5e5e0" stroke-width="0.5"/>
+  <text x="256" y="804" fill="#888888" font-size="11">Showing 1-12 of 247 · sorted by composite score</text>
+  <text x="964" y="804" fill="#0c447c" font-size="11" text-anchor="end">‹ 1 2 3 ... 21 ›</text>
+
+  <!-- RIGHT INSPECTOR PANEL -->
+  <rect x="1000" y="50" width="280" height="800" fill="#ffffff"/>
+  <line x1="1000" y1="50" x2="1000" y2="850" stroke="#e5e5e0" stroke-width="0.5"/>
+  
+  <text x="1016" y="84" fill="#888888" font-size="10" letter-spacing="0.5">SELECTED COMPOUND</text>
+  <text x="1016" y="108" fill="#1a1a1a" font-size="16" font-weight="500">GLY-247</text>
+  <text x="1016" y="124" fill="#5a5a5a" font-size="11" font-family="'Courier New', monospace">OC(=O)CN(F)CP(=O)(O)O</text>
+
+  <!-- Structure -->
+  <rect x="1016" y="140" width="248" height="140" fill="#fafaf7" stroke="#e5e5e0" stroke-width="0.5" rx="6"/>
+  
+  <g transform="translate(1140,210)">
+    <line x1="-60" y1="-20" x2="-30" y2="-32" stroke="#1a1a1a" stroke-width="1.5"/>
+    <line x1="-30" y1="-32" x2="0" y2="-20" stroke="#1a1a1a" stroke-width="1.5"/>
+    <line x1="0" y1="-20" x2="0" y2="10" stroke="#1a1a1a" stroke-width="1.5"/>
+    <line x1="0" y1="10" x2="30" y2="22" stroke="#1a1a1a" stroke-width="1.5"/>
+    <line x1="30" y1="22" x2="60" y2="10" stroke="#1a1a1a" stroke-width="1.5"/>
+    <line x1="0" y1="10" x2="-30" y2="22" stroke="#1a1a1a" stroke-width="1.5"/>
+    <line x1="-60" y1="-20" x2="-60" y2="-48" stroke="#1a1a1a" stroke-width="1.5"/>
+    <line x1="-57" y1="-20" x2="-57" y2="-48" stroke="#1a1a1a" stroke-width="1.5"/>
+    
+    <circle cx="-60" cy="-20" r="9" fill="#fceae5"/>
+    <text x="-60" y="-16" fill="#993c1d" font-size="9" text-anchor="middle" font-weight="500">O</text>
+    <circle cx="-60" cy="-54" r="9" fill="#fceae5"/>
+    <text x="-60" y="-50" fill="#993c1d" font-size="9" text-anchor="middle" font-weight="500">O</text>
+    <circle cx="-30" cy="22" r="9" fill="#fceae5"/>
+    <text x="-30" y="26" fill="#993c1d" font-size="9" text-anchor="middle" font-weight="500">OH</text>
+    <circle cx="0" cy="-20" r="9" fill="#e6f1fb"/>
+    <text x="0" y="-16" fill="#0c447c" font-size="9" text-anchor="middle" font-weight="500">N</text>
+    <circle cx="14" cy="-32" r="9" fill="#faeeda"/>
+    <text x="14" y="-28" fill="#854f0b" font-size="9" text-anchor="middle" font-weight="500">F</text>
+    <line x1="0" y1="-20" x2="14" y2="-32" stroke="#1a1a1a" stroke-width="1.5"/>
+    <circle cx="30" cy="22" r="11" fill="#eaf3de"/>
+    <text x="30" y="26" fill="#173404" font-size="9" text-anchor="middle" font-weight="500">P</text>
+    <circle cx="60" cy="10" r="9" fill="#fceae5"/>
+    <text x="60" y="14" fill="#993c1d" font-size="9" text-anchor="middle" font-weight="500">OH</text>
+    <circle cx="46" cy="42" r="9" fill="#fceae5"/>
+    <text x="46" y="46" fill="#993c1d" font-size="9" text-anchor="middle" font-weight="500">O</text>
+    <line x1="36" y1="32" x2="44" y2="38" stroke="#1a1a1a" stroke-width="1.5"/>
+    <line x1="38" y1="30" x2="46" y2="36" stroke="#1a1a1a" stroke-width="1.5"/>
+  </g>
+
+  <!-- Key properties -->
+  <text x="1016" y="306" fill="#888888" font-size="10" letter-spacing="0.5">KEY PROPERTIES</text>
+  
+  <text x="1016" y="330" fill="#888888" font-size="11">MW</text>
+  <text x="1248" y="330" fill="#1a1a1a" font-size="11" text-anchor="end" font-weight="500">187.05 g/mol</text>
+  <text x="1016" y="352" fill="#888888" font-size="11">LogP</text>
+  <text x="1248" y="352" fill="#1a1a1a" font-size="11" text-anchor="end" font-weight="500">-2.04</text>
+  <text x="1016" y="374" fill="#888888" font-size="11">TPSA</text>
+  <text x="1248" y="374" fill="#1a1a1a" font-size="11" text-anchor="end" font-weight="500">112.5 Å²</text>
+  <text x="1016" y="396" fill="#888888" font-size="11">H-bond donors</text>
+  <text x="1248" y="396" fill="#1a1a1a" font-size="11" text-anchor="end" font-weight="500">3</text>
+  
+  <!-- Selectivity profile -->
+  <text x="1016" y="436" fill="#888888" font-size="10" letter-spacing="0.5">SELECTIVITY PROFILE</text>
+  
+  <rect x="1016" y="448" width="118" height="56" fill="#eaf3de" stroke="#173404" stroke-width="0.5" rx="4"/>
+  <text x="1024" y="464" fill="#173404" font-size="10">Target weed</text>
+  <text x="1024" y="482" fill="#173404" font-size="13" font-weight="500">IC50 4 nM</text>
+  <text x="1024" y="498" fill="#173404" font-size="9">98% conserved</text>
+  
+  <rect x="1146" y="448" width="118" height="56" fill="#eaf3de" stroke="#173404" stroke-width="0.5" rx="4"/>
+  <text x="1154" y="464" fill="#173404" font-size="10">Crop (wheat)</text>
+  <text x="1154" y="482" fill="#173404" font-size="13" font-weight="500">Safe</text>
+  <text x="1154" y="498" fill="#173404" font-size="9">Target absent</text>
+  
+  <rect x="1016" y="510" width="118" height="56" fill="#faeeda" stroke="#854f0b" stroke-width="0.5" rx="4"/>
+  <text x="1024" y="526" fill="#854f0b" font-size="10">Honey bee</text>
+  <text x="1024" y="544" fill="#854f0b" font-size="13" font-weight="500">LD50 25 μg</text>
+  <text x="1024" y="560" fill="#854f0b" font-size="9">Moderate risk</text>
+  
+  <rect x="1146" y="510" width="118" height="56" fill="#eaf3de" stroke="#173404" stroke-width="0.5" rx="4"/>
+  <text x="1154" y="526" fill="#173404" font-size="10">Mammal</text>
+  <text x="1154" y="544" fill="#173404" font-size="13" font-weight="500">LD50 5600</text>
+  <text x="1154" y="560" fill="#173404" font-size="9">Low risk</text>
+
+  <!-- Resistance -->
+  <text x="1016" y="600" fill="#888888" font-size="10" letter-spacing="0.5">RESISTANCE</text>
+  <text x="1016" y="624" fill="#5a5a5a" font-size="11">EPSPS hotspots</text>
+  <text x="1248" y="624" fill="#173404" font-size="11" text-anchor="end" font-weight="500">2 of 7</text>
+  <text x="1016" y="646" fill="#5a5a5a" font-size="11">Cross-resistance</text>
+  <text x="1248" y="646" fill="#173404" font-size="11" text-anchor="end" font-weight="500">Low (HRAC G)</text>
+  <text x="1016" y="668" fill="#5a5a5a" font-size="11">Predicted persistence</text>
+  <text x="1248" y="668" fill="#173404" font-size="11" text-anchor="end" font-weight="500">~5 generations</text>
+
+  <!-- Actions -->
+  <line x1="1016" y1="700" x2="1264" y2="700" stroke="#e5e5e0" stroke-width="0.5"/>
+  
+  <rect x="1016" y="716" width="118" height="32" fill="#fafaf7" stroke="#e5e5e0" stroke-width="0.5" rx="4"/>
+  <text x="1075" y="736" fill="#5a5a5a" font-size="11" text-anchor="middle">Detail view</text>
+  
+  <rect x="1146" y="716" width="118" height="32" fill="#fafaf7" stroke="#e5e5e0" stroke-width="0.5" rx="4"/>
+  <text x="1205" y="736" fill="#5a5a5a" font-size="11" text-anchor="middle">Compare</text>
+  
+  <rect x="1016" y="756" width="248" height="32" fill="#2d5016" rx="4"/>
+  <text x="1140" y="776" fill="#ffffff" font-size="11" text-anchor="middle" font-weight="500">Add to candidates list →</text>
+
+  <!-- STATUS BAR -->
+  <rect x="0" y="850" width="1280" height="30" fill="#ffffff"/>
+  <line x1="0" y1="850" x2="1280" y2="850" stroke="#e5e5e0" stroke-width="0.5"/>
+  <circle cx="14" cy="865" r="3" fill="#3b6d11"/>
+  <text x="24" y="869" fill="#5a5a5a" font-size="11">Resistance analysis · 104/247 compounds processed</text>
+  <text x="380" y="869" fill="#888888" font-size="11">Queue: 1 active, 0 pending</text>
+  <text x="600" y="869" fill="#888888" font-size="11">Memory: 2.4 GB</text>
+  <text x="780" y="869" fill="#888888" font-size="11">Models: 7 loaded</text>
+  <text x="1264" y="869" fill="#888888" font-size="11" text-anchor="end">License: Commercial · Valid through 2027-03</text>
+</svg>
