@@ -151,4 +151,16 @@ date-released: 2026-02-12
 url: "https://github.com/serhiivakal/edeon-desktop"
 license: "CC-BY-NC-4.0"
 
-For commercial licensing requests, scientific inquiries, or collaboration proposals, please reach out to the project maintainer, Dr. Serhii Vakal (serhii.vakal@gmail.com).
+@software{Vakal_Edeon_Desktop_2026,
+  author    = {Vakal, Serhii},
+  title     = {{Edeon Desktop: Agrochemical Lead Optimization \& Scientific Intelligence Platform}},
+  month     = feb,
+  year      = {2026},
+  publisher = {GitHub},
+  version   = {1.0.0},
+  url       = {https://github.com/serhiivakal/edeon-desktop}
+}
+
+***
+
+**For commercial licensing requests, scientific inquiries, or collaboration proposals, please reach out to the project maintainer, Dr. Serhii Vakal (serhii.vakal@gmail.com).**
