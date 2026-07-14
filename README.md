@@ -140,4 +140,15 @@ This project is licensed under the **Non-Commercial Public License** ([LICENSE](
 - **Non-Commercial Use**: You are free to use, modify, study, and distribute this software for academic, research, personal, and educational purposes.
 - **Commercial Exclusion**: Commercial monetization, integration into proprietary commercial products, or paid consulting using this software requires an explicit commercial license.
 
-For commercial licensing requests, scientific inquiries, or collaboration proposals, please reach out to the project maintainers.
+cff-version: 1.2.0
+message: "If you use Edeon Desktop in your research or software development, please cite it as below."
+authors:
+  - family-names: "Vakal"
+    given-names: "Serhii"
+title: "Edeon Desktop: Agrochemical Lead Optimization & Scientific Intelligence Platform"
+version: "1.0.0"
+date-released: 2026-02-12
+url: "https://github.com/serhiivakal/edeon-desktop"
+license: "CC-BY-NC-4.0"
+
+For commercial licensing requests, scientific inquiries, or collaboration proposals, please reach out to the project maintainer, Dr. Serhii Vakal (serhii.vakal@gmail.com).
